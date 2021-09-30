@@ -9,7 +9,7 @@ let dogs = [{
     color: "dark colors"
 }, {
     name: "Rey",
-    color: "lights colors"
+    color: "light colors"
 }, {
     name: "Gishido",
     color: "midgray colors"
@@ -21,6 +21,8 @@ function setup() {
   createCanvas(600, 600);
   background(200);
   textSize(32);
+
+  text("click to randomize", 50, 50);
 
 }
 
