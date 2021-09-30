@@ -1,18 +1,18 @@
 let dogs = [{
     name: "Steven",
-    color: "Red"
+    color: "skin tones"
 }, {
     name: "Tyson",
-    color: "green"
+    color: "cat eyes"
 }, {
     name: "Kylo",
-    color: "Grey"
+    color: "dark colors"
 }, {
     name: "Rey",
-    color: "white"
+    color: "lights colors"
 }, {
     name: "Gishido",
-    color: "Brown"
+    color: "midgray colors"
 }];
 
 let randomIndex;
