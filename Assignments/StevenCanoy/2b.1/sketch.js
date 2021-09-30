@@ -30,7 +30,7 @@ function draw() {
 function mousePressed() {
   
   //random name and splices
-  background(randome(200,255));
+  background(random(200,255));
   randomIndex = int(random(dogs.length));
   text(dogs[randomIndex].name, 50, 50);
   dogs.splice(randomIndex, 1);
