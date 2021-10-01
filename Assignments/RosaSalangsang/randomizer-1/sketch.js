@@ -1,6 +1,6 @@
-let circles= {{name:"red"},
-{name:"yellow"},
-{name:"violet"}};
+let circles= [{name:"red"}
+{name:"yellow"}
+{name:"violet"}];
 let randomIndex
 function setup() {
   createCanvas(600, 600);
@@ -8,7 +8,7 @@ function setup() {
 
 
 function draw() {
-  
+
 }
 
 function mousePressed(){
