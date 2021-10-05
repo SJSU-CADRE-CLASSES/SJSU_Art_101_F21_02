@@ -1,6 +1,6 @@
 let dogs = [{
     name: "Steven",
-    color: "skin tones"
+    color: "red"
 }, {
     name: "Tyson",
     color: "cat eyes"
@@ -19,10 +19,10 @@ let randomIndex;
 
 function setup() {
   createCanvas(600, 600);
-  background(random(255,255,255),random(255,255,255),random(255,255,255));
+  background(random(255),random(255),random(255));
   textSize(32);
 
-  text("click to randomize", 50, 50);
+  text("click to randomize", 50, 50); 
 
 }
 
