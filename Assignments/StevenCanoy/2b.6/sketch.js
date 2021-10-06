@@ -16,6 +16,7 @@ let dogs = [{
 }];
 
 let randomIndex;
+let counter = 0;
 
 function setup() {
   createCanvas(600, 600);
@@ -35,8 +36,13 @@ function draw() {
 }
 
 function changeBackground(){
+  if (counter <= 5){
+    counter++;
   background(random(255),random(255),random(255));
   setTimeout(changeBackground, 1000);
+} else {
+
+  }
 }
 
 function mousePressed() {
