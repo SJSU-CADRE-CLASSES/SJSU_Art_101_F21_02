@@ -26,10 +26,8 @@ function setup() {
   text("click to randomize", 50, 50); 
 
   setTimeout(changeBackground, 1000);
-
-  
-
 }
+
 
 function draw() {
   
