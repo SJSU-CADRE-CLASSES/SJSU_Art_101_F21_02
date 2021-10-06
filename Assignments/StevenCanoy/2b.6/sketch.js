@@ -36,6 +36,7 @@ function draw() {
 
 function changeBackground(){
   background(random(255),random(255),random(255));
+  setTimeout(changeBackground, 1000);
 }
 
 function mousePressed() {
