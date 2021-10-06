@@ -7,7 +7,6 @@ function setup() {
   background(222, 165, 164);
   noStroke();
   angleMode(DEGREES);
-
   createButton("Start").mousePressed(startSketch);
 }
 
@@ -15,10 +14,12 @@ function startSketch(){
   mic = new p5.AudioIn();
   mic.start();
 
+  console.log("beep");
   sketchStarted = true;
 }
 
 function draw() {
+
   if(sketchStarted){
     var xColor = map(mouseX, 0, 400, 0, 255);
     var yColor = map(mouseY, 0, 400, 0, 255);
@@ -30,10 +31,10 @@ function draw() {
     ellipse(mouseX, mouseY, 25, 25);
 
     fill(0);
-    ellipse(width * 0.5, height * 0.575, 20, mic.getLevel() * 400);
+    //ellipse(width * 0.5, height * 0.575, 20, mic.getLevel() * 400);
+
   }
 }
-// .
 
 function drawEars() {
   fill(0);
