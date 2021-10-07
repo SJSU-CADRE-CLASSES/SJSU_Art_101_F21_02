@@ -24,6 +24,8 @@ function setup() {
 
   text("click to randomize", 50, 50); 
 
+  
+
 }
 
 function draw() {
