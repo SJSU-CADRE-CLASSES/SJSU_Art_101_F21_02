@@ -1,11 +1,42 @@
-let dogs = [];
+let music = [{
+  artist: "The Cars",
+  song: "Just What I Needed"
+}, {
+  artist: "Dio",
+  song: "Rainbow in the Dark"
+}, {
+  artist: "Queen",
+  song: "Killer Queen"
+}, {
+  artist: "King Crimson",
+  song: "Court of the Crimson King"
+}, {
+  artist: "Whitesnake",
+  song: "Fool for Your Loving"
+}, {
+artist: "AC/DC",
+  song: "Dirty Deeds Done Dirt Cheap"
+}, {
+  artist: "Elvis Presley",
+  song: "Wonder of You"
+}];
+
+let randomIndex;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
+  background(220);
 }
 
 function draw() {
-  background(220);
+
+}
+
+function mousePressed() {
+  randomIndex = int(random(music.length));
   fill('#000000');
-  ellipse(100,100,50);
+  textSize(40);
+  text(music[randomIndex].artist, 200, 200)
+  console.log(music[0].artist);
+  music.splice(randomIndex, 1);
 }
