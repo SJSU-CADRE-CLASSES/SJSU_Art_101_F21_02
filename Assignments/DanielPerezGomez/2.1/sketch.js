@@ -1,3 +1,5 @@
+let dogs = [];
+
 function setup() {
   createCanvas(400, 400);
 }

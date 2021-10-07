@@ -1,2 +1,1 @@
-**ELIZABETH CLAWSON**
-======================
+ELIZABETH CLAWSON
