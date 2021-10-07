@@ -45,7 +45,8 @@ function randomizer(){
     //random name and splices
     background(random(200,255));
     randomIndex = int(random(dogs.length));
-    text(`${dogs[randomIndex].name}'s favorite color is ${dogs[randomIndex].color}`, 50, 50);
+    text(`${dogs[randomIndex].name}'s favorite color is 
+    ${dogs[randomIndex].color}`, 50, 50);
     dogs.splice(randomIndex, 1);
   } else {
     background(random(200,255));
