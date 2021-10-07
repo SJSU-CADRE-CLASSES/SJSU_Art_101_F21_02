@@ -25,7 +25,7 @@ let randomIndex;
 
 function setup() {
   createCanvas(600, 600);
-  background(220);
+  background(255);
 }
 
 function draw() {
@@ -33,10 +33,10 @@ function draw() {
 }
 
 function mousePressed() {
+  background(random(200, 255));
   randomIndex = int(random(music.length));
   fill('#000000');
   textSize(40);
   text(music[randomIndex].artist, 200, 200)
-  console.log(music[0].artist);
   music.splice(randomIndex, 1);
 }
