@@ -1,5 +1,4 @@
-///rainbow
-let randomIndex;
+let fortuneIndex;
 let animating = false;
 let fortune = [
   { name: "Heck yeah." },
@@ -11,12 +10,18 @@ let fortune = [
   { name: "Yea." },
   { name: "*takes off earbud* Sorry, what?" },
   { name: "Uh...outlook seems bleak, bud." },
-  { name: "You got this!" },
+  { name: "Of course!" },
   { name: "*dial-up noises*" },
   { name: "lol good luck, loser." },
   { name: "Sure, why the heck not." },
   { name: "Am I actually your best option?" },
-  { name: "Are you serious rn?" },
+  { name: "Are you serious rn? Heck no." },
+  { name: "Judging by the signs, yes." },
+  { name: "Idk, Google it." },
+  { name: "Oh gosh no." },
+  { name: "Oh, totally." },
+  { name: "Ask the nerd who got me here." },
+  { name: "Nope." },
 ];
 
 function setup() {
@@ -50,7 +55,7 @@ function draw() {
     fill(250);
     ellipse(120, 235, 20);
     ellipse(100, 205, 20);
-    ellipse(200, 150, 250, 80);
+    ellipse(200, 150, 260, 80);
     fill(50);
     ellipse(180, 150, 10);
     ellipse(200, 150, 10);
@@ -64,24 +69,24 @@ function fortunetell() {
     fill(250);
     ellipse(120, 235, 20);
     ellipse(100, 205, 20);
-    ellipse(200, 150, 250, 80);
-    randomIndex = int(random(fortune.length));
+    ellipse(200, 150, 260, 80);
+    fortuneIndex = int(random(fortune.length));
     fill(50);
     textStyle(BOLDITALIC);
     textSize(15);
-    text(fortune[randomIndex].name, 200, 150);
+    text(fortune[fortuneIndex].name, 200, 155);
     textAlign(CENTER);
-    fortune.splice(randomIndex, 1);
+    fortune.splice(fortuneIndex, 1);
   } else {
     background(200);
     fill(50);
     textSize(15);
     strokeWeight(2);
     textStyle(BOLD);
-    text("Am tired, come back later", 200, 150);
+    text("Am tired, come back later", 200, 155);
   }
 }
 function mouseClicked() {
   animating = true;
-  setTimeout(fortunetell, 2000);
+  setTimeout(fortunetell, 1500);
 }
