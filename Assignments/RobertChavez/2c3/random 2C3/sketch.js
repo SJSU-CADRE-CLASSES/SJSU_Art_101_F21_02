@@ -4,6 +4,7 @@ let randomIndex;
 let randompics = [];
 let imageCounter = 0;
 let animating = false;
+let button;
 function preload(){
 // random[0] = loadImage("assets/random_0.JPEG");
 // random[1] = loadImage("assets/random_1.JPEG");
@@ -26,8 +27,9 @@ function setup() {
   frameRate(2);
 
 text("click to randomize",50,50);
-console.log(randompics);
 
+button = createButton("click to randomize");
+button.mousePressed(buttonPressed);
 }
 
 function draw() {
@@ -66,7 +68,7 @@ function randomizer (){
   }
 }
 
-function mousePressed() {
+function buttonPressed() {
   animating = true;
   setTimeout(randomizer,2000);
 
