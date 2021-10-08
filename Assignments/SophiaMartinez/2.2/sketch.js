@@ -24,7 +24,9 @@ let randomIndex;
 function setup() {
   createCanvas(600, 600);
   background(200);
+  textSize(32);
 
+  text("Spin the roulette", 50, 50);
 }
 
 function draw() {
@@ -32,8 +34,15 @@ function draw() {
 }
 
 function mousePressed(){
+
+if (boba[0]){
+    // this displays random name and splices it out of array
   background(random(200, 255));
   randomIndex = int(random(boba.length));
   text(boba[randomIndex].name, 50, 50);
-  boba.splice(randomIndex, 1)
+  boba.splice(randomIndex, 1);
+}else {
+  background(random(200, 255));
+  text("No boba for you today >:(", 50, 50)
+}
 }
