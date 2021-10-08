@@ -71,6 +71,7 @@ function randomizer(){
   text(music[randomIndex].artist, width/2, height - 25);
   music.splice(randomIndex, 1);
 } else {
+  background('#000000');
   text('Explore New Lands!', width/2, height - 25);
 }
 }
