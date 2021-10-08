@@ -6,7 +6,6 @@ function setup () {
   background(200);
 
   console.log(flowers[0]);
-  
 
 }
 
