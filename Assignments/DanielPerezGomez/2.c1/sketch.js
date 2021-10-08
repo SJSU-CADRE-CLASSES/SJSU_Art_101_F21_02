@@ -60,6 +60,7 @@ function draw() {
 function randomizer(){
   animation = false;
   if (music[0]){
+  background('#000000');
   // clear();
   randomIndex = int(random(music.length));
   image(random(tarrot), width/2, height/2);
