@@ -22,21 +22,22 @@ let imageCounter = 0;
 function preload() {
   myFontOne = loadFont('assets/Poppins-Bold.ttf');
   for (let i = 0; i <= 6; i++){
-  tarrot[i] = loadImage(`assets/tarrot_${i}.jpg`)
+  tarrot[i] = loadImage(`assets/tarrot_${i}.jpg`);
 }
 }
 
 function setup() {
   createCanvas(600, 600);
+  background('#000000');
   frameRate(8);
   
   imageMode(CENTER);
   button = createButton('Randomize');
-  // button = select('#randomButton')
+  // button = select('#randomButton');
   button.mousePressed(buttonPressed);
   button.class('randomizerButton');
-  // button.style('padding', '20px')
-  // button.style('background-color', '#78DEC7')
+  // button.style('padding', '20px');
+  // button.style('background-color', '#78DEC7');
 }
 
 function draw() {
@@ -53,7 +54,7 @@ function draw() {
   textFont(myFontOne);
   textSize(40);
   textAlign(CENTER);
-  text('Let Fate Decide Your Music', width/2, 50)
+  text('Let Fate Decide Your Music', width/2, 50);
 }
 
 function randomizer(){
@@ -66,10 +67,10 @@ function randomizer(){
   textFont(myFontOne);
   textSize(40);
   textAlign(CENTER);
-  text(music[randomIndex].artist, width/2, height - 15)
+  text(music[randomIndex].artist, width/2, height - 15);
   music.splice(randomIndex, 1);
 } else {
-  text('Explore New Lands!', width/2, 200)
+  text('Explore New Lands!', width/2, height - 15);
 }
 }
 
