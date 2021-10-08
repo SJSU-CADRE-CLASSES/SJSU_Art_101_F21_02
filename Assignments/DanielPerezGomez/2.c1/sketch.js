@@ -42,7 +42,7 @@ function setup() {
 
 function draw() {
   if(animation == true) {
-  clear();
+  // clear();
   image(tarrot[imageCounter], width/2, height/2);
   if (imageCounter < tarrot.length - 1){
   imageCounter++;
@@ -60,17 +60,17 @@ function draw() {
 function randomizer(){
   animation = false;
   if (music[0]){
-  clear();
+  // clear();
   randomIndex = int(random(music.length));
   image(random(tarrot), width/2, height/2);
   fill('#ffffff');
   textFont(myFontOne);
   textSize(40);
   textAlign(CENTER);
-  text(music[randomIndex].artist, width/2, height - 15);
+  text(music[randomIndex].artist, width/2, height - 25);
   music.splice(randomIndex, 1);
 } else {
-  text('Explore New Lands!', width/2, height - 15);
+  text('Explore New Lands!', width/2, height - 25);
 }
 }
 
