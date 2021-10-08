@@ -20,7 +20,7 @@ let boba = [{
 }];
 
 let randomIndex;
-let counter=0;
+let animating = false;
 
 function setup() {
   createCanvas(600, 600);
@@ -28,35 +28,31 @@ function setup() {
   textSize(32);
 
   text("Spin the roulette", 50, 50); //home screen
-
-  setTimeout(changeBackground, 1000);
 }
 
 function draw() {
 
-}
-
-function changeBackground(){
-  if (counter <==5){
-    counter++;
-    console.log(counter)
-  background(random(255), random(255), random(255));
-  setTimeout(changeBackground, 1000);
-} else {
-
+  if(animating == true){
+    ellipse(random(width), random(height), random(50, 200));
   }
 }
 
-function mousePressed(){
-
-if (boba[0]){
-    // this displays random name and splices it out of array
-  background(random(200, 255));
-  randomIndex = int(random(boba.length));
-  text(boba[randomIndex].name, 50, 50);
-  boba.splice(randomIndex, 1);
-}else {
-  background(random(200, 255));
-  text("No boba for you today >:(", 50, 50);
+function randomizer(){
+  animating = false
+  if (boba[0]){
+      // this displays random name and splices it out of array
+    background(random(200, 255));
+    randomIndex = int(random(boba.length));
+    text(boba[randomIndex].name, 50, 50);
+    boba.splice(randomIndex, 1);
+  } else {
+    background(random(200, 255));
+    text("No boba for you today >:(", 50, 50);
+  }
 }
+function mousePressed(){
+  animating = true;
+  setTimeout(randomizer, 2000);
+
+
 }
