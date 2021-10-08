@@ -1,4 +1,4 @@
-//where do I want to go get boba
+//where should I go for boba
 let boba = [{
   name: "7leaves",
   sugar: "medium"
@@ -43,8 +43,8 @@ function changeBackground(){
   background(random(255), random(255), random(255));
   setTimeout(changeBackground, 1000);
 } else {
-  
-}
+
+  }
 }
 
 function mousePressed(){
@@ -57,6 +57,6 @@ if (boba[0]){
   boba.splice(randomIndex, 1);
 }else {
   background(random(200, 255));
-  text("No boba for you today >:( (Roll next time?)", 50, 50)
+  text("No boba for you today >:(", 50, 50);
 }
 }
