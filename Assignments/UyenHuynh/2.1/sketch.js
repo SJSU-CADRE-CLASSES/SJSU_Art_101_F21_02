@@ -1,3 +1,6 @@
+// my stuffs
+let stuffs = ["ipad","phone","lipstick","notebook"];
+
 function setup() {
   createCanvas(400, 400);
 }
