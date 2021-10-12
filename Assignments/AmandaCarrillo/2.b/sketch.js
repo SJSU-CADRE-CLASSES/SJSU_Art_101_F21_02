@@ -1,5 +1,6 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 600);
+  console.log("dogs")
 }
 
 function draw() {
