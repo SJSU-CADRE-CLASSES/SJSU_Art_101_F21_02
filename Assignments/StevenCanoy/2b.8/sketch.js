@@ -58,7 +58,7 @@ function randomizer(){
 function mousePressed() {
 
   animating = true;
-  setTimeout(randomizer, 2000);
+  setTimeout(randomizer, 4000);
 
 
 
