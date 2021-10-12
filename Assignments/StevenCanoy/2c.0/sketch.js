@@ -19,7 +19,13 @@ let randomIndex;
 let animating = false;
 let workouts = [];
 
-function pre
+function preload(){
+
+   for (let i = 0; i<=10; i++){
+     workouts[i] = loadImage(`assets/workout_${i}.gif`)
+   }
+
+}
 
 function setup() {
   createCanvas(600, 600);
@@ -35,7 +41,7 @@ function setup() {
 function draw() {
 
   if(animating == true){
-     ellipse(random(width), random(height), random(50,200));
+     image(workouts[0], 0, 0);
   }
   
 }
