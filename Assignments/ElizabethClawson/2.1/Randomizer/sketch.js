@@ -34,7 +34,7 @@ function draw() {
 // } else
 // }
 function randomizer(){
-  animating = false
+  animating = false;
   if (plants[0]) {
     background(random(255), random(255), random(255));
     randomIndex = int(random(plants.length))
