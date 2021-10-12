@@ -17,7 +17,9 @@ let dogs = [{
 
 let randomIndex;
 let animating = false;
+let workouts = [];
 
+function pre
 
 function setup() {
   createCanvas(600, 600);
