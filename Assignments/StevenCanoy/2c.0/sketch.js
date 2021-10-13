@@ -18,6 +18,7 @@ let dogs = [{
 let randomIndex;
 let animating = false;
 let workout = [];
+let imageCounter = 0;
 
 function preload(){
 
@@ -32,6 +33,8 @@ function setup() {
   background(200);
   textSize(32);
   imageMode(CENTER);
+  frameRate(8);
+  
   
 
   text("click to randomize", 50, 50); 
@@ -43,7 +46,14 @@ function setup() {
 function draw() {
 
   if(animating == true){
-     image(workout[0], width/2, height/2);
+     clear();
+     image(workout[imageCounter], width/2, height/2);
+
+     if (imageCounter < workout.length - 1){
+     imageCounter++;
+     } else {
+       imageCounter = 0;
+     }
   }
   
 }
@@ -52,11 +62,15 @@ function randomizer(){
   animating = false;
   if (dogs[0]){
   
-    //random name and splices
-    background(random(200,255));
+    //Display random name and splice
+    
+    clear();
     randomIndex = int(random(dogs.length));
-    text(`${dogs[randomIndex].name}'s favorite color is 
-    ${dogs[randomIndex].color}`, 50, 50);
+   
+    //Image With Name
+    image(random(workout), width/2, height/2);
+     //Name Text
+     text(dogs[randomIndex].name, width/2, height - 50);
     dogs.splice(randomIndex, 1);
   } else {
     background(random(200,255));
