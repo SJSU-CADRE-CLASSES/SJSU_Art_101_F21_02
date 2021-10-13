@@ -17,12 +17,12 @@ let dogs = [{
 
 let randomIndex;
 let animating = false;
-let workouts = [];
+let workout = [];
 
 function preload(){
 
-   for (let i = 0; i<=10; i++){
-     workouts[i] = loadImage(`assets/workout_${i}.gif`)
+   for (let i = 0; i<=9; i++){
+     workout[i] = loadImage(`assets/workout_${i}.jpg`)
    }
 
 }
@@ -31,6 +31,8 @@ function setup() {
   createCanvas(600, 600);
   background(200);
   textSize(32);
+  imageMode(CENTER);
+  
 
   text("click to randomize", 50, 50); 
 
@@ -41,7 +43,7 @@ function setup() {
 function draw() {
 
   if(animating == true){
-     image(workouts[0], 0, 0);
+     image(workout[0], width/2, height/2);
   }
   
 }
