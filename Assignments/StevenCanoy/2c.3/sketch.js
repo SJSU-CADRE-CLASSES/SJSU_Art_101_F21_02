@@ -19,6 +19,7 @@ let randomIndex;
 let animating = false;
 let workout = [];
 let imageCounter = 0;
+let button;
 
 function preload(){
 
@@ -30,15 +31,21 @@ function preload(){
 
 function setup() {
   createCanvas(600, 600);
-  background(200);
-  textSize(32);
+  background(20, 40, 200);
+  textSize(36);
+  textFont('Courier new');
+  textAlign(CENTER);
+  textStyle(BOLD);
+  fill(25);
   imageMode(CENTER);
   frameRate(8);
+
+  //First Page
+  text("click to randomize", width/2, height/2); 
   
   
-
-  text("click to randomize", 50, 50); 
-
+  button = createButton("click to randomize");
+  button.mousePressed(buttonPressed);
 
 }
 
@@ -69,17 +76,20 @@ function randomizer(){
    
     //Image With Name
     image(random(workout), width/2, height/2);
+
      //Name Text
      text(dogs[randomIndex].name, width/2, height - 50);
     dogs.splice(randomIndex, 1);
   } else {
     background(random(200,255));
-    text("nothing left!", 50, 50);
+
+    //Last Page
+    text("nothing left!", width/2, height/2);
   }
 }
 
 
-function mousePressed() {
+function buttonPressed() {
 
   animating = true;
   setTimeout(randomizer, 2000);
