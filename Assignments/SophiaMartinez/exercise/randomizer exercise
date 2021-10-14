@@ -1,0 +1,14 @@
+let fruit = ["banana", "apple", "orange", "mango", "pineapple", "apricot", "peach"];
+
+function setup() {
+  createCanvas(600, 600);
+  background(200);
+
+
+console.log(fruit[0]);
+}
+
+function draw() {
+
+
+}
