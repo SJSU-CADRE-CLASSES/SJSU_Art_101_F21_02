@@ -22,6 +22,7 @@ let boba = [{
 let randomIndex;
 let animating = false;
 let shops = [];
+let imageCounter = 0;
 
 function preload(){
   for (let i = 0; i<=6; i++){
@@ -33,6 +34,7 @@ function setup() {
   createCanvas(600, 600);
   background(200);
   textSize(32);
+  imageMode(CENTER);
 
   text("Spin the roulette", 50, 50); //home screen
   console.log(shops);
@@ -41,7 +43,11 @@ function setup() {
 function draw() {
 
   if (animating == true) {
-    ellipse(random(width), random(height), random(50, 200));
+    clear();
+    image(shops[imageCounter],width/2,height/2);
+
+    if (imageCounter < trolls.length)
+    imageCounter++;
   }
 }
 
