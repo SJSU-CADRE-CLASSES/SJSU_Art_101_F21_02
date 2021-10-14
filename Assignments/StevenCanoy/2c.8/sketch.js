@@ -44,8 +44,12 @@ function setup() {
   imageMode(CENTER);
   frameRate(8);
 
-  //First Page
-  text("click to randomize", width/2, height/2); 
+  //First Page text
+  push();
+  fill(225);
+  text("Welcome!", width/2, height/2); 
+  pop();
+
   
   //Button and style
   //button = createButton("click to randomize");
