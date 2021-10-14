@@ -1,10 +1,11 @@
 //hobbies I love to do
-let hobbies=
+let hobbies= ["sketching", "painting", "sewing", "cooking", "writing", "arts and crafts"];
 
 function setup() {
   createCanvas(600, 600);
   background(200);
-md
+
+ console.logs(hobbies[6]);
 
 }
 
