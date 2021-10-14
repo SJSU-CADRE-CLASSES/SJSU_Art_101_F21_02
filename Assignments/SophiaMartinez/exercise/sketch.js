@@ -6,9 +6,9 @@ let randomIndex;
 //LOAD IMAGES BEFORE THE PROGRAM RUNS
 function preload(){
 
-  let pic1 = loadImage('fruit_1.jpeg');
-  let pic2 = loadImage('fruit_2.jpeg');
-  let pic3 = loadImage('fruit_3.jpeg');
+  let pic1 = loadImage('assets/fruit_1.jpeg');
+  let pic2 = loadImage('assets/fruit_2.jpeg');
+  let pic3 = loadImage('assets/fruit_3.jpeg');
   pics = [pic1, pic2, pic3];
 
 }
