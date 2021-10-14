@@ -51,7 +51,7 @@ function setup() {
 function draw() {
 
   if (animating == true) {
-    image(shops[imageCounter], width/2, height / 2);
+    image(shops[imageCounter], width/2, height/2);
 
     if (imageCounter < shops.length - 1) {
       imageCounter++;
@@ -68,7 +68,7 @@ function draw() {
       // this displays random name and splices it out of array
       background(random(200, 255));
       randomIndex = int(random(boba.length));
-      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 50, 50);
+      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, width/2, height/5);
       image(shops[randomIndex], width/2, height/2.3);
       boba.splice(randomIndex, 1);
     } else {
