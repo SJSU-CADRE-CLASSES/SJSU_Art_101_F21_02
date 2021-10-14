@@ -21,6 +21,13 @@ let boba = [{
 
 let randomIndex;
 let animating = false;
+let shops = [];
+
+function preload(){
+  for (let i = 0; i<=6; i++){
+    shops[i] = loadImage(`assets/shops_${1}.png`)
+  }
+}
 
 function setup() {
   createCanvas(600, 600);
@@ -28,6 +35,7 @@ function setup() {
   textSize(32);
 
   text("Spin the roulette", 50, 50); //home screen
+  console.log(shops);
 }
 
 function draw() {
