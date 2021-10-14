@@ -9,6 +9,13 @@ let stuffs = [
 let randomIndex;
 let backgroundColor;
 let animate = false;
+let arts=[];
+
+function preload(){
+  for (let i=0; i<=14; i++){
+    arts[i] = loadImage("assets/Art"+i+".png")
+  }
+}
 function setup() {
   createCanvas(400, 400);
   background(color(random(255, 205), random(205, 255), random(205, 205)));
@@ -16,6 +23,7 @@ function setup() {
   textSize(30);
   fill(0);
   text("click to begin", 100, 100);
+  console.log(arts);
 }
 // animate the ellipses
 function draw() {
@@ -35,7 +43,7 @@ function randomizer() {
       fill(0);
 
     text(
-      `my ${stuffs[randomIndex].name} is 
+      `my ${stuffs[randomIndex].name} is
       ${stuffs[randomIndex].color}`,
       width / 3,
       height / 2

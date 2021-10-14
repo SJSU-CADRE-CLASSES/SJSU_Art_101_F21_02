@@ -43,9 +43,10 @@ function setup() {
   //First Page
   text("click to randomize", width/2, height/2); 
   
-  
+  //Button and style
   button = createButton("click to randomize");
   button.mousePressed(buttonPressed);
+  button.class("randomizerButton");
 
 }
 
