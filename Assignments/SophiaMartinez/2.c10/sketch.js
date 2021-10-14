@@ -27,7 +27,7 @@ let button;
 
 function preload() {
   for (let i = 0; i <= 6; i++) {
-    shops[i] = loadImage(`assets/shops_${1}.png`)
+    shops[i] = loadImage(`assets/shops_${0}.png`)
   }
 }
 
@@ -42,7 +42,8 @@ function setup() {
   imageMode(CENTER);
   frameRate(8);
 
-  text("Spin the roulette", width/2, height/2); //home screen
+  text("Boba Decision Maker", width/2, height/2); //home screen
+  console.log(boba);
 
   button = createButton("click to spin");
   button.mousePressed(buttonPressed);
@@ -51,6 +52,7 @@ function setup() {
 function draw() {
 
   if (animating == true) {
+    clear();
     image(shops[imageCounter], width/2, height/2);
 
     if (imageCounter < shops.length - 1) {
