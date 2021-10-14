@@ -1,19 +1,40 @@
 let dogs = [{
-    name: "Steven",
+    name: "January",
     color: "doo doo brown"
 }, {
-    name: "Tyson",
+    name: "February",
     color: "cat eyes"
 }, {
-    name: "Kylo",
+    name: "March",
     color: "dark colors"
 }, {
-    name: "Rey",
+    name: "April",
     color: "light colors"
 }, {
-    name: "Gishido",
+    name: "May",
     color: "midgray colors"
-}];
+}, {
+  name: "June",
+  color: "midgray colors"
+}, {
+  name: "July",
+  color: "midgray colors"
+}, {
+  name: "August",
+  color: "midgray colors"
+}, {
+  name: "September",
+  color: "midgray colors"
+}, {
+  name: "October",
+  color: "midgray colors"
+}, {
+  name: "November",
+  color: "midgray colors"
+}, {
+  name: "December",
+  color: "midgray colors"
+}] ;
 
 let randomIndex;
 let animating = false;
