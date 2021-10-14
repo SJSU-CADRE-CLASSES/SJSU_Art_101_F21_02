@@ -20,6 +20,7 @@ let animating = false;
 let workout = [];
 let imageCounter = 0;
 let button;
+let cnv;
 
 function preload(){
 
@@ -30,7 +31,10 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 600);
+  
+  cnv = createCanvas(600, 600);
+  cnv.parent("#canvasDiv");
+
   background(20, 40, 200);
   textSize(36);
   textFont('Courier new');
