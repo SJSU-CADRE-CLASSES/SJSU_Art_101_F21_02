@@ -1,5 +1,6 @@
 let pics = []; //CREATE AN EMPTY ARRAY TO STORE VARIABLES
 let numPics = 3;
+let randomIndex;
 
 
 //LOAD IMAGES BEFORE THE PROGRAM RUNS
@@ -19,6 +20,7 @@ function setup (){
   }
 
 function draw(){
+
   background(255);
 
   imageMode(CENTER);
@@ -28,3 +30,18 @@ function draw(){
   image(randoImg, width / 2, height / 2);
 
 }
+
+function randomizer() {
+  animating = false
+  if (pic[0]){
+    randomIndex = int(random(pics.length));
+    image(random[pics], width/2, height/2);
+    pics.splice(randomIndex, 1);
+  } else{
+    background(random(200,255));
+  }
+}
+  function buttonPressed(){
+    animating = true;
+    setTimeout(randomizer, 2000);
+  }
