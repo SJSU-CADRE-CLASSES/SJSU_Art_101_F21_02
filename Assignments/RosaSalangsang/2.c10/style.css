@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.fortuneButton{
+  padding:10px;
+  background-color: #949494;
+  margin-left: 90px;
+}
