@@ -38,15 +38,15 @@ let dogs = [{
 
 let randomIndex;
 let animating = false;
-let workout = [];
+let food = [];
 let imageCounter = 0;
 let button;
 let cnv;
 
 function preload(){
 
-   for (let i = 0; i<=9; i++){
-     workout[i] = loadImage(`assets/workout_${i}.jpg`)
+   for (let i = 0; i<=11; i++){
+     food[i] = loadImage(`assets/food_${i}.jpg`)
    }
 
 }
@@ -82,9 +82,9 @@ function draw() {
 
   if(animating == true){
      clear();
-     image(workout[imageCounter], width/2, height/2);
+     image(food[imageCounter], width/2, height/2);
 
-     if (imageCounter < workout.length - 1){
+     if (imageCounter < food.length - 1){
      imageCounter++;
      } else {
        imageCounter = 0;
@@ -103,7 +103,7 @@ function randomizer(){
     randomIndex = int(random(dogs.length));
    
     //Image With Name
-    image(random(workout), width/2, height/2);
+    image(random(food), width/2, height/2);
 
      //Name Text
      text(dogs[randomIndex].name, width/2, height - 50);
