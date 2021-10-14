@@ -4,11 +4,14 @@ let numbers =
 {  name: "3",},
 {  name: "4",},
 {  name: "5",}];
+
+let randomIndex;
+
 function setup(){
   createCanvas(windowWidth, windowHeight);
 background('#FFF0F5');
   textSize(50);}
 
 function draw(){
-  
+
 }
