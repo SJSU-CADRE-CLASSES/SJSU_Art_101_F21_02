@@ -16,6 +16,7 @@ let titles = [
 let tvshow = [];
 let animating = false;
 let randomIndex;
+let button;
 
 function preload (){
   for(let i = 0; i <= 11; i ++){  
@@ -26,7 +27,6 @@ function preload (){
 function setup() {
   cnv= createCanvas (400,400);
   background (200)
-  cnv.mouseClicked(pick);
   textSelection = ""
   imageSelection = 0
   console.log (tvshow);
