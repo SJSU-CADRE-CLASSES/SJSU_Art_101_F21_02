@@ -21,6 +21,7 @@ let workout = [];
 let imageCounter = 0;
 let button;
 let cnv;
+let nameInputs = [];
 
 function preload(){
 
@@ -52,11 +53,17 @@ function setup() {
 
   
   //Button and style
-  //button = createButton("click to randomize");
+  //Old button
+     //button = createButton("click to randomize");
   //New Button
   button = select('#randButton')
   button.mousePressed(buttonPressed);
   button.class("randomizerButton");
+
+
+  //Inputs
+  //nameInputs.push(createInput());
+  //nameInput.parent("#inputFields");
 
 }
 
