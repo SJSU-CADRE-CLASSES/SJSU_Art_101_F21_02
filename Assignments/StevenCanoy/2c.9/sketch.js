@@ -62,8 +62,8 @@ function setup() {
 
 
   //Inputs
-  //nameInputs.push(createInput());
-  //nameInput.parent("#inputFields");
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length -1].parent("#inputFields");
 
 }
 
