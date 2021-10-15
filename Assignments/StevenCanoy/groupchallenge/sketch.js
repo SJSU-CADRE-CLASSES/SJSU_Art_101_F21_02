@@ -1,4 +1,4 @@
-let dogs = [{
+let months = [{
     name: "January",
     color: "doo doo brown"
 }, {
@@ -95,19 +95,19 @@ function draw() {
 
 function randomizer(){
   animating = false;
-  if (dogs[0]){
+  if (months[0]){
   
     //Display random name and splice
     
     clear();
-    randomIndex = int(random(dogs.length));
+    randomIndex = int(random(months.length));
    
     //Image With Name
     image(random(food), width/2, height/2);
 
      //Name Text
-     text(dogs[randomIndex].name, width/2, height - 50);
-    dogs.splice(randomIndex, 1);
+     text(months[randomIndex].name, width/2, height - 50);
+    months.splice(randomIndex, 1);
   } else {
     background(random(200,255));
 
