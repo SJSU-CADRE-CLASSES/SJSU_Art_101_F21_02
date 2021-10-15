@@ -6,15 +6,6 @@ let cats = [{name:"Melinda", color:"yellow"},
 let randomIndex;
 //let counter = 0;
 let animating = true;
-//let img;
-let cats = [];
-
-function preload(){
-  for (let i=0; i<= 7; i++){
-    cats[i]=loadImage("assets/cats"+i+".JPG");
-    //cats[i]=loadImage(`assets/cats${i}.JPG`);
-  }
-}
 
 
 function setup() {
@@ -26,7 +17,6 @@ function setup() {
 
   //setInterval(changeBackground, 1000);
   //setTimeout(changeBackground, 1000);
-  console.log(cats);
 }
 
 function draw() {
