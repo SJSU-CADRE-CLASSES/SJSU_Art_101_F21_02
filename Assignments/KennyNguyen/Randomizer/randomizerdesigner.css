@@ -69,66 +69,56 @@ body {
 	animation-name: anim-9;
 }
 
-.item-10{
-	animation-name: anim-10;
-}
-
 @keyframes anim-1 {
-	0%, 8.3% { left: -100%; opacity: 0; }
+	0%, 10% { left: -100%; opacity: 0; }
   41.63%, 58.29% { left: 25%; opacity: 1; }
-  33.33%, 100% { left: 110%; opacity: 0; }
+  10%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-2 {
-	0%, 33.33% { left: -100%; opacity: 0; }
+	0%, 20% { left: -100%; opacity: 0; }
   41.63%, 58.29% { left: 25%; opacity: 1; }
-  66.66%, 100% { left: 110%; opacity: 0; }
+  20%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-3 {
-	0%, 66.66% { left: -100%; opacity: 0; }
+	0%, 30% { left: -100%; opacity: 0; }
   41.63%, 58.29% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+  30% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-4 {
-	0%, 8.3% { left: -100%; opacity: 0; }
-  8.3%,25% { left: 25%; opacity: 1; }
-  33.33%, 100% { left: 110%; opacity: 0; }
+	0%, 40% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  40%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-5 {
-	0%, 33.33% { left: -100%; opacity: 0; }
+	0%, 50% { left: -100%; opacity: 0; }
   41.63%, 58.29% { left: 25%; opacity: 1; }
-  66.66%, 100% { left: 110%; opacity: 0; }
+  50%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-6 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+	0%, 60% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  60% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-7 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+	0%, 70% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  70% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-8 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+	0%, 80% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  80% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-9 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
-}
-
-@keyframes anim-10 {
-	0%, 66.66% { left: -100%; opacity: 0; }
-  74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+	0%, 90% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  90% { left: 110%; opacity: 0; }
 }
