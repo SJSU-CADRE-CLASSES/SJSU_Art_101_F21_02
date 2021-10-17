@@ -1,28 +1,54 @@
-html,body {
-	margin: 0;
-	padding: 0;
-}
-.slider {
-	width: 1024px;
-	margin: 2em auto;
-	
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+
+body { 
+  font-family: 'Open Sans', 'sans-serif';
+  color: #cecece;
+  background: #222;
+  overflow: hidden;
 }
 
-.slider-wrapper {
-	width: 100%;
-	height: 400px;
-	position: relative;
-}
-
-.slide {
-	float: left;
+.item-1, 
+.item-2, 
+.item-3 {
 	position: absolute;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-	transition: opacity 1s linear;
+  display: block;
+	top: 2em;
+  
+  width: 60%;
+  
+  font-size: 2em;
+
+	animation-duration: 20s;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
 }
 
-.slider-wrapper > .slide:first-child {
-	opacity: 1;
+.item-1{
+	animation-name: anim-1;
+}
+
+.item-2{
+	animation-name: anim-2;
+}
+
+.item-3{
+	animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+	0%, 8.3% { left: -100%; opacity: 0; }
+  8.3%,25% { left: 25%; opacity: 1; }
+  33.33%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-2 {
+	0%, 33.33% { left: -100%; opacity: 0; }
+  41.63%, 58.29% { left: 25%; opacity: 1; }
+  66.66%, 100% { left: 110%; opacity: 0; }
+}
+
+@keyframes anim-3 {
+	0%, 66.66% { left: -100%; opacity: 0; }
+  74.96%, 91.62% { left: 25%; opacity: 1; }
+  100% { left: 110%; opacity: 0; }
 }
