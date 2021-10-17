@@ -101,19 +101,19 @@ body {
 @keyframes anim-1 {
 	0%, 8.3% { left: -100%; opacity: 0; }
   8.3%,25% { left: 25%; opacity: 1; }
-  33.33%, 100% { left: 110%; opacity: 0; }
+  25%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-2 {
 	0%, 33.33% { left: -100%; opacity: 0; }
   41.63%, 58.29% { left: 25%; opacity: 1; }
-  66.66%, 100% { left: 110%; opacity: 0; }
+  50%, 100% { left: 110%; opacity: 0; }
 }
 
 @keyframes anim-3 {
 	0%, 66.66% { left: -100%; opacity: 0; }
   74.96%, 91.62% { left: 25%; opacity: 1; }
-  100% { left: 110%; opacity: 0; }
+  75%, 100%{ left: 110%; opacity: 0; }
 }
 
 @keyframes anim-4 {
