@@ -1,5 +1,4 @@
 let dogs = [];
-
 let randomIndex;
 let animating = false;
 let workout = [];
@@ -9,6 +8,7 @@ let addMoreButton;
 let cnv;
 let nameInputs = [];
 let firstTime = true;
+let song;
 
 function preload(){
 
@@ -23,7 +23,7 @@ function setup() {
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
 
-  background(20, 40, 200);
+  background(200, 40, 200);
   textSize(36);
   textFont('Courier new');
   textAlign(CENTER);
@@ -34,8 +34,10 @@ function setup() {
 
   //First Page text
   push();
+  textSize(15);
   fill(225);
-  text("Welcome!", width/2, height/2); 
+  textAlign(CENTER);
+  text("Type # of reps you wish to do and get sweaty!", width/2, height/2); 
   pop();
 
   
@@ -97,7 +99,7 @@ function randomizer(){
     background(20, 40, 200);
 
     //Last Page
-    text("nothing left!", width/2, height/2);
+    text("Water Break!", width/2, height/2);
   }
 }
 
