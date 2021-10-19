@@ -5,6 +5,7 @@ let  movies = ["Scream (1996)","The Shining (1980)","The Addams Family (1991)","
 function setup() {
   createCanvas(600, 600);
   background(200);
+
 }
 
 function draw() {
@@ -12,9 +13,8 @@ function draw() {
 }
 
 function mousePressed(){
-background(200);
+  background(200);
   randomIndex = int(random(movies.length));
   text(movies[randomIndex],50,50);
   movies.splice(randomIndex, 1)
-  
 }
