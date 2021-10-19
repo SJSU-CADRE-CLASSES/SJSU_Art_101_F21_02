@@ -1,49 +1,119 @@
-let squareSize;
-let lineWidth;
+let dogs = [];
 
+let randomIndex;
+let animating = false;
+let workout = [];
+let imageCounter = 0;
+let startRandomizerButton;
+let addMoreButton;
+let cnv;
+let nameInputs = [];
+let firstTime = true;
 
-/////////////////SETUP////////////////////////
+function preload(){
 
-function setup() {
-  createCanvas(600, 600);
-  
-   //Background
-  background(22);
-  
-  //FrameRATE
-  frameRate(2);
-  
-  //********* the setup will Draw random image once  
-  // //Random Square size
-  // squareSize = random(50,100);
-  
-  // //Random Line Size
-  // lineWidth = random(1,50);
-  
-  
+   for (let i = 0; i<=9; i++){
+     workout[i] = loadImage(`assets/workout_${i}.jpg`)
+   }
+
 }
 
-///////////////////DRAW/////////////////////////
+function setup() {
+  
+  cnv = createCanvas(600, 600);
+  cnv.parent("#canvasDiv");
+
+  background(20, 40, 200);
+  textSize(36);
+  textFont('Courier new');
+  textAlign(CENTER);
+  textStyle(BOLD);
+  fill(25);
+  imageMode(CENTER);
+  frameRate(8);
+
+  //First Page text
+  push();
+  fill(225);
+  text("Welcome!", width/2, height/2); 
+  pop();
+
+  
+  //Randomizer Button and style
+  startRandomizerButton = select('#randButton')
+  startRandomizerButton.mousePressed(buttonPressed);
+
+  //Add more Button and style
+  addMoreButton = select('#addMoreButton')
+  addMoreButton.mousePressed(addAnotherInput);
+
+
+
+  //Inputs
+  for (let i = 0; i < 3; i++) {
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length - 1].parent("#inputFields");
+  }
+}
 
 
 function draw() {
-  
-  //Background
-  background(22);
-  
-  //Square Build
-  push();
-  rectMode(CENTER);
-  strokeWeight(lineWidth);
-  stroke(0, 0, 225);
-  fill(0, 255, 0);
-  square(width/2, height/2, squareSize);
-  pop();
-  
-    //Random Square size **** Calling in the draw function will continuously draw random square***
-  squareSize = random(50,100);
-  
-   //Random Line Size**** Calling in the draw function will continuously draw random line***
-  lineWidth = random(1,50);
+
+  if(animating == true){
+     clear();
+     image(workout[imageCounter], width/2, height/2);
+
+     if (imageCounter < workout.length - 1){
+     imageCounter++;
+     } else {
+       imageCounter = 0;
+     }
+  }
   
 }
+
+function addAnotherInput(){
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length -1].parent("#inputFields");
+
+}
+
+function randomizer(){
+  animating = false;
+  if (dogs[0]){
+  
+    //Display random name and splice
+    
+    clear();
+    randomIndex = int(random(dogs.length));
+   
+    //Image With Name
+    image(random(workout), width/2, height/2);
+
+     //Name Text
+     text(dogs[randomIndex], width/2, height - 50);
+    dogs.splice(randomIndex, 1);
+  } else {
+    background(20, 40, 200);
+
+    //Last Page
+    text("nothing left!", width/2, height/2);
+  }
+}
+
+
+function buttonPressed() {
+
+  if (firstTime) {
+  for (let i = 0; i < nameInputs.length; i++) {
+    dogs.push(nameInputs[i].value());
+     }
+    firstTime = false;
+  }
+
+  animating = true;
+  setTimeout(randomizer, 2000);
+
+
+
+ }
