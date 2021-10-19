@@ -1,4 +1,4 @@
-let dogs = [{name: "max", color:"white"}, {name: "jordan", color: "brown"},{name:"slinky", color:"green"}, {name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" }]
+let quotes = [{name: "max", color:"white"}, {name: "jordan", color: "brown"},{name:"slinky", color:"green"}, {name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" }]
 
 let randomIndex;
 let randompics = [];
@@ -53,17 +53,17 @@ if (animating == true){
 
 function randomizer (){
   animating = false;
-  if (dogs[0]){
+  if (quotes[0]){
 
   // background(random(200,255));
 
-  randomIndex = int(random(dogs.length))
-  text(`${dogs[randomIndex].name}'s favorite color inspect;
-  ${dogs[randomIndex].color}`,50, 50);
+  randomIndex = int(random(quotes.length))
+  text(`${quotes[randomIndex].name}'s favorite color inspect;
+  ${quotes[randomIndex].color}`,50, 50);
   image(random(randompics), width/2, height/2);
   // text(dogs[randomIndex].name + "'s favorite color is" +
   // dogs[randomIndex].color,50, 50);
-  dogs.splice(randomIndex, 1);
+  quotes.splice(randomIndex, 1);
   }
   else {
     background(random(226,225,85));
