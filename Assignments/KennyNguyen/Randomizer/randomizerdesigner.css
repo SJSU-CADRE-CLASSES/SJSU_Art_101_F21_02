@@ -6,8 +6,7 @@ padding: 0;}
 body { 
   font-family: 'Open Sans', 'sans-serif';
   color: #cecece;
-  background: linear-gradient(to bottom, #ffffff 0%, #1c1c1c 20%, #1c1c1c 50%, #1c1c1c 80%, #b80000 100%);
-  overflow: hidden;
+  background: #255;
 }
 
 .item-1, 
