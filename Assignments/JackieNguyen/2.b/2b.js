@@ -11,7 +11,7 @@ let hobbies= [{
 }, {
   hobby: "I love writing stories, whether its original fiction or fanfiction"
 }, {
-  hobby: "I love to make arts and crafts"];
+  hobby: "I love to gardening with my mom"
 }];
 
 let randomIndex;
