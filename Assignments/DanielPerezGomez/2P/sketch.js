@@ -87,7 +87,7 @@ let music = [{
     song: "Ghost Food"
 }, {
     artist: "Omiya",
-    song: "Koro Kunk"
+    song: "Koro Funk"
 } 
 ];
 
@@ -95,9 +95,11 @@ let randomIndex;
 let animation = false;
 let nasa = [];
 let imageCounter = 0;
+var DP
 
 function preload() {
   myFontOne = loadFont('assets/Poppins-Bold.ttf');
+  DP = loadSound('assets/Daft Punk.mp3');
   for (let i = 0; i <= 6; i++){
   nasa[i] = loadImage(`assets/nasa_${i}.jpg`);
 }
@@ -214,6 +216,8 @@ function compWindow(xpos, ypos) {
 function buttonPressed() {
   animation = true;
   setTimeout(randomizer, 2000);
+  DP.stop();
+  DP.play();
 }
 
 function buttonPressedTwo() {
