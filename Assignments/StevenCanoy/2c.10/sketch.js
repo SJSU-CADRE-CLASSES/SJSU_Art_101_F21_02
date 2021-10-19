@@ -1,27 +1,14 @@
-let dogs = [{
-    name: "Steven",
-    color: "doo doo brown"
-}, {
-    name: "Tyson",
-    color: "cat eyes"
-}, {
-    name: "Kylo",
-    color: "dark colors"
-}, {
-    name: "Rey",
-    color: "light colors"
-}, {
-    name: "Gishido",
-    color: "midgray colors"
-}];
+let dogs = [];
 
 let randomIndex;
 let animating = false;
 let workout = [];
 let imageCounter = 0;
-let button;
+let startRandomizerButton;
+let addMoreButton;
 let cnv;
 let nameInputs = [];
+let firstTime = true;
 
 function preload(){
 
@@ -52,22 +39,21 @@ function setup() {
   pop();
 
   
-  //Button and style
-  //Old button
-     //button = createButton("click to randomize");
-  //New Button
-  button = select('#randButton')
-  button.mousePressed(buttonPressed);
-  button.class("randomizerButton");
+  //Randomizer Button and style
+  startRandomizerButton = select('#randButton')
+  startRandomizerButton.mousePressed(buttonPressed);
+
+  //Add more Button and style
+  addMoreButton = select('#addMoreButton')
+  addMoreButton.mousePressed(addAnotherInput);
+
 
 
   //Inputs
   for (let i = 0; i < 3; i++) {
   nameInputs.push(createInput());
-  nameInputs[nameInputs.length -1].parent("#inputFields");
+  nameInputs[nameInputs.length - 1].parent("#inputFields");
   }
-
-  //End Setup
 }
 
 
@@ -86,6 +72,12 @@ function draw() {
   
 }
 
+function addAnotherInput(){
+  nameInputs.push(createInput());
+  nameInputs[nameInputs.length -1].parent("#inputFields");
+
+}
+
 function randomizer(){
   animating = false;
   if (dogs[0]){
@@ -99,10 +91,10 @@ function randomizer(){
     image(random(workout), width/2, height/2);
 
      //Name Text
-     text(dogs[randomIndex].name, width/2, height - 50);
+     text(dogs[randomIndex], width/2, height - 50);
     dogs.splice(randomIndex, 1);
   } else {
-    background(random(200,255));
+    background(20, 40, 200);
 
     //Last Page
     text("nothing left!", width/2, height/2);
@@ -111,6 +103,13 @@ function randomizer(){
 
 
 function buttonPressed() {
+
+  if (firstTime) {
+  for (let i = 0; i < nameInputs.length; i++) {
+    dogs.push(nameInputs[i].value());
+     }
+    firstTime = false;
+  }
 
   animating = true;
   setTimeout(randomizer, 2000);
