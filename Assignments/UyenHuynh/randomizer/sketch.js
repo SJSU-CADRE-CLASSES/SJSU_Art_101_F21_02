@@ -32,7 +32,7 @@ function preload() {
   soundFormats("mp3");
   fx=loadSound("assets/Minecraft Eating - Sound Effect (HD).mp3")
   for (let i = 0; i < foodName.length; i++) {
-    img = loadImage("assets/food_" + foodName[i].name + ".JPG")
+    img = loadImage("assets/food_" + foodName[i].name + ".jpg")
     foods[i] = {
       image: img,
       name: foodName[i].name
