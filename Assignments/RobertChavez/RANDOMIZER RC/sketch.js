@@ -1,4 +1,4 @@
-let quotes = [{name: "max", color:"white"}, {name: "jordan", color: "brown"},{name:"slinky", color:"green"}, {name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" },{name: "buddha", color:"blue" }]
+let quotes = [{name: "pic1"}, {name: "pic2"},{name:"pic3"}, {name: "pic4"},{name: "pic5"},{name: "pic6"},{name: "pic7"},{name: "pic8"}]
 
 let randomIndex;
 let randompics = [];
@@ -6,10 +6,7 @@ let imageCounter = 0;
 let animating = false;
 let button;
 function preload(){
-// random[0] = loadImage("assets/random_0.JPEG");
-// random[1] = loadImage("assets/random_1.JPEG");
-// random[2] = loadImage("assets/random_2.JPEG");
-// random[3] = loadImage("assets/random_3.JPEG");
+
   for (let i = 0; i <=10; i++){
 
 randompics[i] = loadImage(`assets/random-${i}.jpg`)
@@ -29,7 +26,7 @@ function setup() {
 fill(255);
 text("click blue button to randomize",50,50);
 
-button = createButton("click to for a helpful tip");
+button = createButton("click for a helpful tip");
 button.mousePressed(buttonPressed);
 button.style("padding","20px");
 button.style("background-color","#49b7e3");
@@ -39,7 +36,7 @@ function draw() {
 
 if (animating == true){
   clear();
-  // ellipse(random(width), random (height), random(50,200));
+
   image(randompics[imageCounter], width/2, height/2);
 
   if (imageCounter < randompics.length-1)
