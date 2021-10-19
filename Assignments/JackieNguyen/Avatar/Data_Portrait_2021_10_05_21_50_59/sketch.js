@@ -55,7 +55,7 @@ fill(random(255), random(255), random(255));
 ellipse(56, 250, 10, 30);
 ellipse(56, 250, 30, 10);
 
-  
+
 // upper right flower petals
 fill(random(255), random(255), random(255));
 ellipse(344, 250, 10, 30);
@@ -106,4 +106,3 @@ rect(320, 80, 80, 40);
 pop();
 
 }
-
