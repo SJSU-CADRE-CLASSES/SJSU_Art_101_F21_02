@@ -40,8 +40,6 @@ function setup() {
   textAlign(CENTER);
   textStyle(BOLD);
   imageMode(CENTER);
-  frameRate(12);
-
 
   text("Boba Decision Maker", width / 2, height / 2);
 
@@ -57,7 +55,7 @@ function draw() {
     clear();
     image(shops[imageCounter], width/2, height/2);
 
-    if (imageCounter < shops.length - 1)
+    if (imageCounter < shops.length - 1);
       imageCounter++;
       console.log(imageCounter);
     }else {
@@ -65,7 +63,7 @@ function draw() {
     }
 
   }
-}
+
 
   function randomizer() {
     animating = false;
@@ -79,9 +77,8 @@ function draw() {
       // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
       shops.splice(randomIndex, 1);
-      console.log(boba);
     } else {
-      background(random(255),random(255),random(255));
+      background(random(225,255,85));
       text("No boba for you today >:(", width / 2, height / 2);
     }
   }
