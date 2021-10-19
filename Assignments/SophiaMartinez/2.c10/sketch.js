@@ -20,14 +20,14 @@ let boba = [{
 }];
 
 let randomIndex;
+let imageCounter = 0;
 let animating = false;
 let shops = [];
-let imageCounter = 0;
-let button;
+
 
 function preload() {
   for (let i = 0; i <= 5; i++) {
-    shops[i] = loadImage(`assets/shops_${1}.png`)
+    shops[i] = loadImage(`assets/shops_${5}.png`)
   }
 }
 
@@ -38,48 +38,49 @@ function setup() {
   textFont('Arial')
   textAlign(CENTER);
   textStyle(BOLD);
-  fill(0);
   imageMode(CENTER);
   frameRate(12);
 
 
-  text("Boba Decision Maker", width / 2, height / 2); //home screen
-  console.log(shops);
-
-  button = createButton("click to spin");
-  button.mousePressed(buttonPressed);
+  text("Boba Decision Maker", width / 2, height / 2);
 }
 
 function draw() {
-
   if (animating == true) {
     clear();
-    image(shops[imageCounter], width / 2, height / 2);
+    noStroke();
+
     if (imageCounter < shops.length - 1) {
       imageCounter++;
       console.log(imageCounter);
-    } else {
-      imageCounter = 0;
-
     }
+    else {
+      imageCounter = 0;
+    }
+    image(shops[imageCounter], width/2, height/2);
   }
+}
 
   function randomizer() {
-    animating = false
+    animating = false;
     if (boba[0]) {
       // this displays random name and splices it out of array
-      background(random(200, 255));
+      background(random(255),random(255),random(255));
       randomIndex = int(random(boba.length));
+      console.log(boba[randomIndex].starter);
+      noStroke();
       text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 450);
-      image(random(shops), width / 2, height / 2.3);
+      // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
+      shops.splice(randomIndex, 1);
+      console.log(boba);
     } else {
-      background(random(200, 255));
+      background(random(255),random(255),random(255));
       text("No boba for you today >:(", width / 2, height / 2);
     }
   }
 
-  function buttonPressed() {
+  function mousePressed() {
     animating = true;
     setTimeout(randomizer, 2000);
 
