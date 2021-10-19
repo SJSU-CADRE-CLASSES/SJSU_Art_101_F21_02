@@ -20,14 +20,15 @@ let boba = [{
 }];
 
 let randomIndex;
+let shops = [];
 let imageCounter = 0;
 let animating = false;
-let shops = [];
+let button;
 
 
-function preload() {
+function preload(){
   for (let i = 0; i <= 5; i++) {
-    shops[i] = loadImage(`assets/shops_${5}.png`)
+    shops[i] = loadImage(`assets/shops_${i}.png`)
   }
 }
 
@@ -43,21 +44,26 @@ function setup() {
 
 
   text("Boba Decision Maker", width / 2, height / 2);
+
+  button = createButton("click to spin");
+  button.mousePressed(buttonPressed);
+  button.style("padding", "15px");
+  button.style("background-color", "#f0e0ff")
+
 }
 
 function draw() {
   if (animating == true) {
     clear();
-    noStroke();
+    image(shops[imageCounter], width/2, height/2);
 
-    if (imageCounter < shops.length - 1) {
+    if (imageCounter < shops.length - 1)
       imageCounter++;
       console.log(imageCounter);
-    }
-    else {
+    }else {
       imageCounter = 0;
     }
-    image(shops[imageCounter], width/2, height/2);
+
   }
 }
 
