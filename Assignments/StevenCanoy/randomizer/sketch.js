@@ -1,4 +1,4 @@
-let dogs = [];
+let excersizes = [];
 let randomIndex;
 let animating = false;
 let workout = [];
@@ -8,9 +8,14 @@ let addMoreButton;
 let cnv;
 let nameInputs = [];
 let firstTime = true;
-let song;
+var song;
+
+/////////////// PRE LOAD ////////////////////////////
 
 function preload(){
+
+  //music
+  song = loadSound("curls.mp3");
 
    for (let i = 0; i<=9; i++){
      workout[i] = loadImage(`assets/workout_${i}.jpg`)
@@ -18,10 +23,14 @@ function preload(){
 
 }
 
+
+///////////////////// SETUP ///////////////////////////
+
 function setup() {
-  
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
+
+  song.play();
 
   background(200, 40, 200);
   textSize(36);
@@ -58,6 +67,7 @@ function setup() {
   }
 }
 
+///////////////////// DRAW ////////////////////////////////
 
 function draw() {
 
@@ -74,33 +84,43 @@ function draw() {
   
 }
 
+////////////////////// Input Section ///////////////////////////
+
+
 function addAnotherInput(){
   nameInputs.push(createInput());
   nameInputs[nameInputs.length -1].parent("#inputFields");
 
 }
 
+
+/////////////////////// Randomizer Button //////////////////////////
+
 function randomizer(){
   animating = false;
-  if (dogs[0]){
+  if (excersizes[0]){
   
     //Display random name and splice
     
     clear();
-    randomIndex = int(random(dogs.length));
+    randomIndex = int(random(excersizes.length));
    
     //Image With Name
     image(random(workout), width/2, height/2);
 
      //Name Text
-     text(dogs[randomIndex], width/2, height - 50);
-    dogs.splice(randomIndex, 1);
+     text(excersizes[randomIndex], width/2, height - 50);
+    excersizes.splice(randomIndex, 1);
   } else {
     background(20, 40, 200);
 
     //Last Page
+    push();
+    fill(255);
     text("Water Break!", width/2, height/2);
+    pop();
   }
+
 }
 
 
@@ -108,7 +128,7 @@ function buttonPressed() {
 
   if (firstTime) {
   for (let i = 0; i < nameInputs.length; i++) {
-    dogs.push(nameInputs[i].value());
+    excersizes.push(nameInputs[i].value());
      }
     firstTime = false;
   }
