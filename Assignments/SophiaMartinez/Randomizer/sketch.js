@@ -34,7 +34,7 @@ function preload(){
 
 function setup() {
   createCanvas(600, 600);
-  background(200);
+  background(181,156,127);
   textSize(24);
   textFont('Arial')
   textAlign(CENTER);
@@ -42,6 +42,7 @@ function setup() {
   imageMode(CENTER);
 
   text("Boba Decision Maker", width / 2, height / 2);
+  fill(255);
 
   button = createButton("click to spin");
   button.mousePressed(buttonPressed);
@@ -70,7 +71,7 @@ function draw() {
       // this displays random name and splices it out of array
       randomIndex = int(random(boba.length));
       // background(random(255),random(255),random(255));
-      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 450);
+      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 50);
       image(random(shops), width/2, height/2);
       //console.log(boba[randomIndex].starter);
       noStroke();
@@ -85,6 +86,6 @@ function draw() {
 
   function mousePressed() {
     animating = true;
-    setTimeout(randomizer, 2000);
+    setTimeout(randomizer, 2500);
 
 }
