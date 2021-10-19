@@ -66,7 +66,7 @@ function randomizer (){
   dogs.splice(randomIndex, 1);
   }
   else {
-    background(random(226,226,85));
+    background(random(226,225,85));
     text("Have a great day :)",50,50);
   }
 }
