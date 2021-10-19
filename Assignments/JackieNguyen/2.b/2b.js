@@ -1,17 +1,17 @@
 //hobbies I love to do
 let hobbies= [{
-  hobby: "I love sketching flowers and faces",
+  hobby: "sketching flowers and faces",
 
 }, {
-  hobby: "I love painting backgrounds and scenery"
+  hobby: "painting backgrounds and scenery"
 }, {
-  hobby: "I love sewing skirts and dresses"
+  hobby: "sewing skirts and dresses"
 }, {
-  hobby: "I love cooking and trying out  new recipes"
+  hobby: "cooking and trying out  new recipes"
 }, {
-  hobby: "I love writing stories, whether its original fiction or fanfiction"
+  hobby: "writing stories, whether its original fiction or fanfiction"
 }, {
-  hobby: "I love to gardening with my mom"
+  hobby: "gardening with my mom"
 }];
 
 let randomIndex;
