@@ -191,15 +191,15 @@ function compWindow(xpos, ypos) {
   circle(110, 290, 7.5);
   line(110, 295, 110, 315);
   circle(110, 265, 7.5);
-  line(110, 240, 110, 260);
+  line(110, 242.5, 110, 262.5);
   //hydrogen right
   noFill();
   circle(480, 300, 100);
   fill('#000000');
   circle(480, 290, 7.5);
   line(480, 295, 480, 315);
-  circle(480, 240, 7.5);
-  line(480, 245, 480, 265);
+  circle(480, 238, 7.5);
+  line(480, 242.5, 480, 262.5);
   //contents text
   fill('#ffffff');
   stroke('#000000');
