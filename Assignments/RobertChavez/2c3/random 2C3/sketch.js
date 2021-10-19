@@ -30,6 +30,8 @@ text("click to randomize",50,50);
 
 button = createButton("click to randomize");
 button.mousePressed(buttonPressed);
+button.style("padding","20px");
+button.style("background-color","#49b7e3");
 }
 
 function draw() {
