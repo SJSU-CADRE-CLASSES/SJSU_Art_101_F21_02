@@ -23,7 +23,7 @@ let randomIndex;
 let shops = [];
 let imageCounter = 0;
 let animating = false;
-let button;
+let buttonPressed;
 
 
 function preload(){
@@ -55,7 +55,7 @@ function draw() {
     clear();
     image(shops[imageCounter], width/2, height/2);
 
-    if (imageCounter < shops.length - 1);
+    if (imageCounter < shops.length - 1)
       imageCounter++;
       console.log(imageCounter);
     }else {
@@ -64,16 +64,16 @@ function draw() {
 
   }
 
-
   function randomizer() {
     animating = false;
     if (boba[0]) {
       // this displays random name and splices it out of array
-      background(random(255),random(255),random(255));
       randomIndex = int(random(boba.length));
-      console.log(boba[randomIndex].starter);
-      noStroke();
+      // background(random(255),random(255),random(255));
       text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 450);
+      image(random(shops), width/2, height/2);
+      //console.log(boba[randomIndex].starter);
+      noStroke();
       // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
       shops.splice(randomIndex, 1);
