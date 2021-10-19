@@ -6,7 +6,13 @@ padding: 0;}
 body { 
   font-family: 'Open Sans', 'sans-serif';
   color: #cecece;
-  background: #222;
+  background: rgb(0,159,255);
+	background: linear-gradient(180deg,
+		rgba(0,159,255,1) 0%,
+		rgba(255,255,255,1) 10%,
+		rgba(0,0,0,1) 50%,
+		rgba(255,255,255,1) 90%,
+		rgba(255,0,0,1) 100%);
   overflow: hidden;
 }
 

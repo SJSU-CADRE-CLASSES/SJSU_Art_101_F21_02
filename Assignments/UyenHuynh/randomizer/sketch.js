@@ -102,8 +102,8 @@ function randomizer() {
   } else {
     //   draw the background again so it does not overlay the previous object
     background(backgroundColor);    // when we show all food, nothing else to show
-    text("That's all I have for now", width / 2, height / 2);
-    text("I hope you figure out what to eat today!",width/2, height/2 +50)
+    text("Seriously, you go all the way here?", width / 2, height / 2);
+    text("Make up your mind. Eat anything!",width/2, height/2 +50)
   }
 }
 
