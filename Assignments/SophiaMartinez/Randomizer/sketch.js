@@ -23,7 +23,7 @@ let randomIndex;
 let shops = [];
 let imageCounter = 0;
 let animating = false;
-let button;
+let buttonPressed;
 
 
 function preload(){
@@ -34,7 +34,7 @@ function preload(){
 
 function setup() {
   createCanvas(600, 600);
-  background(200);
+  background(181,156,127);
   textSize(24);
   textFont('Arial')
   textAlign(CENTER);
@@ -42,6 +42,7 @@ function setup() {
   imageMode(CENTER);
 
   text("Boba Decision Maker", width / 2, height / 2);
+  fill(255);
 
   button = createButton("click to spin");
   button.mousePressed(buttonPressed);
@@ -55,7 +56,7 @@ function draw() {
     clear();
     image(shops[imageCounter], width/2, height/2);
 
-    if (imageCounter < shops.length - 1);
+    if (imageCounter < shops.length - 1)
       imageCounter++;
       console.log(imageCounter);
     }else {
@@ -64,16 +65,16 @@ function draw() {
 
   }
 
-
   function randomizer() {
     animating = false;
     if (boba[0]) {
       // this displays random name and splices it out of array
-      background(random(255),random(255),random(255));
       randomIndex = int(random(boba.length));
-      console.log(boba[randomIndex].starter);
+      // background(random(255),random(255),random(255));
+      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 45);
+      image(random(shops), width/2, height/2);
+      //console.log(boba[randomIndex].starter);
       noStroke();
-      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 450);
       // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
       shops.splice(randomIndex, 1);
@@ -85,6 +86,6 @@ function draw() {
 
   function mousePressed() {
     animating = true;
-    setTimeout(randomizer, 2000);
+    setTimeout(randomizer, 250);
 
 }
