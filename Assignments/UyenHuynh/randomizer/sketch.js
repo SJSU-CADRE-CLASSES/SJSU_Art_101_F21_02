@@ -1,13 +1,13 @@
-// my stuffs
+// food array
 let foodName = [
 {name: "almond_pepper_chicken_tenders"}  ,
-{name:"banh_beo"}  ,
-{name:"banh_xeo"}  ,
+{name:"savory_steamed_rice_cakes_with_prawn"}  ,
+{name:"sizzling_pancake"}  ,
 {name:"beef_filet_mignon"}  ,
 {name:"bibimbap"}  ,
 {name:"broken_rice"}  ,
-{name:"bun_dau_mam_tom"}  ,
-{name:"bun_oc"}  ,
+{name:"Noodle_and_Tofu_with_Shrimp_Sauce"}  ,
+{name:"snail_vermicelli_soup"}  ,
 {name:"chicken_rice"}  ,
 {name:"curry"}  ,
 {name:"duck_noodle"}  ,
@@ -28,6 +28,9 @@ let imageCounter = 0;
 let button;
 
 function preload() {
+  // sound
+  soundFormats("mp3");
+  fx=loadSound("assets/Minecraft Eating - Sound Effect (HD).mp3")
   for (let i = 0; i < foodName.length; i++) {
     img = loadImage("assets/food_" + foodName[i].name + ".jpg")
     foods[i] = {
@@ -39,7 +42,9 @@ myFont = loadFont('assets/IndieFlower-Regular.ttf');
 }
 
 function setup() {
+
   createCanvas(1000, 1000);
+
   background(color(random(255, 205), random(205, 255), random(205, 205)));
   backgroundColor = color(random(255, 205), random(205, 255), random(205, 205));
   textSize(30);
@@ -52,26 +57,28 @@ function setup() {
   text("and can't decide what to eat?",width/2, height/2);
   text("click on the button below to explore",width/2, height/2 + 50);
 
-  button = createButton("start here!")
+// create a button
+  button = createButton("Explore!");
+  button.position(width/2 -100, height/2+400);
+  button.size(200, 50);
+  button.style("font-family", "IndieFlower-Regular");
+  button.style("font-size", "30px");
+  button.style('background-color', "#bfc8db");
+
+// if button is pressed
   button.mousePressed(buttonPressed);
-  // text("all illustrations belongs to the owners. I do not own them", width/2,height);
 }
 function draw() {
-  console.log("animate in draw", animate)
   if (animate == true) {
     clear();
-    // noStroke();
     fill(random(255, 205), random(205, 255), random(205, 205))
-    // ellipse(random(width), random(height), random(10, 200));
-    food = foods[imageCounter]
-    image(food.image, width / 2, height / 2);
-
     if (imageCounter < foods.length - 1) {
       imageCounter++;
     } else {
       imageCounter = 0;
     }
-
+    food = foods[imageCounter]
+    image(food.image, width / 2, height / 2);
   }
 }
 
@@ -86,7 +93,7 @@ function randomizer() {
     image(food.image, width / 2, height /2);
     foodName = food.name.replaceAll("_", " ");
     text(
-      `this is ${foodName}`,
+      `How about some ${foodName} ?`,
       width / 2,
       height /1.2
     );
@@ -94,16 +101,21 @@ function randomizer() {
     foods.splice(randomIndex, 1);
   } else {
     //   draw the background again so it does not overlay the previous object
-    background(backgroundColor);
-    // when we show all obejcts, nothing else to show
-    text("Sorry, I don't have anything left :(", width / 4, height / 2);
+    background(backgroundColor);    // when we show all food, nothing else to show
+    text("That's all I have for now", width / 2, height / 2);
+    text("I hope you figure out what to eat today!",width/2, height/2 +50)
   }
 }
 
 function buttonPressed() {
+  // if there's more than 1 food in the array, run the timeout
   animate = foods.length > 1;
   if (animate) {
-    setTimeout(randomizer, 2000);
+
+    setTimeout(randomizer, 1500);
+
+    fx.play();
+    // don't run the timeout + display the last food
   } else {
     randomizer()
   }
