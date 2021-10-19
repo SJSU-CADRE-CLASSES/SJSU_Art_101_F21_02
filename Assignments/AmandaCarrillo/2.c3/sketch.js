@@ -33,16 +33,27 @@ let movies = [
   "Bram Stoker's Dracula (1992)",
   "The Silence of the Lambs (1991)",
 ];
-
+var song;
 let randomIndex;
+var slider;
+
+function preload() {
+song = loadSound("Spooky Scary Skeletons.mp3");
+
+}
 
 function setup() {
   createCanvas(600, 600);
   background(200);
   textSize (32);
+  slider = createSlider(0, 1, 0.5, 0.01);
+  song.play();
 }
 
-function draw() {}
+function draw() {
+  text("volume",50)
+  song.setVolume(slider.value());
+}
 
 function mousePressed() {
   if (movies[0]){
