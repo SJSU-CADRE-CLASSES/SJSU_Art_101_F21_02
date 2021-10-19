@@ -71,7 +71,7 @@ function draw() {
       // this displays random name and splices it out of array
       randomIndex = int(random(boba.length));
       // background(random(255),random(255),random(255));
-      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 50);
+      text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 45);
       image(random(shops), width/2, height/2);
       //console.log(boba[randomIndex].starter);
       noStroke();
@@ -86,6 +86,6 @@ function draw() {
 
   function mousePressed() {
     animating = true;
-    setTimeout(randomizer, 2500);
+    setTimeout(randomizer, 250);
 
 }
