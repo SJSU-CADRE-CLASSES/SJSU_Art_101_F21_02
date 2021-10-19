@@ -87,7 +87,7 @@ let music = [{
     song: "Ghost Food"
 }, {
     artist: "Omiya",
-    song: "Koro Kunk"
+    song: "Koro Funk"
 } 
 ];
 
