@@ -34,16 +34,25 @@ let movies = [
   "The Silence of the Lambs (1991)",
 ];
 
+let randomIndex;
+
 function setup() {
   createCanvas(600, 600);
   background(200);
+  textSize (32);
 }
 
 function draw() {}
 
 function mousePressed() {
+  if (movies[0]){
   background(200);
   randomIndex = int(random(movies.length));
   text(movies[randomIndex], 50, 50);
   movies.splice(randomIndex, 1);
+} else {
+  background(200);
+  text("HAPPY HALLOWEEN!",50,50)
+
+}
 }
