@@ -1,5 +1,4 @@
 let dogs = [];
-
 let randomIndex;
 let animating = false;
 let workout = [];
