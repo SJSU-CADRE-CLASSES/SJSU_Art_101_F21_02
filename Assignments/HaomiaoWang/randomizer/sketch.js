@@ -7,7 +7,7 @@ let catsName = [
   {name:"Orange"},
   {name:"Candy"},
   {name:"Topping"}
-]
+];
 
 let randomIndex;
 //let counter = 0;
@@ -16,8 +16,10 @@ let animating = false;
 let imageCounter=0;
 let cats = [];
 let button;
+let fx;
 
 function preload(){
+  //sound
   soundFormats("mp3");
   fx=loadSound("assets/catsmomo.mp3");
   for (let i=0; i<catsName.length; i++){
@@ -92,6 +94,7 @@ function draw() {
 // }
 function randomizer(){
   animating = false;
+
   if (cats.length>0){
     //background(random('#00BFFF','#1E90FF'));
     clear();
@@ -116,7 +119,7 @@ function buttonPressed(){
   if (animating)
   {
     setTimeout(randomizer,2000);
-
+    fx.play();
   }
   else{
     randomizer();
