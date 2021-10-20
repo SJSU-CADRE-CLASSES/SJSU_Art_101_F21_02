@@ -17,7 +17,7 @@ function preload(){
 
   //music
   for (let i = 0; i<=9; i++){
-    song[i] = loadSound(`music/song_${i}.jpg`)
+    song[i] = loadSound(`music/song_${i}.mp3`)
   }
 
   //Images
