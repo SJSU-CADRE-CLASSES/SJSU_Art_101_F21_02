@@ -1,18 +1,17 @@
-//hobbies I love to do
-let hobbies= [{
-  hobby: "sketching",
+//activities I love to do
+let activities= [{
+  activity: "sketching flowers and faces",
+
 }, {
-  hobby:"sketching"
+  activity: "painting backgrounds and scenery"
 }, {
-  hobby: "painting"
+  activityy: "sewing skirts and dresses"
 }, {
-  hobby: "sewing"
+  activity: "cooking and trying out  new recipes"
 }, {
-  hobby: "cooking"
+  activity: "writing stories, whether its original fiction or fanfiction"
 }, {
-  hobby: "writing"
-}, {
-  hobby: "arts and crafts"];
+  activity: "gardening with my mom"
 }];
 
 let randomIndex;
@@ -29,11 +28,11 @@ function setup() {
 if (hobbies[0]){
 
 function mousePressed(){
-if (hobbies[0]){
+if (activities[0]){
   background(random(200,255));
   randomIndex+int(random(hobbies.length));
-  text(hobbies{randomIndex}.hobby, 300,300);
-  hobbies.splice(randomIndex,1);
+  text(activities{randomIndex}.activity, 300,300);
+  activities.splice(randomIndex,1);
 } else{
   text("nothing left!", 300,300);
 }
