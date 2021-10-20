@@ -33,37 +33,49 @@ let movies = [
   "Bram Stoker's Dracula (1992)",
   "The Silence of the Lambs (1991)",
 ];
-var song;
+
 let randomIndex;
 var slider;
-let bg;
+let title;
+var song;
 
 function preload() {
-  song = loadSound("Spooky Scary Skeletons.mp3");
-  bg = loadImage('HalloweenMovieGen-01.jpg');
+  song = loadSound ("Spooky Scary Skeletons.mp3")
+  title = loadImage("HalloweenMovieGen.jpg");
 }
 
 function setup() {
+  imageMode(CENTER);
+  textAlign(CENTER);
   createCanvas(600, 600);
-  textSize(32);
-  slider = createSlider(0, 1, 0.5, 0.01);
+  background(200);
+  textSize(25);
+  imageMode(CENTER);
+  background(random(252), random(76), random(4));
+  fill(255, 255, 255);
+  text("Halloween Movie Generator", width / 2, height / 2);
+  text("Click button below to begin.", width / 2, height / 3);
+  image(title, 300, 300);
+  createButton("Click to Generate");
   song.play();
+  //song.setvolume(0.5);
 }
 
-function draw() {
-  song.setVolume(slider.value());
-  image(bg, 0, 0, 600, 600);
-  noLoop();
-}
+function draw() {}
 
 function mousePressed() {
+  background(random(252), random(76), random(4));
+  textAlign(CENTER);
+  textStyle(BOLD);
+  fill(255, 255, 255);
   if (movies[0]) {
-    background(200);
     randomIndex = int(random(movies.length));
-    text(movies[randomIndex], 50, 50);
+    text(movies[randomIndex], width / 2, height / 2);
     movies.splice(randomIndex, 1);
   } else {
-    background(200);
-    text("HAPPY HALLOWEEN!", 50, 50);
+    textSize(50);
+    fill(0)
+    background(215, 107, 0);
+    text("HAPPY HALLOWEEN!", width / 2, height / 2);
   }
 }

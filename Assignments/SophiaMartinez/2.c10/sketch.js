@@ -46,17 +46,18 @@ function setup() {
 }
 
 function draw() {
-
   if (animating == true) {
+    clear();
     noStroke();
-    image(shops[imageCounter], width/2, height/2);
+
     if (imageCounter < shops.length - 1) {
       imageCounter++;
       console.log(imageCounter);
-    } else {
-      imageCounter = 0;
-
     }
+    else {
+      imageCounter = 0;
+    }
+    image(shops[imageCounter], width/2, height/2);
   }
 }
 
@@ -66,9 +67,13 @@ function draw() {
       // this displays random name and splices it out of array
       background(random(255),random(255),random(255));
       randomIndex = int(random(boba.length));
+      console.log(boba[randomIndex].starter);
+      noStroke();
       text(boba[randomIndex].name + "'s sugar level is " + boba[randomIndex].sugar, 250, 450);
       // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
+      shops.splice(randomIndex, 1);
+      console.log(boba);
     } else {
       background(random(255),random(255),random(255));
       text("No boba for you today >:(", width / 2, height / 2);
