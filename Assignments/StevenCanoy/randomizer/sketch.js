@@ -55,10 +55,15 @@ function setup() {
 
   //First Page text
   push();
-  textSize(15);
+  textSize(30);
   fill(225);
   textAlign(CENTER);
-  text("Type # of reps you wish to do and get sweaty!", width/2, height/2); 
+  text("There are 9 excersizes.", width/2, 100);
+  text("Enter number of reps", width/2, 150);
+  text("you wish to do.", width/2, 200);
+  text("Press these keys to play music", width/2, height/2); 
+  text("a,s,d,f,g,h,j,k,l,z", width/2, 350);
+  text("Press spacebar to STOP music", width/2, 400);
   pop();
 
   
@@ -73,7 +78,7 @@ function setup() {
 
 
   //Inputs
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 10; i++) {
   nameInputs.push(createInput());
   nameInputs[nameInputs.length - 1].parent("#inputFields");
   }
@@ -83,6 +88,7 @@ function setup() {
 
 function draw() {
 
+  
   if(animating == true){
      clear();
      image(workout[imageCounter], width/2, height/2);
@@ -217,7 +223,7 @@ function keyTyped() {
     song9.stop();
     song8.play();
   }
-  if (key == ';') {
+  if (key == 'z') {
     song0.stop();
     song1.stop();
     song2.stop();
