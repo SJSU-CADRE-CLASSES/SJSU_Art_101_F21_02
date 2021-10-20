@@ -1,5 +1,4 @@
-let dogs = [];
-
+let excersizes = [];
 let randomIndex;
 let animating = false;
 let workout = [];
@@ -9,8 +8,19 @@ let addMoreButton;
 let cnv;
 let nameInputs = [];
 let firstTime = true;
+let song = [];
+let musicStarted;
+
+/////////////// PRE LOAD ////////////////////////////
 
 function preload(){
+
+  //music
+  for (let i = 0; i<=9; i++){
+    song[i] = loadSound(`music/song_${i}.mp3`)
+  }
+
+  //Images
 
    for (let i = 0; i<=9; i++){
      workout[i] = loadImage(`assets/workout_${i}.jpg`)
@@ -18,12 +28,17 @@ function preload(){
 
 }
 
+
+///////////////////// SETUP ///////////////////////////
+
 function setup() {
-  
+
+ song.play();
+
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
 
-  background(20, 40, 200);
+  background(200, 40, 200);
   textSize(36);
   textFont('Courier new');
   textAlign(CENTER);
@@ -34,14 +49,27 @@ function setup() {
 
   //First Page text
   push();
+  textSize(15);
   fill(225);
-  text("Welcome!", width/2, height/2); 
+  textAlign(CENTER);
+  text("Type # of reps you wish to do and get sweaty!", width/2, height/2); 
   pop();
 
+
+
+  //Music starts
+
+  function musicStarted(){
+    if(startRandomizerButton == True){
+     firstTime = true;
+    song.play();
+    
+    }
+  }
   
   //Randomizer Button and style
   startRandomizerButton = select('#randButton')
-  startRandomizerButton.mousePressed(buttonPressed);
+  startRandomizerButton.mousePressed(buttonPressed, musicStarted);
 
   //Add more Button and style
   addMoreButton = select('#addMoreButton')
@@ -56,8 +84,14 @@ function setup() {
   }
 }
 
+///////////////////// DRAW ////////////////////////////////
 
 function draw() {
+
+  if(musicStarted){
+     
+    
+  }
 
   if(animating == true){
      clear();
@@ -72,33 +106,43 @@ function draw() {
   
 }
 
+////////////////////// Input Section ///////////////////////////
+
+
 function addAnotherInput(){
   nameInputs.push(createInput());
   nameInputs[nameInputs.length -1].parent("#inputFields");
 
 }
 
+
+/////////////////////// Randomizer Button //////////////////////////
+
 function randomizer(){
   animating = false;
-  if (dogs[0]){
+  if (excersizes[0]){
   
     //Display random name and splice
     
     clear();
-    randomIndex = int(random(dogs.length));
+    randomIndex = int(random(excersizes.length));
    
     //Image With Name
     image(random(workout), width/2, height/2);
 
      //Name Text
-     text(dogs[randomIndex], width/2, height - 50);
-    dogs.splice(randomIndex, 1);
+     text(excersizes[randomIndex], width/2, height - 50);
+    excersizes.splice(randomIndex, 1);
   } else {
     background(20, 40, 200);
 
     //Last Page
-    text("nothing left!", width/2, height/2);
+    push();
+    fill(255);
+    text("Water Break!", width/2, height/2);
+    pop();
   }
+
 }
 
 
@@ -106,7 +150,7 @@ function buttonPressed() {
 
   if (firstTime) {
   for (let i = 0; i < nameInputs.length; i++) {
-    dogs.push(nameInputs[i].value());
+    excersizes.push(nameInputs[i].value());
      }
     firstTime = false;
   }
