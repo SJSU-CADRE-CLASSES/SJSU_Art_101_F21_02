@@ -43,7 +43,6 @@ function draw() {
   // ellipse(100,100,40);
 
   if(animating == true){
-<<<<<<< Updated upstream
     //ellipse(random(width), random(high), random(50,100));
     clear();
 
@@ -56,9 +55,6 @@ function draw() {
       imageCounter=0;
     }
 
-=======
-    ellipse(random(width), random(height), random(50,100));
->>>>>>> Stashed changes
   }
 }
 
