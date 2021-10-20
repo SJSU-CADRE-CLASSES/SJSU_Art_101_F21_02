@@ -41,7 +41,8 @@ function setup() {
   fill(0);
   frameRate(12);
   imageMode(CENTER);
-  text("click to begin", 100, 100);
+  textAlign(CENTER);
+  text("click the button bellow to begin",width/2, height/2);
   button = createButton("start here!")
   button.mousePressed(buttonPressed);
 }
