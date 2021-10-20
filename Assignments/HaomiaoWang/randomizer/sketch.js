@@ -1,12 +1,12 @@
 //I love Cats!
-let cats = [
+let catsName = [
   {name:"Melinda"},
   {name:"Caroline"},
-  {name:"Momo"}
-  {name:"Momo"}
-  {name:"Momo"}
-  {name:"Momo"}
-  {name:"Momo"}
+  {name:"Momo"},
+  {name:"Milk"},
+  {name:"Orange"},
+  {name:"Candy"},
+  {name:"Topping"}
 ]
 
 let randomIndex;
@@ -20,12 +20,12 @@ let button;
 function preload(){
   soundFormats("mp3");
   fx=loadSound("assets/catsmomo.mp3");
-  for (let i=0; i<cats.length; i++){
-    img=loadImage("assets/cats"+cats[i].name+".JPG");
+  for (let i=0; i<catsName.length; i++){
+    img=loadImage("assets/cats_"+catsName[i].name+".JPG");
     cats[i]=
     {
-      image:img;
-      name:cats[i].name;
+      image:img,
+      name:catsName[i].name
     }
     //cats[i]=loadImage(`assets/cats${i}.JPG`);
   }
@@ -112,8 +112,16 @@ function randomizer(){
 }
 //mousePressed
 function buttonPressed(){
-  animating = true;
-  setTimeout(randomizer,2000);
+  animating = cats.lenegth>1;
+  if (animating)
+  {
+    setTimeout(randomizer,2000);
+
+  }
+  else{
+    randomizer();
+  }
+
 
 
 
