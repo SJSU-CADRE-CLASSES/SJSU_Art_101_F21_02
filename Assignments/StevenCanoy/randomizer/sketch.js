@@ -8,14 +8,19 @@ let addMoreButton;
 let cnv;
 let nameInputs = [];
 let firstTime = true;
-var song;
+let song = [];
+let musicStarted;
 
 /////////////// PRE LOAD ////////////////////////////
 
 function preload(){
 
   //music
-  song = loadSound("curls.mp3");
+  for (let i = 0; i<=9; i++){
+    song[i] = loadSound(`music/song_${i}.jpg`)
+  }
+
+  //Images
 
    for (let i = 0; i<=9; i++){
      workout[i] = loadImage(`assets/workout_${i}.jpg`)
@@ -27,10 +32,11 @@ function preload(){
 ///////////////////// SETUP ///////////////////////////
 
 function setup() {
+
+ song.play();
+
   cnv = createCanvas(600, 600);
   cnv.parent("#canvasDiv");
-
-  song.play();
 
   background(200, 40, 200);
   textSize(36);
@@ -49,10 +55,21 @@ function setup() {
   text("Type # of reps you wish to do and get sweaty!", width/2, height/2); 
   pop();
 
+
+
+  //Music starts
+
+  function musicStarted(){
+    if(startRandomizerButton == True){
+     firstTime = true;
+    song.play();
+    
+    }
+  }
   
   //Randomizer Button and style
   startRandomizerButton = select('#randButton')
-  startRandomizerButton.mousePressed(buttonPressed);
+  startRandomizerButton.mousePressed(buttonPressed, musicStarted);
 
   //Add more Button and style
   addMoreButton = select('#addMoreButton')
@@ -70,6 +87,11 @@ function setup() {
 ///////////////////// DRAW ////////////////////////////////
 
 function draw() {
+
+  if(musicStarted){
+     
+    
+  }
 
   if(animating == true){
      clear();
