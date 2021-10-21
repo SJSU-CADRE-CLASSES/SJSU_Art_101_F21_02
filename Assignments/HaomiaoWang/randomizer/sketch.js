@@ -25,7 +25,7 @@ function preload(){
   //sound
   soundFormats("mp3");
   fx=loadSound("assets/catsmomo.mp3");
-  halloween=loadImage("assets/hw.JPG")
+  halloween=loadImage("assets/hw.jpg")
   for (let i=0; i<=6; i++){
     cats[i]=loadImage("assets/cats-"+i+".jpg");
     // cats[i]=
