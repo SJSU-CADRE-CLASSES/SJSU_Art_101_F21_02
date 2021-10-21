@@ -10,7 +10,7 @@ let activities = [{
 }, {
   activity: "writing stories to be creative"
 }, {
-  activity: "gardening with my mom"
+  activity: "gardening"
 }];
 
 let randomIndex;
