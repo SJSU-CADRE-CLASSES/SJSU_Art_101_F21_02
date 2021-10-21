@@ -18,8 +18,8 @@ var song0, song1, song2, song3, song4, song5, song6, song7, song8, song9;
 function preload(){
 
    //music
-   song0 = loadSound("music/song_0.mp3");
-   song1 = loadSound("music/song_1.mp3");
+   song0 = loadSound('music/song_0.mp3');
+   song1 = loadSound('music/song_1.mp3');
    song2 = loadSound("music/song_2.mp3");
    song3 = loadSound("music/song_3.mp3");
    song4 = loadSound("music/song_4.mp3");
