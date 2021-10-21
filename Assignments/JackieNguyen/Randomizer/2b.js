@@ -15,6 +15,14 @@ let activities = [{
 
  let randomIndex;
 let animating = false;
+let activities = [];
+function preload(){
+
+  for (let i = 0;  i <= 5; i ++){
+    activities[i] = loadImage("assets/activity" + i + ".JPG")
+  }
+
+}
 
 function setup() {
   createCanvas(600, 600);
