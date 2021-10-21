@@ -27,12 +27,12 @@ function preload(){
   fx=loadSound("assets/catsmomo.mp3");
   halloween=loadImage("assets/hw.JPG")
   for (let i=0; i<=6; i++){
-    //cats[i]=loadImage("assets/cats-"+catsName[i]+".JPG");
+    cats[i]=loadImage("assets/cats-"+i+".JPG");
     // cats[i]=
     // {
     //   image:img,
     //   name:catsName[i].name
-    cats[i]=loadImage(`assets/cats-${i}.JPG`);
+    //cats[i]=loadImage(`assets/cats-${i}.JPG`);
 
     }
 
