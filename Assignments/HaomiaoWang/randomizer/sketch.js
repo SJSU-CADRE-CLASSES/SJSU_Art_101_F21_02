@@ -16,6 +16,7 @@ let animating = false;
 let imageCounter=0;
 let cats = [];
 let button;
+let halloween;
 
 //let fx;
 //let preload;
@@ -24,6 +25,7 @@ function preload(){
   //sound
   soundFormats("mp3");
   fx=loadSound("assets/catsmomo.mp3");
+  halloween=loadImage("assets/hw.JPG")
   for (let i=0; i<=6; i++){
     //cats[i]=loadImage("assets/cats-"+catsName[i]+".JPG");
     // cats[i]=
@@ -31,6 +33,7 @@ function preload(){
     //   image:img,
     //   name:catsName[i].name
     cats[i]=loadImage(`assets/cats-${i}.JPG`);
+
     }
 
 
@@ -39,7 +42,7 @@ function preload(){
 
 
 function setup() {
-  createCanvas(1000,1000);
+  createCanvas(750,750);
   background('#FFF0F5');
   textFont(myFont);
 
@@ -49,16 +52,21 @@ function setup() {
   textAlign(CENTER);
   frameRate(5);
 
-  text("click to randomize and get a cat's love!",500,500);
+  text("Click to randomize and get a cat's love!",340,700);
 
   button = createButton("click to enjoy cats!")
-  button.size(300,50)
-  button.position(width/2,height/2);
+  button.size(750,50)
+  button.position(width/0,height/1);
+  button.style("font-family", "HyFTwinkling-2");
+  button.style("font-size", "28px");
+  button.style("color", "#8FBC8F");
+  button.style("background-color", "#FFDAB9");
 
   button.mousePressed(buttonPressed);
   //setInterval(changeBackground, 1000);
   //setTimeout(changeBackground, 1000);
   //console.log(cats);
+  image(halloween, 375, 300);
 }
 
 function draw() {
@@ -80,7 +88,7 @@ function draw() {
       imageCounter=0;
     }
     //cats=cats[imageCounter]
-    image(cats[imageCounter], width/5, height/5);
+    image(cats[imageCounter], width/2, height/2);
 
   }
 }
@@ -99,11 +107,11 @@ function randomizer(){
   animating = false;
 
   if (catsName[0]){
-    background(random('#00BFFF','#1E90FF'));
+    background(random(255), random(255), random(255));
 
     //clear();
     randomIndex = int(random(catsName.length));
-    image(cats[randomIndex], width/5, height/5);
+    image(cats[randomIndex], width/2, height/2);
     fill(random(255), random(255), random(255));
     //console.log(cats[randomIndex].name);
     text("Name: " + catsName[randomIndex].name, 500, 600);
