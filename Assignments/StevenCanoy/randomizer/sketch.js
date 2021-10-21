@@ -58,9 +58,12 @@ function setup() {
   textSize(30);
   fill(225);
   textAlign(CENTER);
-  text("There are 10 excersizes.", width/2, 100);
+  push();
+  fill("#EBE16E");
+  text("There are 10 random excersizes.", width/2, 100);
   text("Enter number of reps", width/2, 150);
   text("you wish to do.", width/2, 200);
+  pop();
   text("Press these keys to play music", width/2, height/2); 
   text("a,s,d,f,g,h,j,k,l,z", width/2, 350);
   text("Press spacebar to STOP music", width/2, 400);
