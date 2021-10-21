@@ -58,7 +58,7 @@ function setup() {
   image(title, 300, 300);
   createButton("Click to Generate");
   song.play();
-  //song.setvolume(0.5);
+  song.setVolume(0.5);
 }
 
 function draw() {}
