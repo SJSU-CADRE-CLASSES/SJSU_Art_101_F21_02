@@ -16,46 +16,57 @@ let animating = false;
 let imageCounter=0;
 let cats = [];
 let button;
-let fx;
+let halloween;
+
+//let fx;
+//let preload;
 
 function preload(){
   //sound
   soundFormats("mp3");
   fx=loadSound("assets/catsmomo.mp3");
-  for (let i=0; i<catsName.length; i++){
-    img=loadImage("assets/cats_"+catsName[i].name+".JPG");
-    cats[i]=
-    {
-      image:img,
-      name:catsName[i].name
+  halloween=loadImage("assets/hw.JPG")
+  for (let i=0; i<=6; i++){
+    //cats[i]=loadImage("assets/cats-"+catsName[i]+".JPG");
+    // cats[i]=
+    // {
+    //   image:img,
+    //   name:catsName[i].name
+    cats[i]=loadImage(`assets/cats-${i}.JPG`);
+
     }
-    //cats[i]=loadImage(`assets/cats${i}.JPG`);
-  }
+
+
   myFont=loadFont('assets/HyFTwinkling-2.ttf');
 }
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(750,750);
   background('#FFF0F5');
   textFont(myFont);
 
   fill('#778899');
-  textSize(45);
+  textSize(40);
   imageMode(CENTER);
   textAlign(CENTER);
   frameRate(5);
 
-  text("click to randomize and get a cat's love!",500,600);
+  text("Click to randomize and get a cat's love!",340,700);
 
   button = createButton("click to enjoy cats!")
-  button.size(300,50)
-  button.position(width/2,height/2);
-  button.style("myFont","HyFTwinkling-2");
+  button.size(750,50)
+  button.position(width/0,height/1);
+  button.style("font-family", "HyFTwinkling-2");
+  button.style("font-size", "28px");
+  button.style("color", "#8FBC8F");
+  button.style("background-color", "#FFDAB9");
+
   button.mousePressed(buttonPressed);
   //setInterval(changeBackground, 1000);
   //setTimeout(changeBackground, 1000);
-  console.log(cats);
+  //console.log(cats);
+  image(halloween, 375, 300);
 }
 
 function draw() {
@@ -67,7 +78,7 @@ function draw() {
     //ellipse(random(width), random(high), random(50,100));
     clear();
 
-    image(cats[imageCounter],width/2,height/2);
+    //image(cats[imageCounter],width/2,height/2);
 
     if(imageCounter<cats.length-1){
       imageCounter++;
@@ -76,8 +87,8 @@ function draw() {
     else{
       imageCounter=0;
     }
-    cat=cats[imageCounter]
-    image(cat.image, width/2, height/2);
+    //cats=cats[imageCounter]
+    image(cats[imageCounter], width/2, height/2);
 
   }
 }
@@ -95,35 +106,44 @@ function draw() {
 function randomizer(){
   animating = false;
 
-  if (cats.length>0){
-    //background(random('#00BFFF','#1E90FF'));
-    clear();
-    randomIndex = int(random(cats.length));
-  //console.log(cats[randomIndex].name);
-    text(`${cats[randomIndex].name} is the cat chooses you!
-    ${cats[randomIndex].color}`,width/2,height-100);
+  if (catsName[0]){
+    background(random(255), random(255), random(255));
+
+    //clear();
+    randomIndex = int(random(catsName.length));
+    image(cats[randomIndex], width/2, height/2);
+    fill(random(255), random(255), random(255));
+    //console.log(cats[randomIndex].name);
+    text("Name: " + catsName[randomIndex].name, 500, 600);
+    text(catsName[randomIndex].name+"is the cat chooses you!", 500, 650);
+
+
+    //image(cats.image,width/2,height/2);
+    //catsName=cats.name.replaceAll("-"," ");
+   //  text(
+   //   `${catsName} is the cat chooses you!`,
+   //   width / 2,
+   //   height / 2
+   // );
+    //text(`${cats[randomIndex].name} is the cat chooses you!
+    //${cats[randomIndex].color}`,width/2,height-100);
     // text(cats[randomIndex].name + "'s favorite color is",
     // cats[randomIndex].color,500,600);
-    image(random(cats),width/2,height/2);
-
+    catsName.splice(randomIndex,1);
     cats.splice(randomIndex,1);
   }
   else{
-    background(random('#00BFFF','#1E90FF'));
+    background('#FFF0F5');
     text("Remember your cat!",500,600);
   }
 }
 //mousePressed
 function buttonPressed(){
-  animating = cats.lenegth>1;
-  if (animating)
-  {
-    setTimeout(randomizer,2000);
-    fx.play();
-  }
-  else{
-    randomizer();
-  }
+
+  animating=true;
+  setTimeout(randomizer,4500);
+  fx.play();
+
 
 
 
