@@ -29,7 +29,7 @@ function preload() {
 
 function setup() {
   createCanvas(600, 600);
-  background(200);
+  background('pink');
   textSize(32);
   textFont('Courier new');
   textAlign(CENTER);
@@ -37,16 +37,16 @@ function setup() {
   imageMode(CENTER);
  frameRate(8);
 
-  text('Wanna Try A New Hobby?', 250, 100);
+  text('Wanna Try A New Hobby?', 250, 50);
 
 button = createButton("click for a hobby")
-button.mousePressed();
+button.mousePressed(buttonPressed);
 }
 
 function draw() {
 
   if (animating == true) {
-    clear();
+    //clear();
     image(activities[imageCounter], width / 2, height / 2);
 
     if (imageCounter < activities.length - 1) {
@@ -64,14 +64,14 @@ function randomizer() {
   if (activities[0]) {
     //this displays a random activity and splices it out of the array
     //background(random(200, 255));
-    clear();
+    //clear();
     randomIndex = int(random(activities.length));
-    text(activities[randomIndex].activity + " is fun", width/2, height - 50);
+    text(" Maybe Try This?", width/2, height - 50);
     image(random(activities), width / 2, height / 2);
     activities.splice(randomIndex, 1);
   } else {
     background(random(200, 255));
-    text("nothing left!", 50, 50);
+    text("nothing left!", 200, 300);
   }
 
 }
