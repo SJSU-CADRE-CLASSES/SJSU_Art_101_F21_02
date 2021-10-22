@@ -1,0 +1,10 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/assets/background.jpeg");
+  background-color: #ffdd99;
+
+}
+canvas {
+  display: block;
+}
