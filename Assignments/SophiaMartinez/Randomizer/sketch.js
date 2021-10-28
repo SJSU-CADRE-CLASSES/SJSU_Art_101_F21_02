@@ -75,7 +75,6 @@ function draw() {
       image(random(shops), width/2, height/2);
       //console.log(boba[randomIndex].starter);
       noStroke();
-      // image(random(shops), width / 2, height / 2.3);
       boba.splice(randomIndex, 1);
       shops.splice(randomIndex, 1);
     } else {
@@ -86,6 +85,6 @@ function draw() {
 
   function mousePressed() {
     animating = true;
-    setTimeout(randomizer, 250);
+    setTimeout(randomizer, 2400);
 
 }
