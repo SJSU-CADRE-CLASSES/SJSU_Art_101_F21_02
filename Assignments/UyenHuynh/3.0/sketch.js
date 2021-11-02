@@ -22,7 +22,7 @@ function keyTyped(){
   if (key === 's'){
     saveCanvas('fileName','png');
   }else if (key ==='d'){
-    background(255);
+    background(200);
     beginShape();
     for (let i=0; i< array.length; i++){
       // line(array[i][0],array[i][1],array[i+1][0],array[i+1][1] )
