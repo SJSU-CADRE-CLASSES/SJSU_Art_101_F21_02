@@ -83,11 +83,11 @@ let music = [{
   artist: "Tatsuro Yamashita",
   song: "Marry-go-Round"
 } , {
-    artist: "Moe Shop",
-    song: "Ghost Food"
+  artist: "Moe Shop",
+  song: "Ghost Food"
 }, {
-    artist: "Omiya",
-    song: "Koro Funk"
+  artist: "Omiya",
+  song: "Koro Funk"
 } 
 ];
 
@@ -95,7 +95,7 @@ let randomIndex;
 let animation = false;
 let nasa = [];
 let imageCounter = 0;
-var DP
+var DP;
 
 function preload() {
   myFontOne = loadFont('assets/Poppins-Bold.ttf');
@@ -152,7 +152,7 @@ function randomizer(){
   background('#000000');
   compWindow(6, 10);
   textAlign(CENTER);
-  text('Explore New Lands!', width/2, height - 25);
+  text('Explore New Music!', width/2, height - 25);
   
 }  
 }
