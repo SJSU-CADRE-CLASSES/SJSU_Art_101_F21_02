@@ -1,13 +1,17 @@
-// my stuffs
-let stuffs = ["ipad","phone","lipstick","notebook"];
+function setup(){
+  createCanvas(600,600);
+  background(200);
+  strokeWeight(5);
+  line(width/2, 0, width/2,height);
+  fill(0);
+  ellipse(width/2, height/2,5,5)
 
-function setup() {
-  createCanvas(400, 400);
 }
+function draw(){
+  if (mouseIsPressed){
+    line(width-mouseX, height-mouseY, width-pmouseX,height-pmouseY);
+      line(mouseX, mouseY, pmouseX,pmouseY);
 
-function draw() {
-  background(240);
-  fill(255, 204, 0);
-  noStroke();
-  circle(100, 100, 100);
+  }
+
 }
