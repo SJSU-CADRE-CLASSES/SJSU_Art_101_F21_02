@@ -2,14 +2,18 @@ let array = [];
 
 function setup() {
   createCanvas(600, 600);
-  background(220, 50, 133);
+  background(122,22,15);
   strokeWeight(5);
+  noFill();
 }
 
 function draw() {
  
   /////If mouse is pressed, draw "______"
    if (mouseIsPressed) {
+
+    //Turn Background Black
+    background(0);
 
      //Below can draw cool 3D looking hills 
         //ellipse(mouseX, mouseY, pmouseX, pmouseY)
@@ -35,6 +39,9 @@ function keyTyped(){
   if (key ==='s'){
     saveCanvas('drawmachineimage', 'png');
   } else if (key === 'd'){
+
+    //Turn background white again
+    background(255);
 
     //Display Image
     beginShape();
