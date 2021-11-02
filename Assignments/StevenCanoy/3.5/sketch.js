@@ -2,14 +2,14 @@ let array = [];
 
 function setup() {
   createCanvas(600, 600);
-  background(220);
+  background(220, 50, 133);
   strokeWeight(5);
 }
 
 function draw() {
  
   /////If mouse is pressed, draw "______"
-   if (mouseIsPressed == true){
+   if (mouseIsPressed) {
 
      //Below can draw cool 3D looking hills 
         //ellipse(mouseX, mouseY, pmouseX, pmouseY)
@@ -37,10 +37,12 @@ function keyTyped(){
   } else if (key === 'd'){
 
     //Display Image
-    for(let i = 0; i < array.length - 1; i++){
-      line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);   
+    beginShape();
+    for(let i = 0; i < array.length; i++){
+      //line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);   
+       curveVertex(array[i][0], array[i][1])
     }
-
+    endShape();
    
   }
 
