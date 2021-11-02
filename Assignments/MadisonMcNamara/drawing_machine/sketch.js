@@ -5,6 +5,7 @@ let backgroundColor = 200;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(backgroundColor);
+  strokeWeight(5);
 }
 
 function draw() {
@@ -20,7 +21,7 @@ if (mouseIsPressed){
 //
 // line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 
-line(mouseX, mouseY, pmouseX, pmouseY);
+// line(mouseX, mouseY, pmouseX, pmouseY);
 array.push([mouseX, mouseY]);
 
 beginShape();
@@ -32,25 +33,25 @@ endShape();
 
 }
 }
-
-
 function keyTyped() {
   if (key === 's') {
     //save image
     saveCanvas('fileName', 'jpg');
 
-} else if (key === 'c') {
+} else if (key === 'd') {
 
-  clear();
-//
-//
-//   beginShape();
-//   for(let i = 0; i < array.length; i++){
-// 
-// curveVertex(array[i][0], array[i][1])
-// }
-// endShape();
+  // clear();
+  beginShape();
+  for(let i = 0; i < array.length; i++){
+
+curveVertex(array[i][0], array[i][1])
+}
+endShape();
 //   //display image
+
+} else if (key === 'c') {
+  background(backgroundColor);
+  array = [];
 
 
 
@@ -60,9 +61,9 @@ function keyTyped() {
 return false;
 }
 
-function mousePressed () {
-
-array = [];
-backgroundColor = 255;
-
-}
+// function mousePressed () {
+//
+//
+// // backgroundColor = 255;
+//
+// }
