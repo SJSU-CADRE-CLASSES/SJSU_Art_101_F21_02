@@ -115,7 +115,7 @@ function randomizer(){
     fill(random(255), random(255), random(255));
     //console.log(cats[randomIndex].name);
     text("Name: " + catsName[randomIndex].name, 500, 600);
-    text(catsName[randomIndex].name+"is the cat chooses you!", 500, 650);
+    text(catsName[randomIndex].name+" is the cat chooses you!", 500, 650);
 
 
     //image(cats.image,width/2,height/2);
