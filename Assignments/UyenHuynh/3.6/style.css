@@ -1,7 +1,21 @@
-html, body {
+html {
   margin: 0;
   padding: 0;
 }
+body {
+  display:flex;
+  justify-content: center;
+}
+.instruction{
+  z-index: 2;
+  position: absolute;
+  text-align: center; 
+  
+}
 canvas {
-  display: block;
+  /* margin:auto; */
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
 }
