@@ -30,7 +30,7 @@ let bike = [];
 
 function preLoad(){
     for (let i=0; i<=6; i++){
-      trolls[i] = loadImage(`Randomizer/bike_ ${i}.jpeg`)
+      bikes[i] = loadImage(`Randomizer/bike_ ${i}.jpeg`)
     }
 }
 // let counter = 0;
