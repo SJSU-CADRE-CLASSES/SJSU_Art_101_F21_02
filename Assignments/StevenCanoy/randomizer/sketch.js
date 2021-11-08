@@ -18,8 +18,8 @@ var song0, song1, song2, song3, song4, song5, song6, song7, song8, song9;
 function preload(){
 
    //music
-   song0 = loadSound("music/song_0.mp3");
-   song1 = loadSound("music/song_1.mp3");
+   song0 = loadSound('music/song_0.mp3');
+   song1 = loadSound('music/song_1.mp3');
    song2 = loadSound("music/song_2.mp3");
    song3 = loadSound("music/song_3.mp3");
    song4 = loadSound("music/song_4.mp3");
@@ -58,9 +58,12 @@ function setup() {
   textSize(30);
   fill(225);
   textAlign(CENTER);
-  text("There are 9 excersizes.", width/2, 100);
+  push();
+  fill("#EBE16E");
+  text("There are 10 random excersizes.", width/2, 100);
   text("Enter number of reps", width/2, 150);
   text("you wish to do.", width/2, 200);
+  pop();
   text("Press these keys to play music", width/2, height/2); 
   text("a,s,d,f,g,h,j,k,l,z", width/2, 350);
   text("Press spacebar to STOP music", width/2, 400);
