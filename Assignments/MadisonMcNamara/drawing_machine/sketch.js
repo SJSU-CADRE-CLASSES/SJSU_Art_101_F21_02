@@ -99,7 +99,6 @@ fill(fillColor);
 
 }
 
-strokeWeight(5);
 }
 
 
