@@ -1,3 +1,6 @@
+let noiseOffset = 0.0;
+let strokeWidth = 5;
+
 let array = [];
 let backgroundColor = 200;
 
@@ -5,21 +8,25 @@ let backgroundColor = 200;
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(backgroundColor);
-  strokeWeight(5);
+
 }
 
 function draw() {
   background(220, 50, 133, 5);
-  strokeWeight(5);
+  strokeWeight(strokeWidth);
   noFill();
 
-if (mouseIsPressed){
-  backgroundColor -= 5;
-  background(backgroundColor);
+  noiseOffset += + 0.05;
+  strokeWidth = noise(noiseOffset) * 100;
 
-// stroke(map(mouseX, 0, 600, 0, 255, true), map(mouseX, 0, 600, 0, 255, true))
+if (mouseIsPressed){
+  // These create fade to black
+  // backgroundColor -= 5;
+  // background(backgroundColor);
+
+stroke(map(mouseX, 0, 600, 0, 255, true), map(mouseX, 0, 600, 0, 255, true))
 //
-// line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 
 // line(mouseX, mouseY, pmouseX, pmouseY);
 array.push([mouseX, mouseY]);
