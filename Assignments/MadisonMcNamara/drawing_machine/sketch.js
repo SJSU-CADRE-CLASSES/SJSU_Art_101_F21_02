@@ -75,7 +75,7 @@ return false;
 function drawGrid(){
   numCells = 20;
   fillColor = 255;
-  strokeWeight(3);
+  strokeWeight(2);
 
   for (let i = 0; i <= width; i += width / numCells){
     for (let j = 0; j <= height; j += height / numCells){
