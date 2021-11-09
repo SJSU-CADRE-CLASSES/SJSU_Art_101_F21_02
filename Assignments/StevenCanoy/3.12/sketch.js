@@ -1,9 +1,10 @@
-
+let noiseOffset = 0.0;
+let strokeWidth = 5;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   background(220, 50, 133);
-  strokeWeight(5);
+  
   
 }
 
@@ -11,6 +12,15 @@ function draw() {
 
       //Background
       background(220, 50, 133, 5);
+
+      //Stroke Weight
+      strokeWeight(strokeWidth);
+
+      //Noise Offset
+      noiseOffset += 0.09;
+
+      //Stroke Weight Changing
+      strokeWidth = noise(noiseOffset) * 100;
  
 
     //Below changes to color of stroke
