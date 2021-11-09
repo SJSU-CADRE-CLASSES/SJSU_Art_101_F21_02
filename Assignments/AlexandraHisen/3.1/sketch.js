@@ -3,7 +3,7 @@ let array =[]
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background (50,30,20);
+  background (10,60,170);
   strokeWeight (5);
   stroke(255)
   noFill ();
