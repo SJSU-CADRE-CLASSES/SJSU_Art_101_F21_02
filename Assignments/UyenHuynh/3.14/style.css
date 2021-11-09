@@ -1,0 +1,20 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+ margin: 100px auto 0 auto;
+ width: 80%;
+ text-align: CENTER;  
+}
+/* .instruction{
+  z-index: 2;
+  position: absolute;
+  text-align: center; 
+  
+} */
+canvas {
+  margin: 100px auto 0 auto;
+  display: block;
+  border: 3px solid gold;
+}
