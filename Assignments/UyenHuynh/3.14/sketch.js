@@ -2,22 +2,22 @@ let array=[];
 let backgroundColor =200;
 
 function setup(){
- createCanvas(windowWidth, windowHeight);
-  background(backgroundColor);
-  strokeWeight(5);
+ createCanvas(600, 600);
+  // background(backgroundColor);
+  strokeWeight(3);
   noFill();
-
+  drawGrid();
 
 }
 function draw(){
   if (mouseIsPressed){
-    // line(width-mouseX, height-mouseY, width-pmouseX,height-pmouseY);
-     
-      background(backgroundColor);
+      // background(backgroundColor);
       backgroundColor -=2;
-      line(mouseX, mouseY, pmouseX,pmouseY);
+      // line(mouseX, mouseY, pmouseX,pmouseY);
       array.push([mouseX, mouseY]);
+      
   }
+  
 
 }
 function keyTyped(){
@@ -31,8 +31,34 @@ function keyTyped(){
       curveVertex(array[i][0], array[i][1])
     } 
   endShape();
-  }else if ( key === 'c'){
-    background(200);
-  }
+//   }else if ( key === 'c'){
+//   clear();
+//   background(200);
+
+//   array.length = 0;  
+// }
   return false;
 }
+}
+function mousePressed(){
+  array = [];
+  backgroundColor = 255;
+}
+function drawGrid(){
+  numCells = 20;
+  fillColor= 255;
+  strokeWeight(0);
+  for ( let i = 0; i<= width; i+=width/numCells){
+    for ( let j = 0; j<= height; j+= height/numCells){
+      if (fillColor === 255){
+        fillColor = 200
+      } else{
+        fillColor =255;
+      }
+      fill(fillColor); 
+      rect(i, j, width/numCells, height/numCells);
+    }
+    
+  }
+}
+strokeWeight(5);
