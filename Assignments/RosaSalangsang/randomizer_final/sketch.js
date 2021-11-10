@@ -28,7 +28,6 @@ let fortune = [
   { name: "*snores*" },
   { name: "Bad news, buddy..." },
 ];
-
 function setup() {
   createCanvas(500, 500);
   background(200);
@@ -37,6 +36,7 @@ function setup() {
   button = createButton("Submit question, I guess.");
   button.mouseClicked(buttonPressed);
   button.class("fortuneButton");
+
 }
 
 function draw() {
@@ -75,10 +75,6 @@ function draw() {
     ellipse(270, 150, 10);
   }
 }
-function question() {
-  const answer = input.value();
-  input.value();
-}
 function fortunetell() {
   animating = false;
   if (fortune[0]) {
@@ -106,4 +102,5 @@ function fortunetell() {
 function buttonPressed() {
   animating = true;
   setTimeout(fortunetell, 1500);
+  input.value("");
 }
