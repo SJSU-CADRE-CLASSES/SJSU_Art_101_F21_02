@@ -1,0 +1,21 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  text-align: center;
+}
+h1{
+  font-family:"Brush Script MT", cursive;
+  }
+h3{
+  font-family: "Arial", sans-serif;
+}
+canvas {
+  display: block;
+  border: 7px solid black;
+  margin: auto;
+  position: relative;
+  z-index:-1;
+}
