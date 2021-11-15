@@ -21,7 +21,7 @@ function keyTyped(){
   if (key === 's'){
     // save this image
     saveCanvas('fileName', 'png');
-  } else if (key === 'd'){
+  } else if (key === 'a'){
     // display image
 
 beginShape();
