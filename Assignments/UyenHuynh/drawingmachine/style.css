@@ -1,0 +1,74 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display:flex;
+  justify-content: center;
+}
+.title{
+  z-index: 2;
+  position: absolute;
+  text-align: center; 
+  font-family:'Schoolbell', Arial, sans-serif;
+  font-size: 30px;
+  color:rgb(102, 123, 180)
+  
+}
+canvas {
+  /* margin:auto; */
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.instructions{
+  z-index: 2;
+  position: absolute;
+  text-align: center;
+  position:absolute;
+  left:100px;
+  top: 150px;
+  line-height: 0.8;
+  padding: 20px;
+  font-family:'Schoolbell', Arial, sans-serif;
+  font-size: 20px;
+  color:rgb(102, 123, 180);
+  background-color: rgb(210, 226, 250);
+  border-style: dotted;
+  border-radius: 20px;
+
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: #7db5f5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(212, 212, 212);
+}
+
+.button:hover {background-color: #0e75a5}
+
+.button:active {
+  background-color: #5274e2;
+  box-shadow: 0 5px rgb(212, 212, 212);
+  transform: translateY(4px);
+}
+.randomized-text{
+  text-align: center;
+  font-family:'Schoolbell', Arial, sans-serif;
+  position:absolute;
+  top: 250px;
+  color:rgb(102, 123, 180);
+  font-size:25px;
+
+
+}
