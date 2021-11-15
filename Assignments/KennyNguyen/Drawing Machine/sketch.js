@@ -4,14 +4,15 @@ function setup() {
   createCanvas(1500, 1000);
   background(63, 114, 224);
 
-  strokeWeight(3);
+  strokeWeight(7);
 }
 
 function draw() {
 
   if (mouseIsPressed){
+    stroke(map(mouseX, 0, 600, 0, 255, true))
+    line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
     line(mouseX, mouseY, pmouseX, pmouseY);
-    array.push([mouseX, mouseY]);
   }
 
 }
