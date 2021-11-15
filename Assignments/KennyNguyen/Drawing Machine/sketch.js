@@ -5,6 +5,7 @@ function setup() {
   background(63, 114, 224);
 
   strokeWeight(7);
+
 }
 
 function draw() {
@@ -24,7 +25,6 @@ function keyTyped(){
     saveCanvas('fileName', 'png');
   }
 
-  }
   return false;
 
 }
