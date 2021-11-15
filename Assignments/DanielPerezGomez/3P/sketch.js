@@ -40,7 +40,7 @@ function keyPressed() {
   //Erase
   } else if (key === 'e'){
     stroke(0, 0, 0)
-    strokeWeight(10);
+    strokeWeight(22);
   //Save Image
   } else if (key === '0'){
     saveCanvas('squares','png');
