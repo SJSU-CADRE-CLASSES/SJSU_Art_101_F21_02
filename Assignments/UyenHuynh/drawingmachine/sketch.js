@@ -41,19 +41,7 @@ function setup() {
   canvas.style(
     'z-index', 1
   )
-  button = createButton("REFRESH")
-  button.style('z-index', 2);
-  button.style("padding", "25px");
-  button.style("background-color", "#7db5f5");
-  button.style("border-radius", "15px");
-  button.style("border", "none");
-  button.style("text-align", "CENTER");
-  button.style("color", "white");
-  button.style("font-size", "24px");
-  button.style("font-family", "Schoolbell");
-  button.style("letter-spacing", "1.5px");
-  button.style("transform", "translateY(4px)");
-  button.position(CENTER, height / 7);
+  var button = select('.refresh-button')    
   button.mousePressed(buttonPressed);
 
 
@@ -86,12 +74,12 @@ function randomizer() {
   div.style('z-index',3)
   if (prompts[0]) {
     //   get random object from stuffs
-    background(backgroundColor);  
+    background(backgroundColor);
     randomIndex = int(random(prompts.length));
     fill(0);
 
     div.html(
-      ` ${prompts[randomIndex].name}`      
+      ` ${prompts[randomIndex].name}`
     );
     textAlign(CENTER);
     //   and then take that object out of the array
