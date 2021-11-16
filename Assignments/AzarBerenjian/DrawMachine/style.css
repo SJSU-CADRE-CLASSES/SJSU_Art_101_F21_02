@@ -1,0 +1,20 @@
+html{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 100px auto 0 auto;
+  width: 80%;
+  text-align: center;
+  font-family: "consolas";
+  background-color: #ffd166;
+  background-image: url('939716.png');
+  /* image source https://images8.alphacoders.com/939/939716.png */
+}
+
+canvas {
+  margin: auto;
+  display: block;
+  border: 5px solid black;
+}

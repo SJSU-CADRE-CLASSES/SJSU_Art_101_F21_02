@@ -5,15 +5,23 @@ html, body {
 body {
   margin: 0;
   display: flex;
+  border:18px;
+  border-style: dotted;
+  border-color: #e6ccff;
 
-  /* This centers our sketch horizontally. */
+  text-align: center;
+  color:'#8080ff';
+
   justify-content: center;
-
-  /* This centers our sketch vertically. */
   align-items: center;
 
   font-family: monospace;
 }
 canvas {
+  margin: auto;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index: -1;
   display: block;
 }

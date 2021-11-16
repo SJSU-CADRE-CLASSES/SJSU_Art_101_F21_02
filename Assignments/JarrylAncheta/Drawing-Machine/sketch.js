@@ -1,5 +1,18 @@
+var song;
+
 function setup() {
+  song = loadSound('FluffingADuck.mp3')
   createCanvas(windowWidth, windowHeight);
+}
+
+function mousePressed() {
+  if ( song.isPlaying() ) {
+    song.stop();
+    background(255);
+  } else {
+    song.play();
+    background(0);
+  }
 }
 
 function draw() {
@@ -60,8 +73,6 @@ function draw() {
     if (key === 's'){
       //save image
       saveCanvas(`fileName`, `png`);
-    //} else if (key === `d`) {
-      //display image
     } else if (key ===`c`){
       //clear image
       clear();
