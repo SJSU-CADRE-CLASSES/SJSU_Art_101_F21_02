@@ -1,9 +1,9 @@
 let strokeWidth = 8;
-var audio = new Audio('media/wooshing.mp3');
-  audio.play();
+var song
 
 function setup () {
   createCanvas(500, 500);
+  song = loadSound ('media/wooshing.mp3')
   // background(230);
   strokeWeight(strokeWidth);
   smooth();
