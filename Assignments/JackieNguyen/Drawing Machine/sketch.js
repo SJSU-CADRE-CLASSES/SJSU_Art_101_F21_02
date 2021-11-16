@@ -11,10 +11,17 @@ function setup() {
 function draw() {
 
 if (mouseIsPressed){
- //line(mouseX, mouseY, pmouseX, pmouseY);
+ backgroundColor -= 3;
  background(backgroundColor);
- backgroundColor -=2;
+ //line(mouseX, mouseY, pmouseX, pmouseY);
  array.push([mouseX,  mouseY]);
+
+ beginShape();
+ for (let i = 0; i < array.length; i++) {
+   //line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
+   curveVertex(array[i][0], array[i][1])
+ }
+ endShape();
 }
 
 }
