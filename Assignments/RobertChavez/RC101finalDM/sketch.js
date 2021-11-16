@@ -1,7 +1,7 @@
 let angle=0;
 // let strokeWeight();
 function setup() {
-  loadImage('assets/light.jpg');
+  loadImage('assets1/light.jpg');
   createCanvas(700,700);
   rectMode(CENTER);
   // background(200, 50, 133);
