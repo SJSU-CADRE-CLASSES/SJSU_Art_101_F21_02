@@ -48,14 +48,6 @@ function draw() {
     rect(random(width),random(height),random(50,200));
   }
 }
-// function changeBackground(){
-//   if (counter <= 5){
-//     counter++;
-//     console.log(counter)
-//   background(random(255),random(255), random(255));
-//   setTimeout(changeBackground,1000);
-// } else
-// }
 function randomizer(){
   animating = false;
   if (bikes[0]) {
@@ -71,7 +63,6 @@ function randomizer(){
     textSize(150)
     text("ALL DONE!", 20, 250)
   }
-
 }
 function mousePressed() {
   animating = true
