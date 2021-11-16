@@ -24,7 +24,7 @@ array.push([mouseX,  mouseY]);
 saveCanvas('fileName', 'png');
 } else if (key === 'd'){
   //display image
-  console.log(array);
+  console.log(array[0]);
 }
 
    return false;
