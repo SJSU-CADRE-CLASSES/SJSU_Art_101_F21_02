@@ -77,9 +77,7 @@ function keyTyped(){
   }
   if (key === 's'){
   saveCanvas('fileName', 'png');
-} else if (key === 'c'){
-  clear();
-
+} 
 
 }
 }
