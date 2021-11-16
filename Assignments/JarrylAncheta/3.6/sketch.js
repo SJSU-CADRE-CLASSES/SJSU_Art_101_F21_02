@@ -54,7 +54,6 @@ function draw() {
     }
   }
 
-
   function keyTyped(){
 
     if (key === 's'){
