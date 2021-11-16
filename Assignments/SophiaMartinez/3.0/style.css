@@ -1,19 +1,17 @@
-html, body {
+html {
   height: 100%;
 }
 
 body {
-  margin: 0;
-  display: flex;
-
-  /* This centers our sketch horizontally. */
-  justify-content: center;
-
-  /* This centers our sketch vertically. */
-  align-items: center;
-
-  font-family: monospace;
+  margin: 100px auto 0 auto;
+  width: 80%;
+text-align:left;
+  font-family: "monospace";
+  font-weight: bold;
 }
 canvas {
+  margin: auto;
+  align-content: center;
   display: block;
+
 }
