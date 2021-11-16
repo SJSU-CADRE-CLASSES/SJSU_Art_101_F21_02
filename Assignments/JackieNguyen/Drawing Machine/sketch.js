@@ -11,10 +11,10 @@ function setup() {
 function draw() {
 
 if (mouseIsPressed){
-//line(mouseX, mouseY, pmouseX, pmouseY);
-background(backgroundColor);
-backgroundColor--;
-array.push([mouseX,  mouseY]);
+ //line(mouseX, mouseY, pmouseX, pmouseY);
+ background(backgroundColor);
+ backgroundColor -=2;
+ array.push([mouseX,  mouseY]);
 }
 
 }
