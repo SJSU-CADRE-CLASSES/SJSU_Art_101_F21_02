@@ -1,0 +1,44 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  text-align: center;
+  background-attachment:fixed;
+  background-image: linear-gradient(ghostwhite, paleturquoise, skyblue);
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+h1{
+  font-size: 35px;
+  font-family:"Brush Script MT", cursive;
+  }
+
+h3{
+  font-family: "Arial Narrow", sans-serif;
+}
+
+canvas {
+  display: block;
+  background-color: ivory;
+  border: 5px solid black;
+  margin: auto;
+  position: relative;
+  bottom:290px;
+  z-index: -2;
+}
+p{
+  font-family: "Arial Narrow", sans-serif;
+  max-width: 500px;
+  margin:auto;
+}
+.artstate{
+  font-family: "Arial Narrow", sans-serif;
+  max-width: 500px;
+  margin:auto;
+  position:relative;
+  top:680px;
+  padding-bottom: 10px;
+  user-select: none;
+}
