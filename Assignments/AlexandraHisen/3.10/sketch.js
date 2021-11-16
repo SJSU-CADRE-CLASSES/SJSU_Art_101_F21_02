@@ -3,20 +3,19 @@ let noiseOffset = 0.0;
 let strokeValue = 5;
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background (220, 50, 133,);
+  background (20, 50, 220,);
 
 
 
 }
 
 function draw() {
-    background (220, 50, 133, 5);
+    background (20, 50, 220, 5);
       strokeWeight (strokeValue);
     noiseOffset += 0.05;
     strokeValue = noise (noiseOffset) * 100;
 
 stroke (map(mouseX, 0, 600, 0, 255, true))
-line (width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 line(mouseX, mouseY, pmouseX, pmouseY);
 
 }
