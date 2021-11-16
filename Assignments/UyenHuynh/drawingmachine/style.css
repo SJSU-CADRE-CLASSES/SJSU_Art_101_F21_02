@@ -27,7 +27,7 @@ canvas {
 }
 .instructions-container {
   z-index: 2;
-  padding: 20px;
+  padding: 10px;
 }
 .instructions{
   text-align: center;
