@@ -59,9 +59,9 @@ canvas {
   z-index:2;
 }
 
-.button:hover {background-color: #0e75a5}
+.refresh-button:hover {background-color: #0e75a5}
 
-.button:active {
+.refresh-button:active {
   background-color: #5274e2;
   box-shadow: 0 5px rgb(212, 212, 212);
   transform: translateY(4px);
