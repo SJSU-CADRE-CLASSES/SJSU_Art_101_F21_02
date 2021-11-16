@@ -9,11 +9,11 @@ function setup () {
   }
 
 function draw() {
-
-  // if (mouseIsPressed){
-    stroke(map(mouseX, 0, 600, 0, 255, true))
+  if (mouseIsPressed){
+    line(mouseX, mouseY, pmouseX, pmouseY);
+    // stroke(map(mouseX, 0, 600, 0, 255, true))
+  }
 background(199, 168, 107);
-line(mouseX, mouseY, pmouseX, pmouseY);
 
 }
 
