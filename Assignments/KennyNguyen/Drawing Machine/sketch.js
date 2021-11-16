@@ -25,7 +25,7 @@ function keyTyped(){
 
   if (key === 's'){
     // save this image
-    saveCanvas('fileName', 'png');
+    saveCanvas('SaveYourMaze', 'png');
   }  else if (key === 'c') {
     // clear the image
     clear();
