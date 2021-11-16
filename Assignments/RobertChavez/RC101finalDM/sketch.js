@@ -77,10 +77,10 @@ function keyTyped(){
   }
   if (key === 's'){
   saveCanvas('fileName', 'png');
-} 
+}
 
 }
-}
+
 //   return false;
 //
 // }
