@@ -3,7 +3,7 @@ let angle=0;
 function setup() {
   loadImage('assets1/light.jpg');
   createCanvas(700,700);
-  recttMode(CENTER);
+  rectMode(CENTER);
   // background(200, 50, 133);
 }
 
