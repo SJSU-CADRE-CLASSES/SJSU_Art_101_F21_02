@@ -1,3 +1,5 @@
+var audio = new Audio('media/wooshing.mp3');
+  audio.play();
 
 function setup () {
   createCanvas(600, 600);
@@ -12,8 +14,6 @@ function draw() {
     stroke(map(mouseX, 0, 600, 0, 255, true))
 background(199, 168, 107);
 line(mouseX, mouseY, pmouseX, pmouseY);
-
-
 
 }
 
