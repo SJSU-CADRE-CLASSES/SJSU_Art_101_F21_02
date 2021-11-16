@@ -24,3 +24,8 @@ Resources
 2. Mad Mapper https://madmapper.com/
 3. MapMap https://mapmapteam.github.io//
 4. animorph.es  http://animorph.es
+
+11/2
+1. install solidity https://docs.soliditylang.org/en/latest/installing-solidity.html
+2. solidity https://soliditylang.org/
+3. bitcoin whitepaper https://bitcoinwhitepaper.co/

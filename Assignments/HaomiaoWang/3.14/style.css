@@ -1,0 +1,27 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  border:18px;
+  border-style: dotted;
+  border-color: #ccdcff;
+
+  text-align: center;
+  color:'#ccdcff';
+
+  justify-content: center;
+  align-items: center;
+
+  font-family: monospace;
+}
+canvas {
+  margin: auto;
+  top:0;
+  left:0;
+  position:absolute;
+  z-index: -1;
+  display: block;
+}

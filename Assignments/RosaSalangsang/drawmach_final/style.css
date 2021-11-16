@@ -1,0 +1,30 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  text-align: center;
+  background-image: linear-gradient(ghostwhite, paleturquoise);
+}
+h1{
+  font-size: 35px;
+  font-family:"Brush Script MT", cursive;
+  }
+h3{
+  font-family: "Arial Narrow", sans-serif;
+}
+
+canvas {
+  display: block;
+  background-color: ivory;
+  border: 7px solid black;
+  margin: auto;
+  position: relative;
+  z-index:-1;
+}
+p{
+  font-family: "Arial Narrow", sans-serif;
+  max-width: 500px;
+  margin:auto;
+}
