@@ -26,6 +26,9 @@ function keyTyped(){
   if (key === 's'){
     // save this image
     saveCanvas('fileName', 'png');
+  }  else if (key === 'c') {
+    // clear the image
+    clear();
   }
 
   return false;
