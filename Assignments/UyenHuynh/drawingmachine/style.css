@@ -1,0 +1,81 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  display:flex;
+  justify-content: center;
+}
+.title{
+  z-index: 2;
+  width: 100vw;
+  text-align: center;
+  font-family:'Schoolbell', Arial, sans-serif;
+  font-size: 30px;
+  color:rgb(102, 123, 180);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+canvas {
+  /* margin:auto; */
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 0;
+}
+.instructions-container {
+  z-index: 2;
+  padding: 10px;
+}
+.instructions{
+  text-align: center;
+  line-height: 0.8;
+  font-family:'Schoolbell', Arial, sans-serif;
+  font-size: 20px;
+  color:rgb(102, 123, 180);
+  background-color: rgb(210, 226, 250);
+  border-style: dotted;
+  border-radius: 20px;
+  max-height: 300px;
+}
+
+.refresh-button {
+  display: inline-block;
+  padding: 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background-color: #7db5f5;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(212, 212, 212);
+  font-family: 'Schoolbell', Arial, sans-serif;
+  letter-spacing: 1.5px;
+  z-index:2;
+}
+
+.refresh-button:hover {background-color: #0e75a5}
+
+.refresh-button:active {
+  background-color: #5274e2;
+  box-shadow: 0 5px rgb(212, 212, 212);
+  transform: translateY(4px);
+}
+.randomized-text{
+  text-align: center;
+  font-family:'Schoolbell', Arial, sans-serif;
+  color:rgb(102, 123, 180);
+  padding-top: 20px;
+  font-size:25px;
+}
+
+.top-container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+}
