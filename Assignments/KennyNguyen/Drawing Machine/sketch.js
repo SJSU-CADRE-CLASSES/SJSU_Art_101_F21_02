@@ -1,7 +1,33 @@
+let array = [];
+
 function setup() {
-  createCanvas(600, 600);
+  // The background image must be the same size as the parameters
+  // into the createCanvas() method. In this program, the size of
+  // the image is 1200x1000 pixels.
+  bg = loadImage('https://i.postimg.cc/y62kYP8S/drawingmachine.png');
+  createCanvas(1200, 500);
+
+  strokeWeight(7);
+
 }
 
 function draw() {
-  background(207, 4, 78);
+  background(bg);
+  if (mouseIsPressed){
+    stroke(map(mouseX, 500, 600, 0, 255, true));
+    line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+  }
+
+}
+
+function keyTyped(){
+
+  if (key === 's'){
+    // save this image
+    saveCanvas('fileName', 'png');
+  }
+
+  return false;
+
 }

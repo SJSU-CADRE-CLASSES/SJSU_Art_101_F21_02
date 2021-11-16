@@ -24,7 +24,14 @@ let prompts = [
   { name: "Draw a squirrel roasting a marshmallow" },
   { name: "Draw an octopus with spoons for legs" },
   { name: "Draw a mouse riding a motorcycle" },
-
+  { name: "Draw an eye with tree branches for lashes" },
+  { name: "Draw a snowman sailing" },
+  { name: "Draw a plant with a face" },
+  { name: "Draw the moon fighting the sun over a turkey sandwich" },
+  { name: "Draw a foot doing a handstand" },
+  { name: "Draw a koala bear sitting on a trash can" },
+  { name: "Draw the moon howling at a wolf" },
+ 
 
 ];
 
@@ -37,23 +44,11 @@ function setup() {
   strokeWeight(3);
   noFill();
   saveState();
-
+stroke(33, 74, 128);
   canvas.style(
     'z-index', 1
   )
-  button = createButton("REFRESH")
-  button.style('z-index', 2);
-  button.style("padding", "25px");
-  button.style("background-color", "#7db5f5");
-  button.style("border-radius", "15px");
-  button.style("border", "none");
-  button.style("text-align", "CENTER");
-  button.style("color", "white");
-  button.style("font-size", "24px");
-  button.style("font-family", "Schoolbell");
-  button.style("letter-spacing", "1.5px");
-  button.style("transform", "translateY(4px)");
-  button.position(CENTER, height / 7);
+  var button = select('.refresh-button')    
   button.mousePressed(buttonPressed);
 
 
@@ -77,6 +72,7 @@ function keyTyped() {
     background(backgroundColor);
   } else if (key === 'e') {
     stroke(backgroundColor)
+    strokeWeight(10);
   }
   return false;
 }
@@ -86,12 +82,12 @@ function randomizer() {
   div.style('z-index',3)
   if (prompts[0]) {
     //   get random object from stuffs
-    background(backgroundColor);  
+    background(backgroundColor);
     randomIndex = int(random(prompts.length));
     fill(0);
 
     div.html(
-      ` ${prompts[randomIndex].name}`      
+      ` ${prompts[randomIndex].name}`
     );
     textAlign(CENTER);
     //   and then take that object out of the array
