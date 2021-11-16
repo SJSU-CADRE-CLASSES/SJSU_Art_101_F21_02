@@ -24,7 +24,7 @@ for (let i = 0; o < array.length; i++) {
     curveVertex(array[i][0], array[i][1]);
 endShape();
   }
-background(255);
+background: rgb(199, 168, 107);
 
 }
   return false;
