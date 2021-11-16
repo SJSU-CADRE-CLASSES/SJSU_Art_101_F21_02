@@ -9,7 +9,6 @@ function setup(){
   background(backgroundColor);
   noFill();
 
-
 }
 function draw(){
   background(200,5);
