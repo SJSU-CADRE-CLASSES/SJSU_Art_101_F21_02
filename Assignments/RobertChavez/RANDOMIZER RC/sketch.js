@@ -5,6 +5,9 @@ let randompics = [];
 let imageCounter = 0;
 let animating = false;
 let button;
+let backgroundColor = 255;
+// let array = [];
+let strokeWidth = 5;
 function preload(){
 
   for (let i = 0; i <=10; i++){
@@ -21,12 +24,13 @@ function setup() {
   background(182,235,242);
   textSize(32);
   imageMode(CENTER);
-  frameRate(5);
+  frameRate(2);
 
-fill(255);
+
+// fill(255);
 text("click blue button to randomize",50,50);
 
-button = createButton("click for a helpful tip");
+button = createButton("click for diagram");
 button.mousePressed(buttonPressed);
 button.style("padding","20px");
 button.style("background-color","#49b7e3");
@@ -73,4 +77,49 @@ function buttonPressed() {
   setTimeout(randomizer,2500);
 
 
+}
+function draw() {
+
+  if (mouseIsPressed){
+    // stroke(map(mouseX, 0, 600, 0, 255, true))
+    // line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+
+  }
+
+
+}
+
+
+function keyTyped(){
+  //0-5 change the pen size
+  if (key == '0') {
+    stroke(250);
+    strokeWeight(1);
+  }
+  if (key == '1') {
+    stroke(250);
+    strokeWeight(10);
+  }
+  if (key == '2') {
+    stroke(250);
+    strokeWeight(20);
+  }
+  if (key == '3') {
+    stroke(250);
+    strokeWeight(30);
+  }
+  if (key == '4') {
+    stroke(250);
+    strokeWeight(40);
+  }
+  if (key == '5') {
+    stroke(250);
+    strokeWeight(50);
+  }
+
+  if (key === 's'){
+
+    saveCanvas('fileName', 'png');
+}
 }
