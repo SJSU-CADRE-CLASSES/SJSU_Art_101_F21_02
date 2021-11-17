@@ -4,14 +4,15 @@ var audio = new Audio('media/wooshing.mp3');
 
 function setup () {
   createCanvas(600, 600);
-  background(230);
+  background(199, 168, 107);
   strokeWeight(strokeWidth);
   smooth();
   }
 
 function draw() {
+  background(199, 168, 107, 20);
   if (mouseIsPressed){
-    stroke(map(mouseX, 0, 600, 0, 255, true))
+    stroke(map(mouseX, 0, 400, 0, 255, true))
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
