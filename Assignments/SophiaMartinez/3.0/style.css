@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  padding: 0;
 }
 
 body {
@@ -11,7 +12,9 @@ text-align:left;
 }
 canvas {
   padding-bottom: 50px
-  margin: auto
+  margin: 0 auto 0 auto;
   display: block;
+  align: CENTER;
+
 
 }
