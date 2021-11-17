@@ -1,32 +1,30 @@
-let array = [];
-function setup (){
+let strokeWidth = 8;
+var audio = new Audio('media/wooshing.mp3');
+  audio.play();
+
+function setup () {
   createCanvas(600, 600);
-  background(220);
-  strokeWeight(3);
-noFill();
+  background(199, 168, 107);
+  strokeWeight(strokeWidth);
+  smooth();
   }
 
 function draw() {
-
-if (mouseIsPressed){
-  //line(mouseX, mouseY, pmouseX, pmouseY);
-  background(0);
-  array.push([mouseX, mouseY]);
+  background(199, 168, 107, 20);
+  if (mouseIsPressed){
+    stroke(map(mouseX, 0, 400, 0, 255, true))
+    line(mouseX, mouseY, pmouseX, pmouseY);
   }
-
 }
+// background(199, 168, 107);
 
-function keyTyped(){
-
+function keyTyped() {
   if (key === 's'){
     //save image
     saveCanvas('fileName', 'png');
-  } else if (key === 'd'){
-  //display image
-background(255);
-  for(let i = 0; i < array.length - 1; i++){
-    line(array[i][0], array[i][1], array[i + 1][0], array[i + 1][1]);
+  } else if (key === 'c') {
+    //clear the image
+    clear();
   }
-}
   return false;
 }

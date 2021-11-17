@@ -14,7 +14,7 @@ function setup() {
 function draw() {
   background(bg);
   if (mouseIsPressed){
-    stroke(map(mouseX, 500, 600, 0, 255, true));
+    stroke(map(mouseX, 500, 600, 0, 100, true));
     line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
@@ -25,7 +25,10 @@ function keyTyped(){
 
   if (key === 's'){
     // save this image
-    saveCanvas('fileName', 'png');
+    saveCanvas('SaveYourMaze', 'png');
+  }  else if (key === 'c') {
+    // clear the image
+    clear();
   }
 
   return false;
