@@ -1,0 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+#p5canvas {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  width: 400px;
+  height: 400px;
+}
