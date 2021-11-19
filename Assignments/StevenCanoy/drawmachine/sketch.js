@@ -37,8 +37,6 @@ function draw() {
         fill(mouseX, mouseY, random(255), 275);
         ellipse(mouseX, mouseY, 150, 170);
         ellipse(width - mouseX, height - mouseY, 100, 100);
-        
-        //triangle(mouseX, mouseY, width - mouseX, height - mouseY, windowWidth / 2 , windowHeight / 2);
         pop();
 
   }
