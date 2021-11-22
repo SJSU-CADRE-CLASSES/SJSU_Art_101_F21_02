@@ -8,6 +8,8 @@ function setup() {
   drawGrid();
   strokeWeight(5);
   noFill();
+
+
 }
 
 function draw() {
@@ -92,3 +94,4 @@ function drawGrid(){
 
   }
 }
+
