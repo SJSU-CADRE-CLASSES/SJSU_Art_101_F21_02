@@ -5,6 +5,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   //background(220, 50, 133);
   drawGrid();
+  strokeWeight(5);
+  noFill();
   
   
 }
@@ -68,7 +70,7 @@ function mousePressed() {
 function drawGrid(){
   numCells = 20;
 
-  for (let i = 0; i >= width; i += width / numCells){
+  for (let i = 0; i <= width; i += width / numCells){
     for (let j = 0; j <= height; j += height / numCells){
     rect(i, j, width / numCells, height / numCells);
     }
