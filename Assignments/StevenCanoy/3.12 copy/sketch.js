@@ -3,7 +3,8 @@ let strokeWidth = 5;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  background(220, 50, 133);
+  //background(220, 50, 133);
+  drawGrid();
   
   
 }
@@ -62,4 +63,15 @@ return false;
 function mousePressed() {
   array = [];
   backgroundColor = 255;
+}
+
+function drawGrid(){
+  numCells = 20;
+
+  for (let i = 0; i >= width; i += width / numCells){
+    for (let j = 0; j <= height; j += height / numCells){
+    rect(i, j, width / numCells, height / numCells);
+    }
+
+  }
 }
