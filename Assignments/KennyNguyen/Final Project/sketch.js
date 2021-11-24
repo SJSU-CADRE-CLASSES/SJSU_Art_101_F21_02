@@ -1,23 +1,29 @@
 'use strict';
 
+
 let state = 'title';
 let cnv;
 
 function setup() {
   cnv = createCanvas(600, 600);
+
 }
 
 function draw() {
 
-  if (state === 'title') {
-    title();
-    cnv.mouseClicked(titleMouseClicked);
-  } else if (state === 'level 1'){
-    level1();
-    cnv.mouseClicked(function(){
-      console.log('canvas is clicked on level 1');
-    });
+  switch (state){
+    case 'title':
+      title();
+      cnv.mouseClicked(titleMouseClicked);
+      break;
+    case 'level 1':
+      level1();
+      cnv.mouseClicked(level1MouseClicked);
+      break;
+    default:
+      break;
   }
+
 }
 
 function title(){
@@ -37,4 +43,8 @@ function titleMouseClicked(){
 
 function level1(){
   background(50, 150, 200);
+}
+
+function level1MouseClicked(){
+  console.log('canvas is clicked on level 1');
 }
