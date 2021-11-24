@@ -1,36 +1,46 @@
 let noiseOffset = 0.0;
 let strokeWidth = 5;
 
+
 function setup() {
-  createCanvas(windowWidth, windowHeight);
-  background(220, 50, 133);
+  createCanvas(600, 600);
+  background(22);
   
   
 }
 
 function draw() {
 
-      //Background
-      background(220, 50, 133, 5);
+  if (mouseIsPressed) {
 
       //Stroke Weight
       strokeWeight(strokeWidth);
 
       //Noise Offset
-      noiseOffset += 0.09;
+     noiseOffset += 0.5;
 
       //Stroke Weight Changing
-      strokeWidth = noise(noiseOffset) * 100;
+      strokeWidth = noise(noiseOffset) / 5;
  
 
     //Below changes to color of stroke
-    stroke(map(mouseX, 0, 600, 0, 255, true));
+    stroke(map(mouseX, 0, 300, 0, 100, true));
 
     //Below draws in opposite direction
-    line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
+    //line(width - mouseX, height - mouseY, width - pmouseX, height - pmouseY);
 
-    //Below draws a line
-        line(mouseX, mouseY, pmouseX, pmouseY);
+    
+
+    //Below draws an ellipse
+        push();
+        strokeWeight(2.5);
+        //noStroke();
+        fill(mouseX, mouseY, random(255), 275);
+        ellipse(mouseX, mouseY, 150, 170);
+        ellipse(width - mouseX, height - mouseY, 100, 100);
+        pop();
+
+  }
       
    }
 

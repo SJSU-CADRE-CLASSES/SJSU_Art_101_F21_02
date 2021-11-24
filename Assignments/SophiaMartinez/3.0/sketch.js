@@ -1,17 +1,18 @@
 let strokeWidth = 8;
-var song
+var audio = new Audio('media/wooshing.mp3');
+  audio.play();
 
 function setup () {
-  createCanvas(500, 500);
-  song = loadSound ('media/wooshing.mp3')
-  // background(230);
+  createCanvas(600, 600);
+  background(199, 168, 107);
   strokeWeight(strokeWidth);
   smooth();
   }
 
 function draw() {
+  background(199, 168, 107, 20);
   if (mouseIsPressed){
-    stroke(map(mouseX, 0, 600, 0, 255, true))
+    stroke(map(mouseX, 0, 400, 0, 255, true))
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
 }
