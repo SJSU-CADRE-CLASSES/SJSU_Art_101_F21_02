@@ -34,6 +34,7 @@ function draw() {
     //Below draws an ellipse
         push();
         strokeWeight(2.5);
+        //noStroke();
         fill(mouseX, mouseY, random(255), 275);
         ellipse(mouseX, mouseY, 150, 170);
         ellipse(width - mouseX, height - mouseY, 100, 100);
