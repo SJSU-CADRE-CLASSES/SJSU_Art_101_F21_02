@@ -1,4 +1,3 @@
-let array = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -11,12 +10,8 @@ function setup() {
 
 function draw() {
 
-  if (mouseIsPressed) {
-    //  line(mouseX, mouseY, pmouseX, pmouseY);
-    background(0);
-    array.push([mouseX, mouseY]);
-  }
-}
+stroke(map(mouseX,0, 600, 0, 255, true))
+line(width-mouseX, height - mouseY, width - pmouseX, height - pmouseY);   
 
 function keyTyped() {
 

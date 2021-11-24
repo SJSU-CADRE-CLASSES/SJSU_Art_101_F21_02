@@ -13,6 +13,8 @@ function draw() {
       //Background
       background(220, 50, 133, 5);
 
+      if (mouseIsPressed) {
+
       //Stroke Weight
       strokeWeight(strokeWidth);
 
@@ -31,8 +33,11 @@ function draw() {
 
     //Below draws a line
         line(mouseX, mouseY, pmouseX, pmouseY);
+
+      }
       
    }
+   
 
 
 
