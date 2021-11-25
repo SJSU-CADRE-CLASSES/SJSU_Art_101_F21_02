@@ -3,14 +3,16 @@ let noiseOffset = 0.0;
 let strokeWidth = 3;
 
 function setup (){
-  createCanvas(windowWidth, windowHeight);
-  noFill();
-  background(230);
-
+  createCanvas(600, 600);
+  // background(230);
+drawGrid();
+strokeWeight(strokeWidth);
+noFill();
   }
 
 function draw() {
-  background(112, 98, 112, 5)
+  backgroundColor -=5;
+  background(backgroundColor);
   strokeWeight(strokeWidth);
   noiseOffset += 0.05;
   strokeWidth = noise(noiseOffset) * 100;
@@ -30,4 +32,20 @@ clear();
 background(backgroundColor);
 }
   return false;
+}
+
+function drawGrid(){
+numCells = 20;
+fillColor = 255;
+  for (i = 0; i <= width; i <= width / numCells);{
+    for (let j = 0; j <= height; j += height / numCells){
+      if (fillColor === 255){
+        fillColor = 200;
+      } else {
+        fillColor = 255;
+      }
+      fill(fillColor);
+      rect(i, j, width / numCells, height / numCells);
+    }
+  }
 }
