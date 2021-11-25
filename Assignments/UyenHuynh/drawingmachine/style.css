@@ -11,7 +11,7 @@ body {
   width: 100vw;
   text-align: center;
   font-family:'Schoolbell', Arial, sans-serif;
-  font-size: 30px;
+  font-size: 25px;
   color:rgb(102, 123, 180);
   display:flex;
   justify-content: center;
@@ -61,7 +61,7 @@ canvas {
 
 .refresh-button:hover {background-color: #0e75a5}
 
-.refresh-button:active {
+.button:active {
   background-color: #5274e2;
   box-shadow: 0 5px rgb(212, 212, 212);
   transform: translateY(4px);

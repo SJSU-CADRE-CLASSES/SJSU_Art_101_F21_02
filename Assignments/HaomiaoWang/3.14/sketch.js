@@ -2,6 +2,12 @@ let array = [];
 // let backgroundColor=200;
 let noiseOffset=0.0;
 let strokeWidth=5;
+let white;
+
+function preload(){
+
+  white=loadImage("assets/w1.png")
+}
 
 function setup (){
   createCanvas(windowWidth, windowHeight);
@@ -11,6 +17,8 @@ function setup (){
 
   strokeWeight(5);
   //noFill();
+
+  image(white, 375, 300);
   }
 
 function draw() {
@@ -26,7 +34,8 @@ function draw() {
 
 
     stroke(map(mouseX,0,600,0,255,true));
-    line(width-mouseX,height-mouseY,width-pmouseX,height-pmouseY);
+    //mirror your sketch
+    //line(width-mouseX,height-mouseY,width-pmouseX,height-pmouseY);
     line(mouseX,mouseY,pmouseX,pmouseY);
     array.push([mouseX, mouseY]);
 }

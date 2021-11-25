@@ -1,10 +1,12 @@
 let array = [];
 
+backgroundColor=255;
 function setup() {
   createCanvas(600, 600);
   background(255);
 
   strokeWeight(5);
+  stroke(0);
   noFill();
 }
 
@@ -12,7 +14,7 @@ function draw() {
 
 if (mouseIsPressed){
  backgroundColor -= 3;
- background(255);
+ background(backgroundColor);
  line(mouseX, mouseY, pmouseX, pmouseY);
  array.push([mouseX,  mouseY]);
 
@@ -28,6 +30,7 @@ if (mouseIsPressed){
 saveCanvas('fileName', 'png');
 } else if (key === 'd'){
   //display image
+
 background(255);
 beginShape();
 for(let i = 0; i < array.length; i++){
