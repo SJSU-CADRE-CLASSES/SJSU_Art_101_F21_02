@@ -8,9 +8,11 @@ body {
 text-align:left;
   font-family: monospace;
   font-weight: bold;
+  background-color: rgb(189, 151, 188);
 }
 canvas {
   display: block;
   margin: 0 auto 0 auto;
   border: 5px solid gray;
+  z-index: auto;
 }
