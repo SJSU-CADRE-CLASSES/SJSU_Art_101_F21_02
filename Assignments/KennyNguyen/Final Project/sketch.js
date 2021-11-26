@@ -39,6 +39,12 @@ function draw() {
 
 }
 
+function keyPressed(){
+  if (keyCode == LEFT_ARROW){
+    player.direction = 'left'
+  }
+}
+
 function title(){
   background(0);
   textSize(80);
