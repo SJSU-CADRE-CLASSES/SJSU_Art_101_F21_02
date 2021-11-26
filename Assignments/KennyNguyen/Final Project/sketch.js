@@ -60,6 +60,7 @@ function level1(){
   // text('click for points', w/2, h - 30);
 
   player.display();
+  player.move();
 
   coin.display();
   coin.move();
