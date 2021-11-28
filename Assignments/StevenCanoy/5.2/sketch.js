@@ -1,6 +1,7 @@
 'use strict'
 
 let state = 'title';
+let cnv;
 
   function setup(){
     createCanvas(600, 600);
@@ -14,11 +15,6 @@ let state = 'title';
     } else if (state === 'level 1'){
       level1();
     }
-  }
-
-
-  function mousePressed(){
-    state = 'level 1';
   }
 
   function title(){
