@@ -3,9 +3,13 @@
 let state = 'title';
 let cnv;
 let points = 0;
+let w = 600;
+let h = 600;
 
   function setup(){
-    cnv = createCanvas(600, 600);
+    cnv = createCanvas(w, h);
+
+    textFont('monospace');
     
   }
 
@@ -32,13 +36,14 @@ let points = 0;
 
 
   function title(){
-    background(100);
+    background(0);
     textSize(80);
-    stroke(225);
-    text('MY GAME', 100, 100);
+    fill(225);
+    textAlign(CENTER);
+    text('MY GAME', w/2, h/5);
 
     textSize(30);
-    text('click anywhere to start', 100, 300);
+    text('click anywhere to start', w/2, h/2);
   }
 
 
@@ -50,7 +55,7 @@ let points = 0;
 
   function level1(){
     background(50, 150, 200);
-    text('click for points', 0, height - 30);
+    text('click for points', w/2, h - 30);
   }
 
   function level1MouseClicked(){
@@ -66,10 +71,10 @@ let points = 0;
     background(255, 50, 80);
     textSize(80);
     stroke(225);
-    text('YOU WIN', 100, 100);
+    text('YOU WIN', w/2, h/2);
 
     textSize(30);
-    text('click anywhere to restart', 100, 300);
+    text('click anywhere to restart', w/2, h * 3/4);
   }
 
   function youWinMouseClicked(){
