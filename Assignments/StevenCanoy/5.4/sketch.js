@@ -2,6 +2,7 @@
 
 let state = 'title';
 let cnv;
+let points = 0;
 
   function setup(){
     cnv = createCanvas(600, 600);
@@ -20,6 +21,10 @@ let cnv;
         level1();
          cnv.mouseClicked(level1MouseClicked);
           break;
+          case 'you win':
+            youWin();
+            cnv.mouseClicked(youWinMouseClicked);
+            break;
           default:
             break;
     }
@@ -45,8 +50,29 @@ let cnv;
 
   function level1(){
     background(50, 150, 200);
+    text('click for points', 0, height - 30);
   }
 
   function level1MouseClicked(){
-    console.log('canvas is clicked on level 1');
+    points++;
+    console.log('points = ' + points);
+
+    if (points >= 10){
+      state = 'you win';
+    }
+  }
+
+  function youWin(){
+    background(255, 50, 80);
+    textSize(80);
+    stroke(225);
+    text('YOU WIN', 100, 100);
+
+    textSize(30);
+    text('click anywhere to restart', 100, 300);
+  }
+
+  function youWinMouseClicked(){
+    state = 'level 1';
+    points = 0;
   }
