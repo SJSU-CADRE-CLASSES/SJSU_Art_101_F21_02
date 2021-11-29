@@ -1,7 +1,7 @@
-class Player{
+class Player {
     constuctor(){
         this.r = 60;
-        this.x = w /2;
+        this.x = w / 2;
         this.y = h - this.r;
     }
 

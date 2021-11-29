@@ -6,6 +6,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
+let coin;
 
   function setup(){
     cnv = createCanvas(w, h);
@@ -13,6 +14,8 @@ let player;
     textFont('monospace');
 
     player = new Player();
+
+    coin = new Coin();
     
   }
 
@@ -24,11 +27,11 @@ let player;
         title();
         cnv.mouseClicked(titleMouseClicked);
         break;
-        case 'level 1':
+      case 'level 1':
         level1();
          cnv.mouseClicked(level1MouseClicked);
           break;
-          case 'you win':
+      case 'you win':
             youWin();
             cnv.mouseClicked(youWinMouseClicked);
             break;
@@ -58,7 +61,11 @@ let player;
 
   function level1(){
     background(50, 150, 200);
-    text('click for points', w/2, h - 30);
+    //text('click for points', w/2, h - 30);
+    player.display();
+
+    coin.display();
+    coin.move();
   }
 
   function level1MouseClicked(){
