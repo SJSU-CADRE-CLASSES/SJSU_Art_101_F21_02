@@ -15,7 +15,7 @@ function setup() {
 
   player = new Player();
 
-  coin = new Coin();
+  coin = new Coins();
 }
 
 function draw() {
