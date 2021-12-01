@@ -1,7 +1,9 @@
-function setup() {
-  createCanvas(400, 400);
-}
+ 'use strict'
 
-function draw() {
-  background(220);
-}
+
+
+
+
+ function setuup(){
+   createCanvas(600, 600);
+ }
