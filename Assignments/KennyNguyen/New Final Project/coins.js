@@ -1,5 +1,5 @@
 
-class Coins {
+class Coin {
   constructor(){
     this.r = 50;
     this.x = random(w);

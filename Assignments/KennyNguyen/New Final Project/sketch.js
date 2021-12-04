@@ -6,7 +6,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -15,7 +15,8 @@ function setup() {
 
   player = new Player();
 
-  coin = new Coins();
+  // coins = new Coin();
+  coins.push(new Coin());
 }
 
 function draw() {
@@ -75,16 +76,16 @@ function level1(){
   player.display();
   player.move();
 
-  coin.display();
-  coin.move();
+  coins[0].display();
+  coins[0].move();
 
   // check for collision, if there is a collision increase points by 1
-  if (dist(player.x, player.y, coin.x, coin.y) <= (player.r + coin.r) / 2){
+  if (dist(player.x, player.y, coins[0].x, coins[0].y) <= (player.r + coins[0].r) / 2){
     points++;
     console.log(points);
   }
 
-text(`points: ${points}`, w/4, h - 30);
+text(`points: ${points}`, w / 4, h - 30);
 
 }
 
