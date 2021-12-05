@@ -73,17 +73,28 @@ function titleMouseClicked(){
 function level1(){
   background(50, 150, 200);
 
+  if (random(1) <= 0.01){
+    coins.push(new Coin());
+  }
+
   player.display();
   player.move();
 
-  coins[0].display();
-  coins[0].move();
+  for (let i = 0; i < coins.length; i++){
+    coins[i].display();
+    coins[i].move();
+  }
 
-  // check for collision, if there is a collision increase points by 1
-  if (dist(player.x, player.y, coins[0].x, coins[0].y) <= (player.r + coins[0].r) / 2){
+  // check for collision, if there is a collision increase points by 1 AND splice that coin out of array
+  // need to iterate backwards through array
+
+  for (let i = coins.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
     points++;
     console.log(points);
+    coins.splice(i, 1);
   }
+}
 
 text(`points: ${points}`, w / 4, h - 30);
 
