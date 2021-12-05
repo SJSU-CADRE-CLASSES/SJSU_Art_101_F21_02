@@ -8,9 +8,11 @@ let h = 600;
 let player;
 let coins = [];
 let playerImg;
+let coinImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor1.png');
+  coinImg = loadImage('assets/enemy1.png');
 }
 
 function setup() {
