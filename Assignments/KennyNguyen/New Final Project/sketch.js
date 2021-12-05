@@ -8,6 +8,7 @@ let h = 600;
 let player;
 let coins = [];
 
+
 function setup() {
   cnv = createCanvas(w, h);
 
@@ -80,6 +81,7 @@ function level1(){
   player.display();
   player.move();
 
+  // iterating through coins array to display and move them
   for (let i = 0; i < coins.length; i++){
     coins[i].display();
     coins[i].move();
@@ -87,7 +89,6 @@ function level1(){
 
   // check for collision, if there is a collision increase points by 1 AND splice that coin out of array
   // need to iterate backwards through array
-
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
     points++;
