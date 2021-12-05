@@ -7,7 +7,11 @@ let w = 600;
 let h = 600;
 let player;
 let coins = [];
+let playerImg;
 
+function preLoad(){
+  playerImg = loadImage('assets/raptor.png');
+}
 
 function setup() {
   cnv = createCanvas(w, h);
