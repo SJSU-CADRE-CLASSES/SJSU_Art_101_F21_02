@@ -9,8 +9,8 @@ let player;
 let coins = [];
 let playerImg;
 
-function preLoad(){
-  playerImg = loadImage('assets/raptor.png');
+function preload(){
+  playerImg = loadImage('assets/raptor1.png');
 }
 
 function setup() {
