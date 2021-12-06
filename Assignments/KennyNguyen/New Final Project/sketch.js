@@ -17,6 +17,10 @@ function preload(){
 
 function setup() {
   cnv = createCanvas(w, h);
+  frameRate(240);
+
+  imageMode(CENTER);
+  rectMode(CENTER);
 
   textFont('monospace');
 
@@ -93,12 +97,12 @@ function title(){
   textSize(80);
   stroke(255);
   textAlign(CENTER);
-  text('Space Invasion', w/2, h/5);
+  text('Infinite Warfare', w/2, h/5);
 
   textSize(30);
-  text('Instructions: crash into red planes to earn points', w/2, h/2.25);
-  text('Controls: arrow keys', w/2, h/1.85);
-  text('click the screen to start', w/2, h/1.25);
+  text('Player 1 Instructions: Crash into red planes to earn points', w/2, h/2.25);
+  text('Player Controls: Arrow keys to move', w/2, h/1.85);
+  text('-- click the screen to start --', w/2, h/1.25);
 }
 
 function titleMouseClicked(){
