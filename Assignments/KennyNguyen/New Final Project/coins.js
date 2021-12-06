@@ -4,7 +4,7 @@ class Coin {
     this.r = 70;
     this.x = random(w);
     this.y = 0 - this.r;
-    this.speed = 5;
+    this.speed = 2;
   }
 
   display(){
@@ -13,6 +13,6 @@ class Coin {
   }
 
   move(){
-    this.y++;
+    this.y += this.speed;
   }
 }

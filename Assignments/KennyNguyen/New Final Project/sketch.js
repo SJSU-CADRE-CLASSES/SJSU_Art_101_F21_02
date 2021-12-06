@@ -8,14 +8,17 @@ let h = 575;
 let player;
 let coins = [];
 let missiles = [];
+let lazers = [];
 let playerImg;
 let coinImg;
 let missileImg;
+let lazerImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor1.png');
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
+  lazerImg = loadImage('assets/lazer1.png');
 }
 
 function setup() {
@@ -33,6 +36,8 @@ function setup() {
   coins.push(new Coin());
   // missiles = new Missile();
   missiles.push(new Missile());
+  // lazers = new Lazer();
+  lazers.push(new Lazer());
 }
 
 function draw() {
@@ -126,6 +131,10 @@ function level1(){
     missiles.push(new Missile());
   }
 
+  if (random(1) <= 0.01){
+    lazers.push(new Lazer());
+  }
+
   player.display();
   player.move();
 
@@ -143,7 +152,14 @@ function level1(){
     missiles[i].move();
   }
 
-  // check for collision with coins, if there is a collision increase points by 1 AND splice that coin out of array
+  // iterating through lazers array to display and move them
+  // using for loop
+  for (let i = 0; i < lazers.length; i++){
+    lazers[i].display();
+    lazers[i].move();
+  }
+
+  // check for collision with COINS, if there is a collision increase points by 1 AND splice that coin out of array
   // need to iterate backwards through array
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
@@ -155,7 +171,7 @@ function level1(){
   }
 }
 
-  // check for collision with missiles, if there is a collision increase points by 1 AND splice that missile out of array
+  // check for collision with MISSILES, if there is a collision increase points by 1 AND splice that missile out of array
   // need to iterate backwards through array
   for (let i = missiles.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, missiles[i].x, missiles[i].y) <= (player.r + missiles[i].r) / 2){
@@ -164,6 +180,18 @@ function level1(){
   } else if (missiles[i].y > h){
     missiles.splice(i, 1);
     // console.log('missile is out of town');
+  }
+}
+
+  // check for collision with LAZERS, if there is a collision increase points by 1 AND splice that lazer out of array
+  // need to iterate backwards through array
+  for (let i = lazers.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, lazers[i].x, lazers[i].y) <= (player.r + lazers[i].r) / 2){
+    points--;
+    lazers.splice(i, 1);
+  } else if (lazers[i].y > h){
+    lazers.splice(i, 1);
+  // console.log('lazer is out of town');
   }
 }
 

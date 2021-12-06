@@ -1,14 +1,14 @@
 
-class Missile {
+class Lazer {
   constructor(){
     this.r = 70;
     this.x = random(w);
     this.y = 0 - this.r;
-    this.speed = 5;
+    this.speed = 8;
   }
 
   display(){
-    image(missileImg, this.x, this.y, this.r, this.r)
+    image(lazerImg, this.x, this.y, this.r, this.r)
     // rect(this.x, this.y, this.r, this.r);
   }
 
