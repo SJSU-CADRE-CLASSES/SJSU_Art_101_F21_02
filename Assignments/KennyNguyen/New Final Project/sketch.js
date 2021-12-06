@@ -1,5 +1,10 @@
 'use strict';
 
+// to convert to shoot 'em up
+// 1. creating a projectile class
+// 2. change player controls to move from left and right, space bar will launch projectile
+// 3. test collisions between projectile and coins/enemies, instead of player
+
 let state = 'title';
 let cnv;
 let points = 0;
@@ -9,16 +14,19 @@ let player;
 let coins = [];
 let missiles = [];
 let lazers = [];
+let projectiles = [];
 let playerImg;
 let coinImg;
 let missileImg;
 let lazerImg;
+// let projectileImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor1.png');
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
+  // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
@@ -38,6 +46,9 @@ function setup() {
   missiles.push(new Missile());
   // lazers = new Lazer();
   lazers.push(new Lazer());
+  // projectiles = new Projectile();
+  projectiles.push(new Projectile);
+
 }
 
 function draw() {
@@ -55,6 +66,10 @@ function draw() {
       youWin();
       cnv.mouseClicked(youWinMouseClicked);
       break;
+    case 'game over':
+      gameOver();
+      cnv.mouseClicked(gameOverMouseClicked);
+      break;
     default:
       break;
   }
@@ -70,8 +85,8 @@ function keyPressed(){
     player.direction = 'up'
   } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
-  } else if (key = ' ') {
-    player.direction = 'still';
+  } else if (keyCode == CONTROL) {
+    projectiles.push(new Projectile);
   }
 }
 
@@ -110,9 +125,10 @@ function title(){
   text('Infinite Warfare', w/2, h/5);
 
   textSize(30);
-  text('Objective: Crash into red planes to earn points/Dodge incoming missiles', w/2, h/2.25);
-  text('Player Controls: Arrow keys to move', w/2, h/1.85);
-  text('-- click the screen to begin --', w/2, h/1.25);
+  text('Objective: Crash into enemy planes to earn points!', w/2, h/2.75);
+  text('missiles and lazers will deduct points if hit', w/2, h/2.20);
+  text('Player Controls: Arrow keys to move', w/2, h/1.25);
+  text('-- click the screen to begin --', w/2, h/1.10);
 }
 
 function titleMouseClicked(){
@@ -159,6 +175,13 @@ function level1(){
     lazers[i].move();
   }
 
+  // iterating through projectiles array to display and move them
+  // using for loop
+  for (let i = 0; i < projectiles.length; i++){
+    projectiles[i].display();
+    projectiles[i].move();
+  }
+
   // check for collision with COINS, if there is a collision increase points by 1 AND splice that coin out of array
   // need to iterate backwards through array
   for (let i = coins.length - 1; i >= 0; i--){
@@ -197,6 +220,10 @@ function level1(){
 
 text(`Points Earned: ${points}`, w / 4, h - 30);
 
+  // check point values to win or lose the game
+  if (points <= -1) {
+    state = 'game over';
+  }
 }
 
 function level1MouseClicked(){
@@ -220,5 +247,20 @@ function youWin(){
 
 function youWinMouseClicked(){
   state = 'level 1';
+  points = 0;
+}
+
+function gameOver(){
+  background(222, 46, 33);
+  textSize(80);
+  stroke(255);
+  text('Game Over! You have died 💀', w/2, h/2);
+
+  textSize(30);
+  text('-- click the screen to return to title screen --', w/2, h * 3/4);
+}
+
+function gameOverMouseClicked(){
+  state = 'title';
   points = 0;
 }
