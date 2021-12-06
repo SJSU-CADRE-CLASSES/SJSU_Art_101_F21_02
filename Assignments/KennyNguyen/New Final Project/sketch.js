@@ -3,8 +3,8 @@
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 600;
-let h = 600;
+let w = 1300;
+let h = 575;
 let player;
 let coins = [];
 let playerImg;
@@ -66,10 +66,12 @@ function title(){
   textSize(80);
   stroke(255);
   textAlign(CENTER);
-  text('MY GAME', w/2, h/5);
+  text('Space Invasion', w/2, h/5);
 
   textSize(30);
-  text('click anywhere to start', w/2, h/2);
+  text('Instructions: crash into red planes to earn points', w/2, h/2.25);
+  text('Controls: arrow keys to move, space-bar to stop', w/2, h/1.85);
+  text('click the screen to start', w/2, h/1.25);
 }
 
 function titleMouseClicked(){
