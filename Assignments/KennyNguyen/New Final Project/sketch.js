@@ -61,6 +61,33 @@ function keyPressed(){
   }
 }
 
+function keyReleased(){
+
+  let numberKeysPressed = 0;
+
+  if (keyIsDown(LEFT_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(DOWN_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(UP_ARROW)){
+    numberKeysPressed++;
+  }
+
+  console.log(numberKeysPressed);
+
+  if (numberKeysPressed == 0){
+    player.direction = 'still';
+  }
+}
+
 function title(){
   background(0);
   textSize(80);
@@ -70,7 +97,7 @@ function title(){
 
   textSize(30);
   text('Instructions: crash into red planes to earn points', w/2, h/2.25);
-  text('Controls: arrow keys to move, space-bar to stop', w/2, h/1.85);
+  text('Controls: arrow keys', w/2, h/1.85);
   text('click the screen to start', w/2, h/1.25);
 }
 
@@ -90,6 +117,7 @@ function level1(){
   player.move();
 
   // iterating through coins array to display and move them
+  // using for loop
   for (let i = 0; i < coins.length; i++){
     coins[i].display();
     coins[i].move();
@@ -100,8 +128,10 @@ function level1(){
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
     points++;
-    console.log(points);
     coins.splice(i, 1);
+  } else if (coins[i].y > h){
+    coins.splice(i, 1);
+    // console.log('coin is out of town');
   }
 }
 
