@@ -139,7 +139,7 @@ function level1(){
   }
 }
 
-text(`points: ${points}`, w / 4, h - 30);
+text(`Planes Destroyed: ${points}`, w / 4, h - 30);
 
 }
 
