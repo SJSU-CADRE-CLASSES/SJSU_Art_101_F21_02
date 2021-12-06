@@ -107,7 +107,7 @@ function title(){
   textSize(30);
   text('Objective: Crash into red planes to earn points/Dodge incoming missiles', w/2, h/2.25);
   text('Player Controls: Arrow keys to move', w/2, h/1.85);
-  text('-- click the screen to start --', w/2, h/1.25);
+  text('-- click the screen to begin --', w/2, h/1.25);
 }
 
 function titleMouseClicked(){
