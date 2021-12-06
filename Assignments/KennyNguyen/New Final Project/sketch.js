@@ -7,12 +7,15 @@ let w = 1300;
 let h = 575;
 let player;
 let coins = [];
+let missiles = [];
 let playerImg;
 let coinImg;
+let missileImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor1.png');
   coinImg = loadImage('assets/enemy1.png');
+  missileImg = loadImage('assets/missile1.png');
 }
 
 function setup() {
@@ -28,6 +31,8 @@ function setup() {
 
   // coins = new Coin();
   coins.push(new Coin());
+  // missiles = new Missile();
+  missiles.push(new Missile());
 }
 
 function draw() {
@@ -100,7 +105,7 @@ function title(){
   text('Infinite Warfare', w/2, h/5);
 
   textSize(30);
-  text('Player 1 Instructions: Crash into red planes to earn points', w/2, h/2.25);
+  text('Objective: Crash into red planes to earn points/Dodge incoming missiles', w/2, h/2.25);
   text('Player Controls: Arrow keys to move', w/2, h/1.85);
   text('-- click the screen to start --', w/2, h/1.25);
 }
@@ -117,6 +122,10 @@ function level1(){
     coins.push(new Coin());
   }
 
+  if (random(1) <= 0.01){
+    missiles.push(new Missile());
+  }
+
   player.display();
   player.move();
 
@@ -127,7 +136,14 @@ function level1(){
     coins[i].move();
   }
 
-  // check for collision, if there is a collision increase points by 1 AND splice that coin out of array
+  // iterating through missiles array to display and move them
+  // using for loop
+  for (let i = 0; i < missiles.length; i++){
+    missiles[i].display();
+    missiles[i].move();
+  }
+
+  // check for collision with coins, if there is a collision increase points by 1 AND splice that coin out of array
   // need to iterate backwards through array
   for (let i = coins.length - 1; i >= 0; i--){
   if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
@@ -139,7 +155,19 @@ function level1(){
   }
 }
 
-text(`Planes Destroyed: ${points}`, w / 4, h - 30);
+  // check for collision with missiles, if there is a collision increase points by 1 AND splice that missile out of array
+  // need to iterate backwards through array
+  for (let i = missiles.length - 1; i >= 0; i--){
+  if (dist(player.x, player.y, missiles[i].x, missiles[i].y) <= (player.r + missiles[i].r) / 2){
+    points--;
+    missiles.splice(i, 1);
+  } else if (missiles[i].y > h){
+    missiles.splice(i, 1);
+    // console.log('missile is out of town');
+  }
+}
+
+text(`Points Earned: ${points}`, w / 4, h - 30);
 
 }
 
