@@ -151,9 +151,10 @@ function title(){
   push();
   textSize(20);
   fill(255, 255, 255);
-  text('Player Controls: 🔼 to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+  text('🔼', w/2.205, h/1.44);
+  text('Player Controls:           to MOVE / CTRL key to SHOOT', w/2, h/1.4);
   textSize(20);
-  text('◀️🔽▶️', w/2.205, h/1.314);
+  text('◀️🔽▶️', w/2.205, h/1.35);
   text('-- click the screen to begin --', w/2, h/1.10);
   pop();
 }
@@ -164,7 +165,7 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  background(45, 72, 145);
+  background(bg);
 
   if (random(1) <= 0.01){
     coins.push(new Coin());
