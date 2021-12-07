@@ -7,7 +7,7 @@
 
 let state = 'title';
 let cnv;
-let points = 0;
+let points = 10;
 let w = 1300;
 let h = 575;
 let player;
@@ -272,32 +272,54 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 }
 }
 
-push();
-textSize(15);
-fill(255, 255, 255);
-text('Enemies +1pt, Missiles -10 pts, Lasers -3pts', 200, 30);
-pop();
+  push();
+    textSize(15);
+    fill(255, 255, 255);
+    text('Enemies +1pt, Missiles -10 pts, Lasers -3pts', 200, 30);
+  pop();
 
-push();
-textSize(20);
-fill(255, 255, 255);
-text('Move: 🔼◀️🔽▶️', 108, 70);
-pop();
+  push();
+    textSize(20);
+    fill(255, 255, 255);
+    text('Move:', 48, 80);
+  pop();
 
-push();
-textSize(20);
-fill(255, 255, 255);
-text('Shoot: CTRL', 80, 100);
-pop();
+// 🔼◀️🔽▶️
 
-push();
-textSize(30);
-fill(144, 144, 252);
-text(`Points Earned: ${points}`, w / 7, h - 30);
-pop();
+  push();
+    textSize(20);
+    text('🔼', 135, 68);
+  pop();
+
+  push();
+    textSize(20);
+    text('🔽', 135, 95);
+  pop();
+
+  push();
+    textSize(20);
+    text('◀️', 108, 95);
+  pop();
+
+  push();
+    textSize(20);
+    text('▶️', 162, 95);
+  pop();
+
+  push();
+    textSize(20);
+    fill(255, 255, 255);
+    text('Shoot: CTRL', 270, 80);
+  pop();
+
+  push();
+    textSize(30);
+    fill(144, 144, 252);
+    text(`Points Earned: ${points}`, w / 7, h - 30);
+  pop();
 
   // check point values to win or lose the game
-  if (points <= -1) {
+  if (points <= 0) {
     state = 'game over';
   }
 }
@@ -347,5 +369,5 @@ function gameOver(){
 
 function gameOverMouseClicked(){
   state = 'title';
-  points = 0;
+  points = 10;
 }
