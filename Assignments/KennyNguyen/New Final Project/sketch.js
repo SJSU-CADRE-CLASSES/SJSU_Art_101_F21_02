@@ -26,6 +26,7 @@ function preload(){
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
+  bg = loadImage('assets/galaxy1.png');
   // projectileImg = loadImage('assets/projectile1.png');
 }
 
@@ -127,8 +128,7 @@ function title(){
   textSize(30);
   text('Objective: Shoot enemy planes to earn points!', w/2, h/2.75);
   text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
-  text('Player Controls: ⬆️ Arrow keys to move, Ctrl key to shoot', w/2, h/1.4);
-  text('⬅️⬇️➡️', w/2, h/1.25);
+  text('Player Controls: Arrow keys to move, Ctrl key to shoot', w/2, h/1.4);
   text('-|- click the screen to begin -|-', w/2, h/1.10);
 }
 
