@@ -208,7 +208,7 @@ function level1(){
     lazers.push(new Lazer());
   }
 
-  if (random(3) <= 0.01){
+  if (random(2.5) <= 0.01){
     enemies.push(new Enemy());
   }
 
