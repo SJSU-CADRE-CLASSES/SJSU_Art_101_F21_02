@@ -144,6 +144,7 @@ function title(){
   push();
   textSize(20);
   noStroke();
+  textStyle(ITALIC);
   fill(18, 40, 184);
   text('Created by Kenny Nguyen', w/3, h/4);
   pop();
@@ -164,7 +165,9 @@ function title(){
 
   push();
   textSize(25);
-  fill(144, 144, 252);
+  noStroke();
+  textStyle(BOLD);
+  fill(18, 40, 184);
   text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
   text('Point System: Enemies +1pt, Missiles -10 pts, Lasers -3pts', w/2, h/2);
   pop();
