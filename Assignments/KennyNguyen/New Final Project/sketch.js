@@ -19,7 +19,7 @@ let playerImg;
 let coinImg;
 let missileImg;
 let lazerImg;
-let bg;
+// let bg;
 // let song;
 // let projectileImg;
 
@@ -28,7 +28,7 @@ function preload(){
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
-  bg = loadImage('assets/galaxy1.png');
+  // bg = loadImage('assets/galaxy1.png');
   // song = loadSound ('assets/Album.mp3');
   // projectileImg = loadImage('assets/projectile1.png');
 }
