@@ -8,8 +8,6 @@ class Projectile {
   }
 
   display(){
-    strokeWeight(0);
-    fill(125, 255, 215);
     ellipse(this.x, this.y, this.r, this.r);
     // rect(this.x, this.y, this.r, this.r);
   }
