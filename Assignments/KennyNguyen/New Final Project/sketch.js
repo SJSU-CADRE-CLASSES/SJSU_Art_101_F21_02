@@ -142,10 +142,17 @@ function title(){
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
   push();
+  textSize(20);
+  noStroke();
+  fill(18, 40, 184);
+  text('Created by Kenny Nguyen', w/3, h/4);
+  pop();
+
+  push();
   textSize(25);
   fill(144, 144, 252);
   text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
-  text('Enemies +1pt, Missiles -5 pts, Lasers -3pt', w/2, h/2);
+  text('Enemies +1pt, Missiles -10 pts, Lasers -3pt', w/2, h/2);
   pop();
 
   push();
@@ -249,15 +256,21 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 }
 
 push();
-textSize(20);
+textSize(15);
 fill(255, 255, 255);
-text('Move: 🔼◀️🔽▶️', 120, 40);
+text('Enemies +1pt, Missiles -10 pts, Lasers -3pt', 200, 30);
 pop();
 
 push();
 textSize(20);
 fill(255, 255, 255);
-text('Shoot: CTRL', 93, 70);
+text('Move: 🔼◀️🔽▶️', 108, 70);
+pop();
+
+push();
+textSize(20);
+fill(255, 255, 255);
+text('Shoot: CTRL', 80, 100);
 pop();
 
 push();
@@ -301,14 +314,17 @@ function gameOver(){
   background(222, 46, 33);
   textSize(80);
   stroke(255);
-  fill(0);
+  strokeWeight(5);
+  fill(89, 0, 0);
   text('Game Over! You have died 💀', w/2, h/2);
   pop();
 
   push();
-  textSize(30);
-  fill(255, 255, 255);
-  text('-- click the screen to return to title screen --', w/2, h * 3/4);
+  textSize(40);
+  stroke(242, 78, 78);
+  strokeWeight(5);
+  fill(89, 0, 0);
+  text('-- click anywhere to return to title screen --', w/2, h * 3/4);
   pop();
 }
 
