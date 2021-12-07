@@ -1,21 +1,59 @@
 'use strict';
 
+// to convert to shoot 'em up
+// 1. creating a projectile class
+// 2. change player controls to move from left and right, space bar will launch projectile
+// 3. test collisions between projectile and coins/enemies, instead of player
+
 let state = 'title';
 let cnv;
 let points = 0;
-let w = 600;
-let h = 600;
+let w = 1300;
+let h = 575;
 let player;
-let coin;
+let coins = [];
+let missiles = [];
+let lazers = [];
+let projectiles = [];
+let playerImg;
+let coinImg;
+let missileImg;
+let lazerImg;
+let bg;
+let song;
+// let projectileImg;
+
+function preload(){
+  playerImg = loadImage('assets/raptor2.png');
+  coinImg = loadImage('assets/enemy1.png');
+  missileImg = loadImage('assets/missile1.png');
+  lazerImg = loadImage('assets/lazer1.png');
+  bg = loadImage('assets/galaxy1.png');
+  song = loadSound ('assets/Album.mp3');
+  // projectileImg = loadImage('assets/projectile1.png');
+}
 
 function setup() {
   cnv = createCanvas(w, h);
+  frameRate(240);
+  song.loop();
+
+  imageMode(CENTER);
+  rectMode(CENTER);
 
   textFont('monospace');
 
   player = new Player();
 
-  coin = new Coins();
+  // coins = new Coin();
+  coins.push(new Coin());
+  // missiles = new Missile();
+  missiles.push(new Missile());
+  // lazers = new Lazer();
+  lazers.push(new Lazer());
+  // projectiles = new Projectile();
+  projectiles.push(new Projectile);
+
 }
 
 function draw() {
@@ -33,6 +71,10 @@ function draw() {
       youWin();
       cnv.mouseClicked(youWinMouseClicked);
       break;
+    case 'game over':
+      gameOver();
+      cnv.mouseClicked(gameOverMouseClicked);
+      break;
     default:
       break;
   }
@@ -48,20 +90,72 @@ function keyPressed(){
     player.direction = 'up'
   } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
-  } else if (key = ' ') {
+  } else if (keyCode == CONTROL) {
+    projectiles.push(new Projectile);
+  }
+}
+
+function keyReleased(){
+
+  let numberKeysPressed = 0;
+
+  if (keyIsDown(LEFT_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(RIGHT_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(DOWN_ARROW)){
+    numberKeysPressed++;
+  }
+
+  if (keyIsDown(UP_ARROW)){
+    numberKeysPressed++;
+  }
+
+  console.log(numberKeysPressed);
+
+  if (numberKeysPressed == 0){
     player.direction = 'still';
   }
 }
 
 function title(){
+
+  if (song.isPlaying()) {
+    // .isPlaying() returns a boolean
+
+    song.play();
+    background(0);
+  } else {
+    song.play();
+    background(45, 72, 145);
+  }
+
   background(0);
   textSize(80);
   stroke(255);
   textAlign(CENTER);
-  text('MY GAME', w/2, h/5);
+  fill(144, 144, 252);
+  text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
+  push();
   textSize(30);
-  text('click anywhere to start', w/2, h/2);
+  fill(144, 144, 252);
+  text('Objective: Shoot enemy planes to earn points!', w/2, h/2.75);
+  text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
+  pop();
+
+  push();
+  textSize(20);
+  fill(255, 255, 255);
+  text('Player Controls: 🔼 to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+  textSize(20);
+  text('◀️🔽▶️', w/2.205, h/1.314);
+  text('-- click the screen to begin --', w/2, h/1.10);
+  pop();
 }
 
 function titleMouseClicked(){
@@ -70,22 +164,111 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  background(50, 150, 200);
+  background(45, 72, 145);
+
+  if (random(1) <= 0.01){
+    coins.push(new Coin());
+  }
+
+  if (random(1) <= 0.01){
+    missiles.push(new Missile());
+  }
+
+  if (random(1) <= 0.01){
+    lazers.push(new Lazer());
+  }
 
   player.display();
   player.move();
 
-  coin.display();
-  coin.move();
-
-  // check for collision, if there is a collision increase points by 1
-  if (dist(player.x, player.y, coin.x, coin.y) <= (player.r + coin.r) / 2){
-    points++;
-    console.log(points);
+  // iterating through coins array to display and move them
+  // using for loop
+  for (let i = 0; i < coins.length; i++){
+    coins[i].display();
+    coins[i].move();
   }
 
-text(`points: ${points}`, w/4, h - 30);
+  // iterating through missiles array to display and move them
+  // using for loop
+  for (let i = 0; i < missiles.length; i++){
+    missiles[i].display();
+    missiles[i].move();
+  }
 
+  // iterating through lazers array to display and move them
+  // using for loop
+  for (let i = 0; i < lazers.length; i++){
+    lazers[i].display();
+    lazers[i].move();
+  }
+
+  // iterating through projectiles array to display and move them
+  // using for loop
+  for (let i = 0; i < projectiles.length; i++){
+    projectiles[i].display();
+    projectiles[i].move();
+  }
+
+for(let i = projectiles.length - 1; i >= 0; i--){
+  // check for collision with COINS, if there is a collision increase points by 1 AND splice that coin out of array
+  // need to iterate backwards through array
+  for (let j = coins.length - 1; j >= 0; j--){
+  if (dist(projectiles[i].x, projectiles[i].y, coins[j].x, coins[j].y) <= (projectiles[i].r + coins[j].r) / 2){
+    points++;
+    coins.splice(j, 1);
+  } else if (coins[j].y > h){
+    coins.splice(j, 1);
+    // console.log('coin is out of town');
+  }
+}
+
+  // check for collision with MISSILES, if there is a collision increase points by 1 AND splice that missile out of array
+  // need to iterate backwards through array
+  for (let j = missiles.length - 1; j >= 0; j--){
+  if (dist(player.x, player.y, missiles[j].x, missiles[j].y) <= (player.r + missiles[j].r) / 2){
+    points--;
+    missiles.splice(j, 1);
+  } else if (missiles[j].y > h){
+    missiles.splice(j, 1);
+    // console.log('missile is out of town');
+  }
+}
+
+  // check for collision with LAZERS, if there is a collision increase points by 1 AND splice that lazer out of array
+  // need to iterate backwards through array
+  for (let j = lazers.length - 1; j >= 0; j--){
+  if (dist(player.x, player.y, lazers[j].x, lazers[j].y) <= (player.r + lazers[j].r) / 2){
+    points--;
+    lazers.splice(j, 1);
+  } else if (lazers[j].y > h){
+    lazers.splice(j, 1);
+  // console.log('lazer is out of town');
+  }
+}
+}
+
+push();
+textSize(20);
+fill(255, 255, 255);
+text('Move: 🔼◀️🔽▶️', 120, 40);
+pop();
+
+push();
+textSize(20);
+fill(255, 255, 255);
+text('Shoot: CTRL', 93, 70);
+pop();
+
+push();
+textSize(30);
+fill(144, 144, 252);
+text(`Points Earned: ${points}`, w / 7, h - 30);
+pop();
+
+  // check point values to win or lose the game
+  if (points <= -1) {
+    state = 'game over';
+  }
 }
 
 function level1MouseClicked(){
@@ -109,5 +292,26 @@ function youWin(){
 
 function youWinMouseClicked(){
   state = 'level 1';
+  points = 0;
+}
+
+function gameOver(){
+  push();
+  background(222, 46, 33);
+  textSize(80);
+  stroke(255);
+  fill(0);
+  text('Game Over! You have died 💀', w/2, h/2);
+  pop();
+
+  push();
+  textSize(30);
+  fill(255, 255, 255);
+  text('-- click the screen to return to title screen --', w/2, h * 3/4);
+  pop();
+}
+
+function gameOverMouseClicked(){
+  state = 'title';
   points = 0;
 }
