@@ -20,7 +20,7 @@ let coinImg;
 let missileImg;
 let lazerImg;
 let bg;
-let song;
+// let song;
 // let projectileImg;
 
 function preload(){
@@ -29,14 +29,14 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   bg = loadImage('assets/galaxy1.png');
-  song = loadSound ('assets/Album.mp3');
+  // song = loadSound ('assets/Album.mp3');
   // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
   cnv = createCanvas(w, h);
   frameRate(240);
-  song.loop();
+  // song.loop();
 
   imageMode(CENTER);
   rectMode(CENTER);
@@ -124,15 +124,15 @@ function keyReleased(){
 
 function title(){
 
-  if (song.isPlaying()) {
-    // .isPlaying() returns a boolean
-
-    song.play();
-    background(0);
-  } else {
-    song.play();
-    background(45, 72, 145);
-  }
+  // if (song.isPlaying()) {
+  //   // .isPlaying() returns a boolean
+  //
+  //   song.play();
+  //   background(0);
+  // } else {
+  //   song.play();
+  //   background(45, 72, 145);
+  // }
 
   background(0);
   textSize(80);
