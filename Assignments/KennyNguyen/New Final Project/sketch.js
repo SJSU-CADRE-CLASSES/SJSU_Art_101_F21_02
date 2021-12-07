@@ -142,10 +142,10 @@ function title(){
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
   push();
-  textSize(30);
+  textSize(25);
   fill(144, 144, 252);
-  text('Objective: Shoot enemy planes to earn points!', w/2, h/2.75);
-  text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
+  text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
+  text('Enemies +1pt, Missiles -5 pts, Lasers -3pt', w/2, h/2);
   pop();
 
   push();
@@ -167,15 +167,15 @@ function titleMouseClicked(){
 function level1(){
   background(41, 64, 140);
 
-  if (random(1) <= 0.01){
+  if (random(0.2) <= 0.01){
     coins.push(new Coin());
   }
 
-  if (random(1) <= 0.01){
+  if (random(0.5) <= 0.01){
     missiles.push(new Missile());
   }
 
-  if (random(1) <= 0.01){
+  if (random(0.1) <= 0.01){
     lazers.push(new Lazer());
   }
 
@@ -227,7 +227,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
   // need to iterate backwards through array
   for (let j = missiles.length - 1; j >= 0; j--){
   if (dist(player.x, player.y, missiles[j].x, missiles[j].y) <= (player.r + missiles[j].r) / 2){
-    points--;
+    points -= 10;
     missiles.splice(j, 1);
   } else if (missiles[j].y > h){
     missiles.splice(j, 1);
@@ -239,7 +239,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
   // need to iterate backwards through array
   for (let j = lazers.length - 1; j >= 0; j--){
   if (dist(player.x, player.y, lazers[j].x, lazers[j].y) <= (player.r + lazers[j].r) / 2){
-    points--;
+    points -= 3;
     lazers.splice(j, 1);
   } else if (lazers[j].y > h){
     lazers.splice(j, 1);
