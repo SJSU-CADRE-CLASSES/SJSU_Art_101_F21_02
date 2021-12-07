@@ -152,7 +152,7 @@ function title(){
   textSize(25);
   fill(144, 144, 252);
   text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
-  text('Enemies +1pt, Missiles -10 pts, Lasers -3pt', w/2, h/2);
+  text('Point System: Enemies +1pt, Missiles -10 pts, Lasers -3pt', w/2, h/2);
   pop();
 
   push();
