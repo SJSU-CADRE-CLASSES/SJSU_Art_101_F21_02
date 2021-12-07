@@ -1,13 +1,15 @@
 
 class Projectile {
   constructor(){
-    this.r = 8;
+    this.r = 10;
     this.x = player.x;
-    this.y = player.y;
-    this.speed = 8;
+    this.y = player.y - player.r / 2;
+    this.speed = 10;
   }
 
   display(){
+    strokeWeight(0);
+    fill(125, 255, 215);
     ellipse(this.x, this.y, this.r, this.r);
     // rect(this.x, this.y, this.r, this.r);
   }

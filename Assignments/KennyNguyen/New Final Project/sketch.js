@@ -122,14 +122,14 @@ function title(){
   textSize(80);
   stroke(255);
   textAlign(CENTER);
-  text('Infinite Warfare', w/2, h/5);
+  text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
   textSize(30);
   text('Objective: Crash into enemy planes to earn points!', w/2, h/2.75);
-  text('You will lose points from being hit by missiles and lazers', w/2, h/2.20);
-  text('Player Controls:     ⬆️   Arrow keys to move', w/2, h/1.4);
+  text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
+  text('Player Controls: ⬆️ Arrow keys to move, Ctrl key to shoot', w/2, h/1.4);
   text('⬅️⬇️➡️', w/2, h/1.25);
-  text('-- click the screen to begin --', w/2, h/1.10);
+  text('-|- click the screen to begin -|-', w/2, h/1.10);
 }
 
 function titleMouseClicked(){
@@ -183,40 +183,42 @@ function level1(){
     projectiles[i].move();
   }
 
+for(let i = projectiles.length - 1; i >= 0; i--){
   // check for collision with COINS, if there is a collision increase points by 1 AND splice that coin out of array
   // need to iterate backwards through array
-  for (let i = coins.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
+  for (let j = coins.length - 1; j >= 0; j--){
+  if (dist(projectiles[i].x, projectiles[i].y, coins[j].x, coins[j].y) <= (projectiles[i].r + coins[j].r) / 2){
     points++;
-    coins.splice(i, 1);
-  } else if (coins[i].y > h){
-    coins.splice(i, 1);
+    coins.splice(j, 1);
+  } else if (coins[j].y > h){
+    coins.splice(j, 1);
     // console.log('coin is out of town');
   }
 }
 
   // check for collision with MISSILES, if there is a collision increase points by 1 AND splice that missile out of array
   // need to iterate backwards through array
-  for (let i = missiles.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, missiles[i].x, missiles[i].y) <= (player.r + missiles[i].r) / 2){
+  for (let j = missiles.length - 1; j >= 0; j--){
+  if (dist(player.x, player.y, missiles[j].x, missiles[j].y) <= (player.r + missiles[j].r) / 2){
     points--;
-    missiles.splice(i, 1);
-  } else if (missiles[i].y > h){
-    missiles.splice(i, 1);
+    missiles.splice(j, 1);
+  } else if (missiles[j].y > h){
+    missiles.splice(j, 1);
     // console.log('missile is out of town');
   }
 }
 
   // check for collision with LAZERS, if there is a collision increase points by 1 AND splice that lazer out of array
   // need to iterate backwards through array
-  for (let i = lazers.length - 1; i >= 0; i--){
-  if (dist(player.x, player.y, lazers[i].x, lazers[i].y) <= (player.r + lazers[i].r) / 2){
+  for (let j = lazers.length - 1; j >= 0; j--){
+  if (dist(player.x, player.y, lazers[j].x, lazers[j].y) <= (player.r + lazers[j].r) / 2){
     points--;
-    lazers.splice(i, 1);
-  } else if (lazers[i].y > h){
-    lazers.splice(i, 1);
+    lazers.splice(j, 1);
+  } else if (lazers[j].y > h){
+    lazers.splice(j, 1);
   // console.log('lazer is out of town');
   }
+}
 }
 
 text(`Points Earned: ${points}`, w / 4, h - 30);
