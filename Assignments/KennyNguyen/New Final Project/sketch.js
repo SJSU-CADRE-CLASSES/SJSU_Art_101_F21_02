@@ -14,11 +14,13 @@ let player;
 let coins = [];
 let missiles = [];
 let lazers = [];
+let enemies = [];
 let projectiles = [];
 let playerImg;
 let coinImg;
 let missileImg;
 let lazerImg;
+let enemyImg;
 // let bg;
 // let song;
 // let projectileImg;
@@ -28,6 +30,7 @@ function preload(){
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
+  enemyImg = loadImage('assets/enemy2.png')
   // bg = loadImage('assets/galaxy1.png');
   // song = loadSound ('assets/Album.mp3');
   // projectileImg = loadImage('assets/projectile1.png');
@@ -51,6 +54,8 @@ function setup() {
   missiles.push(new Missile());
   // lazers = new Lazer();
   lazers.push(new Lazer());
+  // enemies = new Lazer();
+  enemies.push(new Enemy());
   // projectiles = new Projectile();
   projectiles.push(new Projectile);
 
@@ -169,7 +174,7 @@ function title(){
   textStyle(BOLD);
   fill(18, 40, 184);
   text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
-  text('Point System: Enemies +1pt, Missiles -10 pts, Lasers -3pts', w/2, h/2);
+  text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', w/2, h/2);
   pop();
 
   push();
@@ -203,6 +208,10 @@ function level1(){
     lazers.push(new Lazer());
   }
 
+  if (random(3) <= 0.01){
+    enemies.push(new Enemy());
+  }
+
   player.display();
   player.move();
 
@@ -225,6 +234,13 @@ function level1(){
   for (let i = 0; i < lazers.length; i++){
     lazers[i].display();
     lazers[i].move();
+  }
+
+  // iterating through enemies array to display and move them
+  // using for loop
+  for (let i = 0; i < enemies.length; i++){
+    enemies[i].display();
+    enemies[i].move();
   }
 
   // iterating through projectiles array to display and move them
@@ -270,12 +286,24 @@ for(let i = projectiles.length - 1; i >= 0; i--){
   // console.log('lazer is out of town');
   }
 }
+  // check for collision with ENEMIES, if there is a collision increase points by 1 AND splice that enemie out of array
+  // need to iterate backwards through array
+  for (let j = enemies.length - 1; j >= 0; j--){
+  if (dist(player.x, player.y, enemies[j].x, enemies[j].y) <= (player.r + enemies[j].r) / 2){
+    points -= 50;
+    enemies.splice(j, 1);
+  } else if (enemies[j].y > h){
+    enemies.splice(j, 1);
+// console.log('enemy is out of town');
+  }
+}
+
 }
 
   push();
     textSize(15);
     fill(255, 255, 255);
-    text('Enemies +1pt, Missiles -10 pts, Lasers -3pts', 200, 30);
+    text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
   pop();
 
   push();
