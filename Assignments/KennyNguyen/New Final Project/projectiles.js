@@ -8,7 +8,7 @@ class Projectile {
   }
 
   display(){
-    ellipse(this.x, this.y, this.r, this.r);
+    rect(this.x, this.y, 3, 30, this.r, this.r);
     // rect(this.x, this.y, this.r, this.r);
   }
 
