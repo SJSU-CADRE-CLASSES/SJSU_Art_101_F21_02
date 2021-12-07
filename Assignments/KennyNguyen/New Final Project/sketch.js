@@ -125,7 +125,7 @@ function title(){
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
   textSize(30);
-  text('Objective: Crash into enemy planes to earn points!', w/2, h/2.75);
+  text('Objective: Shoot enemy planes to earn points!', w/2, h/2.75);
   text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
   text('Player Controls: ⬆️ Arrow keys to move, Ctrl key to shoot', w/2, h/1.4);
   text('⬅️⬇️➡️', w/2, h/1.25);
