@@ -23,7 +23,7 @@ let bg;
 // let projectileImg;
 
 function preload(){
-  playerImg = loadImage('assets/raptor1.png');
+  playerImg = loadImage('assets/raptor2.png');
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
@@ -124,14 +124,24 @@ function title(){
   textSize(80);
   stroke(255);
   textAlign(CENTER);
+  fill(144, 144, 252);
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
+  push();
   textSize(30);
+  fill(144, 144, 252);
   text('Objective: Shoot enemy planes to earn points!', w/2, h/2.75);
   text('You will lose points from colliding with missiles and lasers', w/2, h/2.20);
-  text('Player Controls: 🔼 to MOVE, CTRL key to SHOOT', w/2, h/1.4);
-  text('◀️🔽▶️', w/2.29, h/1.27);
+  pop();
+
+  push();
+  textSize(20);
+  fill(255, 255, 255);
+  text('Player Controls: 🔼 to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+  textSize(20);
+  text('◀️🔽▶️', w/2.205, h/1.314);
   text('-- click the screen to begin --', w/2, h/1.10);
+  pop();
 }
 
 function titleMouseClicked(){
@@ -223,7 +233,23 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 }
 }
 
-text(`Points Earned: ${points}`, w / 4, h - 30);
+push();
+textSize(20);
+fill(255, 255, 255);
+text('Move: 🔼◀️🔽▶️', 120, 40);
+pop();
+
+push();
+textSize(20);
+fill(255, 255, 255);
+text('Shoot: CTRL', 93, 70);
+pop();
+
+push();
+textSize(30);
+fill(144, 144, 252);
+text(`Points Earned: ${points}`, w / 7, h - 30);
+pop();
 
   // check point values to win or lose the game
   if (points <= -1) {
@@ -256,13 +282,19 @@ function youWinMouseClicked(){
 }
 
 function gameOver(){
+  push();
   background(222, 46, 33);
   textSize(80);
   stroke(255);
+  fill(0);
   text('Game Over! You have died 💀', w/2, h/2);
+  pop();
 
+  push();
   textSize(30);
+  fill(255, 255, 255);
   text('-- click the screen to return to title screen --', w/2, h * 3/4);
+  pop();
 }
 
 function gameOverMouseClicked(){
