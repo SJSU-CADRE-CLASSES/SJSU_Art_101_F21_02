@@ -26,7 +26,7 @@ function preload(){
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
-  bg = loadImage('assets/galaxy1.png');
+  // bg = loadImage('assets/galaxy1.png');
   // projectileImg = loadImage('assets/projectile1.png');
 }
 
