@@ -149,6 +149,20 @@ function title(){
   pop();
 
   push();
+  textSize(50);
+  noStroke();
+  fill(18, 40, 184);
+  text('________________________________________', w/2.2, h/30);
+  pop();
+
+  push();
+  textSize(50);
+  noStroke();
+  fill(18, 40, 184);
+  text('________________________________________', w/1.85, h/3.65);
+  pop();
+
+  push();
   textSize(25);
   fill(144, 144, 252);
   text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
