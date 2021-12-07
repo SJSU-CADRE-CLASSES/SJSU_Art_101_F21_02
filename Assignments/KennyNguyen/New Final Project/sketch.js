@@ -29,13 +29,14 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   bg = loadImage('assets/galaxy1.png');
-  song = loadSound ('assets/Song.mp3');
+  song = loadSound ('assets/Album.mp3');
   // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
   cnv = createCanvas(w, h);
   frameRate(240);
+  song.loop();
 
   imageMode(CENTER);
   rectMode(CENTER);
@@ -125,13 +126,12 @@ function title(){
 
   if (song.isPlaying()) {
     // .isPlaying() returns a boolean
-    song.loop();
+
     song.play();
     background(0);
   } else {
     song.play();
     background(45, 72, 145);
-    background(222, 46, 33);
   }
 
   background(0);
