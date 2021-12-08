@@ -143,8 +143,15 @@ function title(){
   textSize(80);
   stroke(255);
   textAlign(CENTER);
-  fill(144, 144, 252);
+  fill(255);
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
+
+  push();
+    textSize(80);
+    stroke(255);
+    fill(144, 144, 252);
+    text('Infinite Warfare', w/2.78, h/4.85);
+  pop();
 
   push();
     textSize(20);
