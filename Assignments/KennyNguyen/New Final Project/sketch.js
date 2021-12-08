@@ -343,7 +343,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
   push();
     textSize(30);
     fill(144, 144, 252);
-    text(`Points Earned: ${points}`, w / 7, h - 30);
+    text(`Score: ${points}`, w / 7, h - 30);
   pop();
 
   // check point values to win or lose the game
