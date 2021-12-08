@@ -173,7 +173,7 @@ function title(){
   noStroke();
   textStyle(BOLD);
   fill(18, 40, 184);
-  text('Objective: Shoot enemy planes and avoid colliding with missiles and lasers!', w/2, h/2.5);
+  text('Objective: Shoot red planes and avoid colliding with missiles, lasers, and black planes!', w/2, h/2.5);
   text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', w/2, h/2);
   pop();
 
