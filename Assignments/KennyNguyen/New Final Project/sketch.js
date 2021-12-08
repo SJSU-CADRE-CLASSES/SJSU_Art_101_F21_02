@@ -147,44 +147,76 @@ function title(){
   text('Infinite Warfare ✈️🚀🌌', w/2, h/5);
 
   push();
-  textSize(20);
-  noStroke();
-  textStyle(ITALIC);
-  fill(18, 40, 184);
-  text('Created by Kenny Nguyen', w/3, h/4);
+    textSize(20);
+    noStroke();
+    textStyle(ITALIC);
+    fill(18, 40, 184);
+    text('Created by Kenny Nguyen', w/3, h/4);
   pop();
 
   push();
-  textSize(50);
-  noStroke();
-  fill(18, 40, 184);
-  text('________________________________________', w/2.2, h/30);
+    textSize(50);
+    noStroke();
+    fill(18, 40, 184);
+    text('________________________________________', w/2.2, h/30);
   pop();
 
   push();
-  textSize(50);
-  noStroke();
-  fill(18, 40, 184);
-  text('________________________________________', w/1.85, h/3.65);
+    textSize(50);
+    noStroke();
+    fill(18, 40, 184);
+    text('________________________________________', w/1.85, h/3.65);
   pop();
 
   push();
-  textSize(25);
-  noStroke();
-  textStyle(BOLD);
-  fill(18, 40, 184);
-  text('Objective: Shoot red planes and avoid colliding with missiles, lasers, and black planes!', w/2, h/2.5);
-  text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', w/2, h/2);
+    textSize(25);
+    noStroke();
+    textStyle(BOLD);
+    fill(18, 40, 184);
+    text('Objective: Shoot red planes and avoid colliding with missiles, lasers, and black planes!', w/2, h/2.5);
+    text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10pts, Black planes -50pts', w/2, h/2);
   pop();
 
   push();
-  textSize(20);
-  fill(255, 255, 255);
-  text('🔼', w/2.205, h/1.44);
-  text('Player Controls:           to MOVE / CTRL key to SHOOT', w/2, h/1.4);
-  textSize(20);
-  text('◀️🔽▶️', w/2.205, h/1.35);
-  text('-- click the screen to begin --', w/2, h/1.10);
+    textSize(25);
+    noStroke();
+    textStyle(BOLD);
+    fill(0, 255, 13);
+    text('+1pt', w/2.8, h/2);
+  pop();
+
+  push();
+    textSize(25);
+    noStroke();
+    textStyle(BOLD);
+    fill(255, 17, 0);
+    text('-3pts', w/2, h/2);
+  pop();
+
+  push();
+    textSize(25);
+    noStroke();
+    textStyle(BOLD);
+    fill(255, 17, 0);
+    text('-10pts', w/1.482, h/2);
+  pop();
+
+  push();
+    textSize(25);
+    noStroke();
+    textStyle(BOLD);
+    fill(255, 17, 0);
+    text('-50pts', w/1.115, h/2);
+  pop();
+
+  push();
+    textSize(20);
+    fill(255, 255, 255);
+    text('🔼', w/2.205, h/1.44);
+    text('Player Controls:           to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+    textSize(20);
+    text('◀️🔽▶️', w/2.205, h/1.35);
+    text('-- click the screen to begin --', w/2, h/1.10);
   pop();
 }
 
