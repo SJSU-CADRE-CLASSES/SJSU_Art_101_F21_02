@@ -301,6 +301,13 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 }
 
   push();
+    textSize(50);
+    stroke(255);
+    fill(144, 144, 252);
+    text('Infinite Warfare', 1000, 70);
+  pop();
+
+  push();
     textSize(15);
     fill(255, 255, 255);
     text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
@@ -311,8 +318,6 @@ for(let i = projectiles.length - 1; i >= 0; i--){
     fill(255, 255, 255);
     text('Move:', 48, 80);
   pop();
-
-// 🔼◀️🔽▶️
 
   push();
     textSize(20);
