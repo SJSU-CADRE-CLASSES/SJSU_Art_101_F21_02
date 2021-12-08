@@ -378,7 +378,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
   pop();
 
   push();
-    textSize(30);
+    textSize(50);
     fill(144, 144, 252);
     text(`Score: ${points}`, w / 7, h - 30);
   pop();
@@ -416,11 +416,24 @@ function youWinMouseClicked(){
 function gameOver(){
   push();
   background(222, 46, 33);
-  textSize(80);
+  textSize(300);
   stroke(255);
   strokeWeight(5);
   fill(89, 0, 0);
-  text('Game Over! You have died 💀', w/2, h/2);
+  text('Game', w/2, h/2.5);
+  pop();
+
+  push();
+  textSize(300);
+  stroke(255);
+  strokeWeight(5);
+  fill(89, 0, 0);
+  text('Over!', w/1.86, h/1.25);
+  pop();
+
+  push();
+  textSize(100);
+  text('💀       💀       💀', w/2, h/1.85)
   pop();
 
   push();
@@ -428,7 +441,7 @@ function gameOver(){
   stroke(242, 78, 78);
   strokeWeight(5);
   fill(89, 0, 0);
-  text('-- click anywhere to return to title screen --', w/2, h * 3/4);
+  text('-- click anywhere to return to title screen --', w/2, h/1.07);
   pop();
 }
 
