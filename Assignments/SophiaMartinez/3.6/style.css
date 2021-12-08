@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 100px auto 0 auto;
+  width: 70%;
+text-align:center;
+  font-family: monospace;
+  font-weight: bold;
+  background-color: rgb(189, 151, 188);
+}
+canvas {
+  margin: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: auto;
+}
