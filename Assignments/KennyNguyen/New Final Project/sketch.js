@@ -386,8 +386,9 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(50);
+    strokeWeight(3);
     fill(144, 144, 252);
-    text(`Score: ${points}`, w / 7, h - 30);
+    text(`Score: ${points} pts`, w / 5, h - 40);
   pop();
 
   // check point values to win or lose the game
@@ -423,24 +424,23 @@ function youWinMouseClicked(){
 function gameOver(){
   push();
   background(222, 46, 33);
-  textSize(300);
+  textSize(200);
   stroke(255);
   strokeWeight(5);
   fill(89, 0, 0);
-  text('Game', w/2, h/2.5);
-  pop();
-
-  push();
-  textSize(300);
-  stroke(255);
-  strokeWeight(5);
-  fill(89, 0, 0);
-  text('Over!', w/1.86, h/1.25);
+  text('Game Over!', w/2, h/3);
   pop();
 
   push();
   textSize(100);
-  text('💀       💀       💀', w/2, h/1.85)
+  text('💀               💀', w/2, h/1.5)
+  pop();
+
+  push();
+    textSize(50);
+    strokeWeight(3);
+    fill(144, 144, 252);
+    text(`Your total score: ${points} pts`, w / 2, h / 1.55);
   pop();
 
   push();
