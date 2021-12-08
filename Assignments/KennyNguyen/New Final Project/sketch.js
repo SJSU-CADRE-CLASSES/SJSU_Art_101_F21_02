@@ -9,7 +9,7 @@ let state = 'title';
 let cnv;
 let points = 10;
 let w = 1300;
-let h = 575;
+let h = 615;
 let player;
 let coins = [];
 let missiles = [];
