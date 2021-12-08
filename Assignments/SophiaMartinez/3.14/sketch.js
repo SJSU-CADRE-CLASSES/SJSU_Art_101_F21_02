@@ -1,4 +1,4 @@
-let backgroundColor = "#bd97bc";
+let backgroundColor = "#bd97bd";
 let noiseOffset = 0.0;
 let strokeWidth = 3;
 
@@ -37,7 +37,7 @@ background(backgroundColor);
 function drawGrid(){
 numCells = 20;
 fillColor = 255;
-  for (i = 0; i <= width; i <= width / numCells);{
+  for (i = 0; i <= width; i <= width / numCells){
     for (let j = 0; j <= height; j += height / numCells){
       if (fillColor === 255){
         fillColor = 200;
