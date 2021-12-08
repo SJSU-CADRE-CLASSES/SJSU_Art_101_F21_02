@@ -158,7 +158,7 @@ function title(){
     noStroke();
     textStyle(ITALIC);
     fill(18, 40, 184);
-    text('Created by Kenny Nguyen', w/3, h/4);
+    text('Created by Kenny Nguyen', w/3, h/3.8);
   pop();
 
   push();
