@@ -26,7 +26,7 @@ function preload (){
   titleImg= loadImage ('assets/bear.png');
   berriesImg= loadImage ('assets/berries.png');
   queenImg= loadImage ('assets/queenbee.png');
-  youLostImg= loadImage ('assets/untitled-9.png');
+  youLostImg= loadImage ('assets/Untitled-9.png');
   youWinImg= loadImage ('assets/victory.png');
 
 
@@ -44,6 +44,9 @@ textFont ('blockhead ot');
 
 player = new Player();
 coins = new Coins();
+enemies = new Enemy();
+berries = new Boost ();
+queen = new Bomb ();
 
 }
 

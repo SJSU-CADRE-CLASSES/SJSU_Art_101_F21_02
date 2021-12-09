@@ -1,5 +1,5 @@
 
-class Coins {
+class Enemy {
   constructor (){
     this.r = 50
     this.x = random (w);
@@ -7,7 +7,7 @@ class Coins {
   }
 
   display(){
-    image(coinsImg, this.x, this.y, this.r, this.r)
+    image(enemiesImg, this.x, this.y, this.r, this.r)
   }
   move(){
     this.y++;
