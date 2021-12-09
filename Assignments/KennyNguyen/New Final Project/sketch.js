@@ -21,19 +21,19 @@ let coinImg;
 let missileImg;
 let lazerImg;
 let enemyImg;
-// let bg;
+let bg1;
+let bg2;
 // let song;
-// let projectileImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor2.png');
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
-  enemyImg = loadImage('assets/enemy2.png')
-  // bg = loadImage('assets/galaxy1.png');
+  enemyImg = loadImage('assets/enemy2.png');
+  bg1 = loadImage('assets/galaxy3.gif');
+  bg2 = loadImage('assets/galaxy3.gif');
   // song = loadSound ('assets/Album.mp3');
-  // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
@@ -41,7 +41,7 @@ function setup() {
   frameRate(240);
   // song.loop();
 
-  imageMode(CENTER);
+  // imageMode(CORNER);
   rectMode(CENTER);
 
   textFont('monospace');
@@ -58,7 +58,6 @@ function setup() {
   enemies.push(new Enemy());
   // projectiles = new Projectile();
   projectiles.push(new Projectile);
-
 }
 
 function draw() {
@@ -139,7 +138,8 @@ function title(){
   //   background(45, 72, 145);
   // }
 
-  background(0);
+  imageMode(CORNER);
+  background(bg1);
   textSize(80);
   stroke(255);
   textAlign(CENTER);
@@ -229,11 +229,12 @@ function title(){
 
 function titleMouseClicked(){
     console.log('canvas is clicked on title page');
-    state = 'level 1'
+    state = 'level 1';
 }
 
 function level1(){
-  background(41, 64, 140);
+  imageMode(CORNER);
+  background(bg2);
 
   if (random(0.2) <= 0.01){
     coins.push(new Coin());
@@ -249,6 +250,13 @@ function level1(){
 
   if (random(2.5) <= 0.01){
     enemies.push(new Enemy());
+  }
+
+  // iterating through projectiles array to display and move them
+  // using for loop
+  for (let i = 0; i < projectiles.length; i++){
+    projectiles[i].display();
+    projectiles[i].move();
   }
 
   player.display();
@@ -280,13 +288,6 @@ function level1(){
   for (let i = 0; i < enemies.length; i++){
     enemies[i].display();
     enemies[i].move();
-  }
-
-  // iterating through projectiles array to display and move them
-  // using for loop
-  for (let i = 0; i < projectiles.length; i++){
-    projectiles[i].display();
-    projectiles[i].move();
   }
 
 for(let i = projectiles.length - 1; i >= 0; i--){
@@ -348,13 +349,14 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(15);
-    fill(255, 255, 255);
+    noStroke();
+    fill(0);
     text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
   pop();
 
   push();
     textSize(20);
-    fill(255, 255, 255);
+    fill(0);
     text('Move:', 48, 80);
   pop();
 
@@ -380,7 +382,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(20);
-    fill(255, 255, 255);
+    fill(0);
     text('Shoot: CTRL', 270, 80);
   pop();
 
@@ -432,23 +434,23 @@ function gameOver(){
   pop();
 
   push();
-  textSize(100);
-  text('💀               💀', w/2, h/1.5)
+    textSize(100);
+    text('💀               💀', w/2, h/1.5);
   pop();
 
   push();
     textSize(50);
     strokeWeight(3);
     fill(144, 144, 252);
-    text(`Your total score: ${points} pts`, w / 2, h / 1.55);
+    text(`Your final score: ${points} pts`, w / 2, h / 1.55);
   pop();
 
   push();
-  textSize(40);
-  stroke(242, 78, 78);
-  strokeWeight(5);
-  fill(89, 0, 0);
-  text('-- click anywhere to return to title screen --', w/2, h/1.07);
+    textSize(40);
+    stroke(242, 78, 78);
+    strokeWeight(5);
+    fill(89, 0, 0);
+    text('-- click anywhere to return to title screen --', w/2, h/1.07);
   pop();
 }
 

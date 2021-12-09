@@ -8,6 +8,7 @@ class Projectile {
   }
 
   display(){
+    imageMode(CENTER);
     push();
     strokeWeight(1);
     stroke(0, 208, 255);
