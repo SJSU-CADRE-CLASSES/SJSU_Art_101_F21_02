@@ -31,8 +31,8 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   enemyImg = loadImage('assets/enemy2.png');
-  bg1 = loadImage('assets/city3a.jpg');
-  bg2 = loadImage('assets/city3b.jpg');
+  bg1 = loadImage('assets/galaxy7a.jpg');
+  bg2 = loadImage('assets/galaxy7b.jpg');
   // song = loadSound ('assets/Album.mp3');
 }
 
