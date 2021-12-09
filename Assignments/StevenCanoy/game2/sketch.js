@@ -14,7 +14,7 @@ function setup() {
   createCanvas(600, 400);
   x = random(5, 390);
   y = 400;
-  speed = random(4, 8);
+  speed = random(4, 5);
   speed2 = random(-7,7);
   score=0;
   shot = false;
