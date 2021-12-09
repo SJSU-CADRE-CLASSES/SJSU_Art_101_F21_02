@@ -16,6 +16,8 @@ let berriesImg;
 let queen = [];
 let queenImg;
 
+
+
 function preload (){
   playerImg= loadImage('assets/mishkabear.png');
   coinsImg= loadImage ('assets/complex_honeycomb.png');
@@ -23,6 +25,10 @@ function preload (){
   titleImg= loadImage ('assets/bear.png');
   berriesImg= loadImage ('assets/berries.png');
   queenImg= loadImage ('assets/queenbee.png');
+  youLostImg= loadImage ('assets/untitled-9.png');
+  youWinImg= loadImage ('assets/victory.png');
+  
+
 }
 
 function setup() {
@@ -32,7 +38,7 @@ function setup() {
 imageMode(CENTER);
 rectMode (CENTER);
 
-textFont ('gill sans');
+textFont ('blockhead ot');
 
 
 player = new Player();
@@ -42,6 +48,9 @@ berries.push (new Boost());
 queen.push (new Bomb());
 
 }
+
+
+
 
 function draw() {
 
@@ -109,14 +118,16 @@ function title(){
   background(248,213,8);
 image (titleImg, w/ 2, h/1);
 
-  textSize(120);
+  textSize(135);
   fill (90,64,27)
 noStroke();
   textAlign (CENTER);
-  text('MISHKA', w/2, h/3);
+  text('MISHKA', w/2, h/3.5);
   textSize (30);
-  text ('click anywhere to start', w/2, h/2);
-
+  text ('collect honey and berries', w/2., h/2);
+  text ('watch out for bees!', w/2., h/1.7);
+  textSize (45);
+  text ('click to begin', w/2, h/2.5);
 }
 
 function titleMouseClicked(){
@@ -125,18 +136,18 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  background (30, 150,150)
+  background (80, 150,170)
 
-  if (random (1) <= 0.02){
+  if (random (1) <= 0.01){
       coins.push(new Coin());
   }
-  if (random (1) <= 0.03){
+  if (random (1) <= 0.02){
       enemies.push(new Enemy());
   }
   if (random (1) <= 0.0003){
       berries.push(new Boost());
   }
-  if (random (1) <= 0.0005){
+  if (random (1) <= 0.0009){
       queen.push(new Bomb());
   }
 
@@ -207,7 +218,7 @@ for (let i= queen.length -1; i >= 0; i --){
 }
 }
 
-     text (`health: ${points}`, w/7, h/10);
+     text (`health: ${points}`, w/5, h/10);
      if (points >= 20){
        state = "you win"
      } else if (points <=0){
@@ -227,11 +238,12 @@ function level1MouseClicked (){
 
 function youWin (){
   background(248,213,8);
+  image (youWinImg, w/2, h/1.5);
   textSize(120);
   noStroke();
-  text('You Won!',w/2, h/2);
+  text('You Won!',w/2, h/4);
   textSize (30);
-  text ('click anywhere to restart',w/2, h *3/4);
+  text ('click anywhere to restart',w/2, h/3);
 }
 
 function youWinMouseClicked (){
@@ -241,12 +253,12 @@ function youWinMouseClicked (){
 
 function youLost (){
   background(240,67,35);
+  image (youLostImg, w/ 2, h/2);
   textSize(100);
 noStroke();
-  text('Game Over',w/2, h/2);
-
+  text('GAME OVER',w/2, h/4);
   textSize (30);
-  text ('click anywhere to try again',w/2, h *3/4);
+  text ('click anywhere to try again',w/2, h/1.1);
 }
 
 function youLostMouseClicked (){
