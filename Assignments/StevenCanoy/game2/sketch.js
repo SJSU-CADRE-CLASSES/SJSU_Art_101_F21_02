@@ -89,7 +89,7 @@ function draw() {
 
 function aim(i, o) {
   push();
-  stroke(20);
+  stroke(2);
   fill(0, 0, 0, 0);
   ellipse(i, o, 15);
   ellipse(i, o, 50);
@@ -105,7 +105,7 @@ function aim(i, o) {
 function target1(q) {
   noStroke();
   fill(100, 200, 100)
-  //ellipse(x, y, 50, 50);
+  //Target image
   image(q,x-50,y-50,100,100);
 
 }
