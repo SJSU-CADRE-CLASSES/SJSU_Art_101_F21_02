@@ -9,12 +9,7 @@ function setup(){
 }
 
 function gotData(giphy){
-  for (var i = 0; i < giphy.data.length; i++){
-  createImg(data.data[0].images.original.url);
-}
-}
-
-function draw(){
-
-
+  // for (var i = 0; i < giphy.data.length; i++){
+  createImg(giphy.data[0].images.original.url);
+// }
 }
