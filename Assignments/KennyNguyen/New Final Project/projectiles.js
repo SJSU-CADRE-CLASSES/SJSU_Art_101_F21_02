@@ -3,7 +3,7 @@ class Projectile {
   constructor(){
     this.r = 10;
     this.x = player.x;
-    this.y = player.y - player.r / 1.35;
+    this.y = player.y - player.r / 2;
     this.speed = 10;
   }
 

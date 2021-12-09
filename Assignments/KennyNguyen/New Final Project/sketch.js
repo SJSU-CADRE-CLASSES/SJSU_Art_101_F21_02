@@ -21,8 +21,8 @@ let coinImg;
 let missileImg;
 let lazerImg;
 let enemyImg;
-let bg1;
-let bg2;
+// let bg1;
+// let bg2;
 // let song;
 // let projectileImg;
 
@@ -32,15 +32,14 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   enemyImg = loadImage('assets/enemy2.png');
-  bg1 = loadImage('assets/galaxy1.png');
-  bg2 = loadImage('assets/galaxy1.png');
+  // bg1 = loadImage('assets/galaxy1.png');
+  // bg2 = loadImage('assets/galaxy1.png');
   // song = loadSound ('assets/Album.mp3');
   // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
   cnv = createCanvas(w, h);
-  frameRate(240);
   // song.loop();
 
   imageMode(CENTER);
@@ -253,6 +252,13 @@ function level1(){
     enemies.push(new Enemy());
   }
 
+  // iterating through projectiles array to display and move them
+  // using for loop
+  for (let i = 0; i < projectiles.length; i++){
+    projectiles[i].display();
+    projectiles[i].move();
+  }
+
   player.display();
   player.move();
 
@@ -282,13 +288,6 @@ function level1(){
   for (let i = 0; i < enemies.length; i++){
     enemies[i].display();
     enemies[i].move();
-  }
-
-  // iterating through projectiles array to display and move them
-  // using for loop
-  for (let i = 0; i < projectiles.length; i++){
-    projectiles[i].display();
-    projectiles[i].move();
   }
 
 for(let i = projectiles.length - 1; i >= 0; i--){
