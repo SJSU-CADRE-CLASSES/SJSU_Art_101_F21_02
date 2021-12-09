@@ -40,6 +40,7 @@ function preload(){
 
 function setup() {
   cnv = createCanvas(w, h);
+  frameRate(240);
   // song.loop();
 
   imageMode(CENTER);
