@@ -1,15 +1,16 @@
 var api = "https://api.giphy.com/v1/gifs/search?";
-var apiKey = "xxe80RCCzSM7bZuMJP6hTGDIs78CjJFc";
-var query = "&q=airport";
+var apiKey = "&api_key=xxe80RCCzSM7bZuMJP6hTGDIs78CjJFc"; //API key
+var query = "&q=hamster"; //searches GIPHY for specific gif
 
 function setup(){
-  noCanvas();
-  var url = api + apiKey + query;
-  loadJSON(url, gotData);
+  noCanvas(); //doesn't limit p5js
+  var url = api + apiKey + query; //creates a URL
+  loadJSON(url, gotData); //loadJSON is a p5js function with callback that is
+  //..fullfilled with data from API
 }
 
 function gotData(giphy){
-  // for (var i = 0; i < giphy.data.length; i++){
-  createImg(giphy.data[0].images.original.url);
-// }
+  for (var i = 0; i < giphy.data.length; i++){ //array of gifs
+  createImg(giphy.data[i].images.original.url); //source of gif
+}
 }
