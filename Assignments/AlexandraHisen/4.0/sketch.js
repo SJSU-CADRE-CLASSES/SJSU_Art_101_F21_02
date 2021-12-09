@@ -1,8 +1,9 @@
 'use scrict';
 
+
 let state = 'title';
 let cnv;
-let points = 5;
+let points = 0;
 let w = 600;
 let h = 600
 let player;
@@ -27,7 +28,7 @@ function preload (){
   queenImg= loadImage ('assets/queenbee.png');
   youLostImg= loadImage ('assets/untitled-9.png');
   youWinImg= loadImage ('assets/victory.png');
-  
+
 
 }
 
@@ -42,10 +43,7 @@ textFont ('blockhead ot');
 
 
 player = new Player();
-coins.push (new Coin());
-enemies.push (new Enemy());
-berries.push (new Boost());
-queen.push (new Bomb());
+coins = new Coins();
 
 }
 
@@ -67,9 +65,6 @@ function draw() {
       youWin();
     cnv.mouseClicked (youWinMouseClicked)
     break;
-    case 'you lost':
-      youLost();
-    cnv.mouseClicked (youWinMouseClicked)
     default:
     break;
   }
@@ -86,30 +81,6 @@ function keyPressed (){
   }else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
   }else if (key = ' '){
-    player.direction = 'still'
-  }
-}
-
-function keyReleased (){
-  let numberKeysPressed = 0;
-
-  if (keyIsDown (LEFT_ARROW)){
-    numberKeysPressed ++;
-  }
-
-  if (keyIsDown (RIGHT_ARROW)){
-    numberKeysPressed ++;
-  }
-
-  if (keyIsDown (UP_ARROW)){
-    numberKeysPressed ++;
-  }
-
-  if (keyIsDown (DOWN_ARROW)){
-    numberKeysPressed ++;
-  }
-  console.log(numberKeysPressed);
-  if (numberKeysPressed == 0){
     player.direction = 'still'
   }
 }
@@ -228,12 +199,12 @@ for (let i= queen.length -1; i >= 0; i --){
 
 
 function level1MouseClicked (){
-  // points ++;
-  // console.log ('points = ' + points);
-  //
-  // if (points >= 10) {
-  //   state = 'you win';
-  // }
+  points ++;
+  console.log ('points = ' + points);
+
+  if (points >= 10) {
+    state = 'you win';
+  }
 }
 
 function youWin (){

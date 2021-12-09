@@ -1,78 +1,57 @@
-'use strict';
-
-let state = 'title';
-let cnv;
-let points = 0;
-let w = 600;
-let h = 600;
+let video;
+let poseNet;
+let pose;
+let skeleton;
 
 function setup() {
-  cnv = createCanvas(w, h);
-  textFont('monospace');
-
+  createCanvas(640, 480);
+  video = createCapture(VIDEO);
+  video.hide();
+  poseNet = ml5.poseNet(video, modelLoaded);
+  poseNet.on('pose', gotPoses);
 }
+
+
+function gotPoses(poses) {
+  // console.log(poses);
+  if (poses.length > 0) {
+    pose = poses[0].pose;
+    skeleton = poses[0].skeleton;
+  }
+}
+
+function modelLoaded() {
+  console.log('poseNet ready');
+}
+
 
 function draw() {
+  image(video, 0, 0);
 
-  switch (state) {
-    case 'title':
-      title();
-      cnv.mouseClicked(titleMouseClicked);
-      break;
-    case 'level 1':
-        level1();
-        cnv.mouseClicked(level1MouseClicked);
-        break;
-      case 'you win':
-      youWin();
-      cnv.mouseClicked(youWinMouseClicked);
-      break;
-      default:
-        break;
+  if (pose) {
+    let eyeR = pose.rightEye;
+    let eyeL = pose.leftEye;
+    let d = dist(eyeR.x, eyeR.y, eyeL.x, eyeL.y);
+
+    fill(255, 0, 0);
+    square(pose.nose.x, pose.nose.y, d);
+    fill(0, 0, 255);
+    ellipse(pose.rightWrist.x, pose.rightWrist.y, 32);
+    ellipse(pose.leftWrist.x, pose.leftWrist.y, 32);
+
+    for (let i = 0; i < pose.keypoints.length; i++) {
+      let x = pose.keypoints[i].position.x;
+      let y = pose.keypoints[i].position.y;
+      fill(0, 255, 0);
+      square(x, y, 16, 16);
+
+    }
+    for (let i = 0; i < skeleton.length; i++) {
+      let a = skeleton[i][0];
+      let b = skeleton[i][0];
+      strokeWeight(2);
+      stroke(255);
+      line(a.position.x, a.position.y,b.position.x,b.position.y);
+    }
   }
-
-}
-
-function title() {
-  background(100);
-  textSize(40);
-  fill(255);
-  text('FOOLS QUEST', w/2, h/5);
-  textAlign(CENTER);
-  textSize(30);
-  text('click anywhere to start', w/2, h/2);
-}
-
-
-function titleMouseClicked() {
-  console.log('canvas is clicked on title page');
-  state = 'level 1'
-}
-
-function level1() {
-  background(50, 150, 200);
-  text('click 4 points', w/2, h - 30);
-}
-
-function level1MouseClicked() {
-  points++;
-  console.log('points = '+ points);
-
-  if (points >= 10){
-    state = 'you win';
-  }
-}
-
-function youWin(){
-  background(255, 50, 80);
-  textSize(40);
-  stroke(255);
-  text('YOU WIN', 100, 100);
-  textSize(30);
-  text('click anywhere to restart', w/2, h* 3/4);
-}
-
-function youWinMouseClicked(){
-  state = 'level 1';
-  points = 0;
 }
