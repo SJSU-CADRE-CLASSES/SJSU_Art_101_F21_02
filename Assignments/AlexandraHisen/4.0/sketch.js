@@ -27,7 +27,7 @@ function preload (){
   queenImg= loadImage ('assets/queenbee.png');
   youLostImg= loadImage ('assets/untitled-9.png');
   youWinImg= loadImage ('assets/victory.png');
-  
+
 
 }
 
