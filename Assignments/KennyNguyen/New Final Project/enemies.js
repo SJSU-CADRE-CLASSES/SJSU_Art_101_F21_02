@@ -8,6 +8,7 @@ class Enemy {
   }
 
   display(){
+    imageMode(CENTER);
     image(enemyImg, this.x, this.y, this.r, this.r)
     // rect(this.x, this.y, this.r, this.r);
   }
