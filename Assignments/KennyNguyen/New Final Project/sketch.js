@@ -31,8 +31,8 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   enemyImg = loadImage('assets/enemy2.png');
-  bg1 = loadImage('assets/galaxy3.gif');
-  bg2 = loadImage('assets/galaxy3.gif');
+  bg1 = loadImage('assets/city3a.jpg');
+  bg2 = loadImage('assets/city3b.jpg');
   // song = loadSound ('assets/Album.mp3');
 }
 
@@ -141,6 +141,7 @@ function title(){
   imageMode(CORNER);
   background(bg1);
   textSize(80);
+  textFont('Helvetica');
   stroke(255);
   textAlign(CENTER);
   fill(255);
@@ -148,6 +149,7 @@ function title(){
 
   push();
     textSize(80);
+    textFont('Helvetica');
     stroke(255);
     fill(144, 144, 252);
     text('Infinite Warfare', w/2.78, h/4.85);
@@ -155,10 +157,11 @@ function title(){
 
   push();
     textSize(20);
+    textFont('Helvetica');
     noStroke();
-    textStyle(ITALIC);
-    fill(18, 40, 184);
-    text('Created by Kenny Nguyen', w/3, h/3.8);
+    textStyle(BOLDITALIC);
+    fill(64, 117, 230);
+    text('Created by Kenny Nguyen', w/2.2, h/3.8);
   pop();
 
   push();
@@ -177,53 +180,60 @@ function title(){
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
-    fill(18, 40, 184);
+    fill(112, 158, 255);
     text('Objective: Shoot red planes and avoid colliding with missiles, lasers, and black planes!', w/2, h/2.5);
     text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10pts, Black planes -50pts', w/2, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(0, 255, 13);
-    text('+1pt', w/2.8, h/2);
+    text('+1pt', w/2.56, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-3pts', w/2, h/2);
+    text('-3pts', w/1.957, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-10pts', w/1.482, h/2);
+    text('-10pts', w/1.531, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-50pts', w/1.115, h/2);
+    text('-50pts', w/1.186, h/2);
   pop();
 
   push();
     textSize(20);
+    textFont('Helvetica');
     fill(255, 255, 255);
     text('🔼', w/2.205, h/1.44);
-    text('Player Controls:           to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+    text('Player Controls:                      to MOVE / CTRL key to SHOOT', w/1.98, h/1.4);
     textSize(20);
     text('◀️🔽▶️', w/2.205, h/1.35);
-    text('-- click the screen to begin --', w/2, h/1.10);
+    text('-- click the screen to begin --', w/4, h/1.15);
+    text('-- click the screen to begin --', w/1.35, h/1.15);
   pop();
 }
 
@@ -234,7 +244,7 @@ function titleMouseClicked(){
 
 function level1(){
   imageMode(CORNER);
-  background(bg2);
+  background(bg1);
 
   if (random(0.2) <= 0.01){
     coins.push(new Coin());
@@ -342,21 +352,25 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(50);
+    textFont('Helvetica');
     stroke(255);
     fill(144, 144, 252);
     text('Infinite Warfare', 1000, 70);
   pop();
 
   push();
-    textSize(15);
+    textSize(17);
+    textFont('Helvetica');
+    textStyle(BOLD);
     noStroke();
-    fill(0);
-    text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
+    fill(255, 255, 255);
+    text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 290, 30);
   pop();
 
   push();
     textSize(20);
-    fill(0);
+    textFont('Helvetica');
+    fill(255, 255, 255);
     text('Move:', 48, 80);
   pop();
 
@@ -382,12 +396,14 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(20);
-    fill(0);
-    text('Shoot: CTRL', 270, 80);
+    textFont('Helvetica');
+    fill(255, 255, 255);
+    text('Shoot: CTRL', 260, 80);
   pop();
 
   push();
     textSize(50);
+    textFont('Helvetica');
     strokeWeight(3);
     fill(144, 144, 252);
     text(`Score: ${points} pts`, w / 5, h - 40);
@@ -424,9 +440,11 @@ function youWinMouseClicked(){
 }
 
 function gameOver(){
+  imageMode(CORNER);
   push();
-  background(222, 46, 33);
+  background(bg2);
   textSize(200);
+  textFont('Helvetica');
   stroke(255);
   strokeWeight(5);
   fill(89, 0, 0);
@@ -435,11 +453,13 @@ function gameOver(){
 
   push();
     textSize(100);
-    text('💀               💀', w/2, h/1.5);
+    textFont('Helvetica');
+    text('💀                   💀', w/2, h/1.5);
   pop();
 
   push();
     textSize(50);
+    textFont('Helvetica');
     strokeWeight(3);
     fill(144, 144, 252);
     text(`Your final score: ${points} pts`, w / 2, h / 1.55);
@@ -447,6 +467,7 @@ function gameOver(){
 
   push();
     textSize(40);
+    textFont('Helvetica');
     stroke(242, 78, 78);
     strokeWeight(5);
     fill(89, 0, 0);
