@@ -8,6 +8,7 @@ class Player {
   }
 
   display() {
+    imageMode(CENTER);
     image(playerImg, this.x, this.y, this.r, this.r);
     // rect(this.x, this.y, this.r, this.r);
   }

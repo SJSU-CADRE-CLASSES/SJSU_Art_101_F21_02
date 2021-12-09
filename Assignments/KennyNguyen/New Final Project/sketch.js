@@ -21,10 +21,9 @@ let coinImg;
 let missileImg;
 let lazerImg;
 let enemyImg;
-// let bg1;
-// let bg2;
+let bg1;
+let bg2;
 // let song;
-// let projectileImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor2.png');
@@ -32,10 +31,9 @@ function preload(){
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
   enemyImg = loadImage('assets/enemy2.png');
-  // bg1 = loadImage('assets/galaxy1.png');
-  // bg2 = loadImage('assets/galaxy1.png');
+  bg1 = loadImage('assets/galaxy3.gif');
+  bg2 = loadImage('assets/galaxy3.gif');
   // song = loadSound ('assets/Album.mp3');
-  // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
@@ -43,7 +41,7 @@ function setup() {
   frameRate(240);
   // song.loop();
 
-  imageMode(CENTER);
+  // imageMode(CORNER);
   rectMode(CENTER);
 
   textFont('monospace');
@@ -140,7 +138,8 @@ function title(){
   //   background(45, 72, 145);
   // }
 
-  background(0);
+  imageMode(CORNER);
+  background(bg1);
   textSize(80);
   stroke(255);
   textAlign(CENTER);
@@ -234,8 +233,8 @@ function titleMouseClicked(){
 }
 
 function level1(){
-  // background(bg2);
-  background(29, 27, 158);
+  imageMode(CORNER);
+  background(bg2);
 
   if (random(0.2) <= 0.01){
     coins.push(new Coin());
@@ -350,13 +349,14 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(15);
-    fill(255, 255, 255);
+    noStroke();
+    fill(0);
     text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
   pop();
 
   push();
     textSize(20);
-    fill(255, 255, 255);
+    fill(0);
     text('Move:', 48, 80);
   pop();
 
@@ -382,7 +382,7 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(20);
-    fill(255, 255, 255);
+    fill(0);
     text('Shoot: CTRL', 270, 80);
   pop();
 
