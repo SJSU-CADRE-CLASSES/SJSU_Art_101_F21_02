@@ -1,18 +1,14 @@
 'use strict';
 
-let player;
 let state = 'title';
 let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
 
-
 function setup() {
   cnv = createCanvas(w, h);
   textFont('monospace');
-
- player = new Player();
 
 }
 
@@ -55,9 +51,7 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
-  // text('click 4 points', w/2, h - 30);
-
-  player.display();
+  text('click 4 points', w/2, h - 30);
 }
 
 function level1MouseClicked() {
