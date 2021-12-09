@@ -21,19 +21,19 @@ let coinImg;
 let missileImg;
 let lazerImg;
 let enemyImg;
-// let bg;
+let bg1;
+let bg2;
 // let song;
-// let projectileImg;
 
 function preload(){
   playerImg = loadImage('assets/raptor2.png');
   coinImg = loadImage('assets/enemy1.png');
   missileImg = loadImage('assets/missile1.png');
   lazerImg = loadImage('assets/lazer1.png');
-  enemyImg = loadImage('assets/enemy2.png')
-  // bg = loadImage('assets/galaxy1.png');
+  enemyImg = loadImage('assets/enemy2.png');
+  bg1 = loadImage('assets/city3a.jpg');
+  bg2 = loadImage('assets/city3b.jpg');
   // song = loadSound ('assets/Album.mp3');
-  // projectileImg = loadImage('assets/projectile1.png');
 }
 
 function setup() {
@@ -41,7 +41,7 @@ function setup() {
   frameRate(240);
   // song.loop();
 
-  imageMode(CENTER);
+  // imageMode(CORNER);
   rectMode(CENTER);
 
   textFont('monospace');
@@ -58,7 +58,6 @@ function setup() {
   enemies.push(new Enemy());
   // projectiles = new Projectile();
   projectiles.push(new Projectile);
-
 }
 
 function draw() {
@@ -139,8 +138,10 @@ function title(){
   //   background(45, 72, 145);
   // }
 
-  background(0);
+  imageMode(CORNER);
+  background(bg1);
   textSize(80);
+  textFont('Helvetica');
   stroke(255);
   textAlign(CENTER);
   fill(255);
@@ -148,6 +149,7 @@ function title(){
 
   push();
     textSize(80);
+    textFont('Helvetica');
     stroke(255);
     fill(144, 144, 252);
     text('Infinite Warfare', w/2.78, h/4.85);
@@ -155,10 +157,11 @@ function title(){
 
   push();
     textSize(20);
+    textFont('Helvetica');
     noStroke();
-    textStyle(ITALIC);
-    fill(18, 40, 184);
-    text('Created by Kenny Nguyen', w/3, h/3.8);
+    textStyle(BOLDITALIC);
+    fill(64, 117, 230);
+    text('Created by Kenny Nguyen', w/2.2, h/3.8);
   pop();
 
   push();
@@ -177,63 +180,71 @@ function title(){
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
-    fill(18, 40, 184);
+    fill(112, 158, 255);
     text('Objective: Shoot red planes and avoid colliding with missiles, lasers, and black planes!', w/2, h/2.5);
     text('Point System: Red planes +1pt, Lasers -3pts, Missiles -10pts, Black planes -50pts', w/2, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(0, 255, 13);
-    text('+1pt', w/2.8, h/2);
+    text('+1pt', w/2.56, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-3pts', w/2, h/2);
+    text('-3pts', w/1.957, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-10pts', w/1.482, h/2);
+    text('-10pts', w/1.531, h/2);
   pop();
 
   push();
     textSize(25);
+    textFont('Helvetica');
     noStroke();
     textStyle(BOLD);
     fill(255, 17, 0);
-    text('-50pts', w/1.115, h/2);
+    text('-50pts', w/1.186, h/2);
   pop();
 
   push();
     textSize(20);
+    textFont('Helvetica');
     fill(255, 255, 255);
     text('🔼', w/2.205, h/1.44);
-    text('Player Controls:           to MOVE / CTRL key to SHOOT', w/2, h/1.4);
+    text('Player Controls:                      to MOVE / CTRL key to SHOOT', w/1.98, h/1.4);
     textSize(20);
     text('◀️🔽▶️', w/2.205, h/1.35);
-    text('-- click the screen to begin --', w/2, h/1.10);
+    text('-- click the screen to begin --', w/4, h/1.15);
+    text('-- click the screen to begin --', w/1.35, h/1.15);
   pop();
 }
 
 function titleMouseClicked(){
     console.log('canvas is clicked on title page');
-    state = 'level 1'
+    state = 'level 1';
 }
 
 function level1(){
-  background(41, 64, 140);
+  imageMode(CORNER);
+  background(bg1);
 
   if (random(0.2) <= 0.01){
     coins.push(new Coin());
@@ -249,6 +260,13 @@ function level1(){
 
   if (random(2.5) <= 0.01){
     enemies.push(new Enemy());
+  }
+
+  // iterating through projectiles array to display and move them
+  // using for loop
+  for (let i = 0; i < projectiles.length; i++){
+    projectiles[i].display();
+    projectiles[i].move();
   }
 
   player.display();
@@ -280,13 +298,6 @@ function level1(){
   for (let i = 0; i < enemies.length; i++){
     enemies[i].display();
     enemies[i].move();
-  }
-
-  // iterating through projectiles array to display and move them
-  // using for loop
-  for (let i = 0; i < projectiles.length; i++){
-    projectiles[i].display();
-    projectiles[i].move();
   }
 
 for(let i = projectiles.length - 1; i >= 0; i--){
@@ -341,19 +352,24 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(50);
+    textFont('Helvetica');
     stroke(255);
     fill(144, 144, 252);
     text('Infinite Warfare', 1000, 70);
   pop();
 
   push();
-    textSize(15);
+    textSize(17);
+    textFont('Helvetica');
+    textStyle(BOLD);
+    noStroke();
     fill(255, 255, 255);
-    text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 300, 30);
+    text('Red planes +1pt, Lasers -3pts, Missiles -10 pts, Black planes -50pts', 290, 30);
   pop();
 
   push();
     textSize(20);
+    textFont('Helvetica');
     fill(255, 255, 255);
     text('Move:', 48, 80);
   pop();
@@ -380,12 +396,14 @@ for(let i = projectiles.length - 1; i >= 0; i--){
 
   push();
     textSize(20);
+    textFont('Helvetica');
     fill(255, 255, 255);
-    text('Shoot: CTRL', 270, 80);
+    text('Shoot: CTRL', 260, 80);
   pop();
 
   push();
     textSize(50);
+    textFont('Helvetica');
     strokeWeight(3);
     fill(144, 144, 252);
     text(`Score: ${points} pts`, w / 5, h - 40);
@@ -422,9 +440,11 @@ function youWinMouseClicked(){
 }
 
 function gameOver(){
+  imageMode(CORNER);
   push();
-  background(222, 46, 33);
+  background(bg2);
   textSize(200);
+  textFont('Helvetica');
   stroke(255);
   strokeWeight(5);
   fill(89, 0, 0);
@@ -432,23 +452,26 @@ function gameOver(){
   pop();
 
   push();
-  textSize(100);
-  text('💀               💀', w/2, h/1.5)
+    textSize(100);
+    textFont('Helvetica');
+    text('💀                   💀', w/2, h/1.5);
   pop();
 
   push();
     textSize(50);
+    textFont('Helvetica');
     strokeWeight(3);
     fill(144, 144, 252);
-    text(`Your total score: ${points} pts`, w / 2, h / 1.55);
+    text(`Your final score: ${points} pts`, w / 2, h / 1.55);
   pop();
 
   push();
-  textSize(40);
-  stroke(242, 78, 78);
-  strokeWeight(5);
-  fill(89, 0, 0);
-  text('-- click anywhere to return to title screen --', w/2, h/1.07);
+    textSize(40);
+    textFont('Helvetica');
+    stroke(242, 78, 78);
+    strokeWeight(5);
+    fill(89, 0, 0);
+    text('-- click anywhere to return to title screen --', w/2, h/1.07);
   pop();
 }
 
