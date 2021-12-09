@@ -154,7 +154,11 @@ function levelFive(){
 
 
 function levelSix(){
-  
-  text("Winner!", width/2, height-20);
+  background(0,250,5);
+  push();
+  fill(255);
+  textSize(50);
+  text("Winner!", width/2, height/2);
+  pop();
   
 } //end GAME  ================================================================================================
