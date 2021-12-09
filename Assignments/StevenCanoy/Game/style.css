@@ -5,8 +5,8 @@ html {
 }
 
 body {
-  background-color: rgb(4, 224, 249);
-  border: 25px solid rgb(41, 12, 234);
+  background-image: linear-gradient(to bottom right, red, yellow);
+  border: 25px solid rgb(250, 250, 252);
   margin: 100px auto 0 auto;
   width: 80%;
   text-align: center;
@@ -20,6 +20,6 @@ canvas {
   left: 0;
   position: relative;
   padding: 1%;
-  border: 10px solid rgb(41, 12, 234);
+  border: 10px solid rgb(253, 253, 255);
   z-index: -1;
 }
