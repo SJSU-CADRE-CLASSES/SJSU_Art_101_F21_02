@@ -6,7 +6,7 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
 
  function setup(){
    cnv = createCanvas(w, h);
@@ -15,7 +15,8 @@ let coin;
 
 player = new Player();
 
-coin = new Coin();
+//coins[0] = new Coin();
+coins.push(new Coin());
  }
 
 function draw() {
@@ -49,7 +50,7 @@ function keyPressed(){
   } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
   } else if (key =  ' ') {
-      player.direction = 'still'
+      player.direction = 'still';
   }
 }
 
@@ -71,13 +72,33 @@ function titleMouseClicked(){
 
 function level1(){
   background(50, 150,  200);
-  //text('click for points', w/2, h - 30);
+
+if (random(1) <= 0.01){
+  coins.push(new Coin());
+}
 
   player.display();
   player.move();
 
-  coin.display();
-  coin.move();
+
+for (let i = 0; i < coins.length; i++){
+  coins[i].display();
+  coins[i].move();
+}
+
+  //check for collision, if there is a collision increase points by 1 AND splice that coin  out of array
+  //need to iterate backwards through array
+
+  for (let i = coins.length - 1; i >= 0; i--){
+if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2){
+  points++;
+  console.log(points);
+  coins.splice(i, 1);
+  }
+ }
+
+text(`points: ${points}`, w/4, h - 30);
+
 }
 
 function level1MouseClicked(){
