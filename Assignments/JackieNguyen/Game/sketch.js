@@ -61,6 +61,30 @@ function keyPressed(){
   }
 }
 
+function keyReleased(){
+
+let numberKeysPressed = 0;
+
+if (keyIsDown(LEFT_ARROW)){
+  numberKeysPressed++;
+}
+  if (keyIsDown(RIGHT_ARROW)){
+    numberKeysPressed++;
+}
+  if (keyIsDown(DOWN_ARROW)){
+      numberKeysPressed++;
+}
+  if (keyIsDown(UP_ARROW)){
+        numberKeysPressed++;
+}
+
+ console.log(numberKeysPressed);
+
+if (numberKeysPressed == 0){
+  player.direction = 'still';
+ }
+}
+
 function title(){
 background(0);
 textSize(80);
@@ -101,6 +125,9 @@ if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) 
   points++;
   console.log(points);
   coins.splice(i, 1);
+} else if (coins[i].y > h){
+  coins.splice(i, 1);
+  //console.log('coin is out of town');
   }
  }
 
