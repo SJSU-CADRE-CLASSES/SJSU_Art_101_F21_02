@@ -5,11 +5,15 @@ let cnv;
 let points = 0;
 let w = 600;
 let h = 600;
+let player;
 
  function setup(){
    cnv = createCanvas(w, h);
 
    textFont('monospace');
+
+player = new Player();
+
 
  }
 
@@ -51,10 +55,11 @@ function titleMouseClicked(){
     state = 'level 1'
 }
 
-
 function level1(){
   background(50, 150,  200);
   text('click for points', w/2, h - 30);
+
+  player.display();
 }
 
 function level1MouseClicked(){
