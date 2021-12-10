@@ -3,14 +3,17 @@ html {
 }
 
 body {
-  margin: 50px 100px 50px 50px;
+  margin: 100px auto 0 auto;
   width: 70%;
-text-align:left;
+text-align:center;
   font-family: monospace;
   font-weight: bold;
+  background-color: rgb(189, 151, 188);
 }
 canvas {
-  display: block;
-  margin: 0 auto 0 auto;
-  border: 5px solid gray;
+  margin: auto;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: auto;
 }
