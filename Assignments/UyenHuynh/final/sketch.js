@@ -82,9 +82,7 @@ function keyPressed() {
     player.direction = 'left'
   } else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
-  } else if (key = ' ') {
-    player.direction = 'still'
-  }
+  } 
 }
 function keyReleased() {
   let numberKeysPressed = 0;
