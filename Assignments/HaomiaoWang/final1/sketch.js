@@ -23,7 +23,6 @@ let difficulty;
 let myFont;
 //music
 let bgm;
-let aoch;
 
 function preload(){
   soundFormats("mp3");
