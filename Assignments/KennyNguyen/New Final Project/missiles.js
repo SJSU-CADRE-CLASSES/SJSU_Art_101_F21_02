@@ -8,7 +8,6 @@ class Missile {
   }
 
   display(){
-    imageMode(CENTER);
     image(missileImg, this.x, this.y, this.r, this.r)
     // rect(this.x, this.y, this.r, this.r);
   }
