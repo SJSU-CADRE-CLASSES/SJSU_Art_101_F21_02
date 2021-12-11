@@ -67,6 +67,7 @@ function level1()
 {
   background(50,150,200);
   text('click for points',w/2,h-30);
+
 }
 
 
