@@ -25,7 +25,7 @@ function preload (){
   titleImg= loadImage ('Assets/bear.png');
   berriesImg= loadImage ('Assets/berries.png');
   queenImg= loadImage ('Assets/queenbee.png');
-  youLostImg= loadImage ('Assets/untitled-9.png');
+  youLostImg= loadImage ('Assets/Untitled-9.png');
   youWinImg= loadImage ('Assets/victory.png');
 
 
