@@ -76,8 +76,8 @@ function draw() {
 
 }
 
-function keyPressed (){
-  if ( keyCode == LEFT_ARROW){
+function keyPressed(){
+  if (keyCode == LEFT_ARROW){
     player.direction = 'left'
   }else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'
