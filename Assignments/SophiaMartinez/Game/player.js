@@ -32,7 +32,7 @@ class Player {
         //decrease xpos
         this.x -= this.speed;
         break;
-        default;
+        default:
         break;
     }
   }
