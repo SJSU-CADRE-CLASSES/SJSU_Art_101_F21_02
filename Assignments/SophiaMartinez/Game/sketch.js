@@ -3,9 +3,10 @@
 let player;
 let state = 'title';
 let cnv;
-let points = 0;
+let score = 0;
 let w = 600;
 let h = 600;
+let points;
 
 
 function setup() {
@@ -14,6 +15,7 @@ function setup() {
 
  player = new Player();
 
+ points = new Points();
 }
 
 function draw() {
@@ -37,6 +39,12 @@ function draw() {
 
 }
 
+function keyPressed(){
+  if (keyCode == LEFT_ARROW){
+    player.direction = 'left'
+  }
+}
+
 function title() {
   background(100);
   textSize(40);
@@ -58,6 +66,8 @@ function level1() {
   // text('click 4 points', w/2, h - 30);
 
   player.display();
+  points.display();
+  points.move();
 }
 
 function level1MouseClicked() {
