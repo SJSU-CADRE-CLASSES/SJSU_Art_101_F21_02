@@ -1,9 +1,9 @@
 class Lives{
     constructor(_numberOfLive){
-        this.x = 10;
-        this.y = 20;
-        this.width = 70;
-        this.height = 60;
+        this.x = 5;
+        this.y = 15;
+        this.width = 150;
+        this.height = 150;
         this.numberOfLives = _numberOfLive;
         this.liveSpacing = 10;
     }
