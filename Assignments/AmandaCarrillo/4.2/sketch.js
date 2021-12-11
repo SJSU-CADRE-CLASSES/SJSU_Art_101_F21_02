@@ -6,7 +6,12 @@ let points = 0;
 let w = 600;
 let h = 600;
 let player;
-let coin;
+let coins = [];
+let playerImg;
+
+function preLoad(){
+playerImg = loadImage('assets/player.png');
+}
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -15,7 +20,8 @@ function setup() {
 
   player = new Player();
 
-  coin = new Coin();
+  //coins [0] = new Coin();
+  coins.push(new Coin());
 }
 
 function draw() {
@@ -47,8 +53,8 @@ function keyPressed() {
     player.direction = 'up'
   } else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
-  } else if (key = ' '){
-    player.direction ='still';
+  } else if (key = ' ') {
+    player.direction = 'still';
   }
 }
 
@@ -71,35 +77,68 @@ function titleMouseClicked() {
 
 function level1() {
   background(50, 150, 200);
-  //text('click for points', w / 2, h - 30);
+
+  if (random(1) <= 0.01) {
+    coins.push(new Coin());
+  }
 
   player.display();
   player.move();
 
-  coin.display();
-  coin.move();
-}
+  coins[0].display();
+  coins[0].move();
 
-function level1MouseClicked() {
-  points++;
-  console.log('points =' + points);
 
-  if (points >= 10) {
-    state = 'you win'
+  // iterating through coins array to display and move them
+
+  // using for loop
+  for (let i = 0; i < coins.length; i++) {
+    coins[i].display();
+    coins[i].move();
   }
-}
 
-function youWin() {
-  background(255, 50, 80);
-  textSize(80);
-  stroke(255);
-  text('YOU WIN', w / 2, h / 2);
+  // using forEach
+  coins.forEach(function(coin) {
+      coin.display();
+      coin.move();
+    })
 
-  textSize(30);
-  text('click anywhere to restart', w / 2, h * 3 / 4);
-}
+    //check for collision, if there is a collision, increase points by 1 and plice that coin out of arr ay
 
-function youWinMouseClicked() {
-  state = 'level 1';
-  points = 0;
-}
+    // need to iterate backwards through the array
+
+    for (let i = coins.length - 1; i >= 0; i--) {
+      if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
+        points++;
+        console.log(points);
+        coins.splice(i, 1);
+      }
+    }
+
+    text(`points: ${points}`, w / 5, h - 30);
+
+  }
+
+  function level1MouseClicked() {
+    // points++;
+    // console.log('points =' + points);
+    //
+    // if (points >= 10) {
+    //   state = 'you win'
+    // }
+  }
+
+  function youWin() {
+    background(255, 50, 80);
+    textSize(80);
+    stroke(255);
+    text('YOU WIN', w / 2, h / 2);
+
+    textSize(30);
+    text('click anywhere to restart', w / 2, h * 3 / 4);
+  }
+
+  function youWinMouseClicked() {
+    state = 'level 1';
+    points = 0;
+  }
