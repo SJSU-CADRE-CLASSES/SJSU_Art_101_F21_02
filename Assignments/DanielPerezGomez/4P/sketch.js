@@ -13,26 +13,29 @@ let lives = 4;
 let player;
 let trouts = [];
 let enemies = [];
+
 // sprite sheets & animation array
 // let playerSS;
 // let playerJSON;
 // let playerAnimation = [];
+
 // dialogue counter
 var indexDialogue = 0;
 //maid dialogue
 let dialogueMaid = [
-  "HELLO MASTER!, rise and shine", "", "", "Oh, it seems like you have a cold",
+  "Hello master!, rise and shine", "", "", "Oh, it seems like you have a cold",
   "Don't worry I'll make you my famous trout soup", "", "", "",
-  "Nonsense, I am your maid", "I'll be back before you know it", "Just stay put master"];
+  "Nonsense, I am your maid afterall", "I'll be back before you know it", "Just stay put"];
 // boy dialogue
 let dialogueBoy = [
   "", "*cough*cough*", "Sorry, but I don't feel so well", "",
-  "", "uh ... WAIT NO!!", "... no need, I don't want to trouble you", "(Please not the soup, she's a bad cook)",
+  "", "uh ... WAIT NO!! ... I mean", "no need, I don't want to trouble you", "(Please not the soup, she's a bad cook)",
   "", "", ""];
 //images
 let introImage;
 let playerImage;
 let troutImage;
+let enemyImage;
 
 function preload() { 
   // custom font
@@ -41,6 +44,8 @@ function preload() {
   introImage = loadImage('assets/intro.jpg')
   playerImage = loadImage('assets/player.png')
   troutImage = loadImage('assets/trout.png')
+  enemyImage = loadImage('assets/enemy.png')
+
   //player sprite sheet & json
   // playerSS = loadImage('assets/spritesheet.png');
   // playerJSON = loadJSON('assets/spritesheet.json')
@@ -239,7 +244,7 @@ function level1MouseClicked() {
 
 function win() {
   push();
-  background('#192959');
+  background('#4D5934');
   textAlign(CENTER);
   textWrap(WORD);
   textSize(35);
@@ -260,7 +265,7 @@ function winMouseClicked() {
 
 function lose() {
   push();
-  background('#192959');
+  background('#73172F');
   textAlign(CENTER);
   textWrap(WORD);
   textSize(35);
