@@ -8,9 +8,11 @@ let h = 600;
 let player;
 let coins = [];
 let playerImg;
+let coinImg;
 
-function preLoad(){
-playerImg = loadImage('assets/player.png');
+function preLoad() {
+  playerImg = loadImage('assets/player.png');
+  coinImg = loadImage('assets/coin.png');
 }
 
 function setup() {
@@ -99,46 +101,46 @@ function level1() {
 
   // using forEach
   coins.forEach(function(coin) {
-      coin.display();
-      coin.move();
-    })
+    coin.display();
+    coin.move();
+  })
 
-    //check for collision, if there is a collision, increase points by 1 and plice that coin out of arr ay
+  //check for collision, if there is a collision, increase points by 1 and plice that coin out of arr ay
 
-    // need to iterate backwards through the array
+  // need to iterate backwards through the array
 
-    for (let i = coins.length - 1; i >= 0; i--) {
-      if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
-        points++;
-        console.log(points);
-        coins.splice(i, 1);
-      }
+  for (let i = coins.length - 1; i >= 0; i--) {
+    if (dist(player.x, player.y, coins[i].x, coins[i].y) <= (player.r + coins[i].r) / 2) {
+      points++;
+      console.log(points);
+      coins.splice(i, 1);
     }
-
-    text(`points: ${points}`, w / 5, h - 30);
-
   }
 
-  function level1MouseClicked() {
-    // points++;
-    // console.log('points =' + points);
-    //
-    // if (points >= 10) {
-    //   state = 'you win'
-    // }
-  }
+  text(`points: ${points}`, w / 5, h - 30);
 
-  function youWin() {
-    background(255, 50, 80);
-    textSize(80);
-    stroke(255);
-    text('YOU WIN', w / 2, h / 2);
+}
 
-    textSize(30);
-    text('click anywhere to restart', w / 2, h * 3 / 4);
-  }
+function level1MouseClicked() {
+  // points++;
+  // console.log('points =' + points);
+  //
+  // if (points >= 10) {
+  //   state = 'you win'
+  // }
+}
 
-  function youWinMouseClicked() {
-    state = 'level 1';
-    points = 0;
-  }
+function youWin() {
+  background(255, 50, 80);
+  textSize(80);
+  stroke(255);
+  text('YOU WIN', w / 2, h / 2);
+
+  textSize(30);
+  text('click anywhere to restart', w / 2, h * 3 / 4);
+}
+
+function youWinMouseClicked() {
+  state = 'level 1';
+  points = 0;
+}
