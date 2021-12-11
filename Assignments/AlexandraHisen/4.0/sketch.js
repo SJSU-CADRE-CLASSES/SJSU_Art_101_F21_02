@@ -86,7 +86,7 @@ function keyPressed (){
   }else if (keyCode == DOWN_ARROW) {
     player.direction = 'down'
   }else if (key = ' '){
-    player.direction = 'still'
+    player.direction == 'still'
   }
 }
 
