@@ -9,7 +9,6 @@ let h=1000;
 function setup() {
   cnv=createCanvas(w, h);
   textFont('monospace');
-
 }
 
 function draw() {
