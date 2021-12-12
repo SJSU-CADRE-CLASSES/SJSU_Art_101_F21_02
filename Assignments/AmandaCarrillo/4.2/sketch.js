@@ -1,6 +1,6 @@
 'use strict';
 
-let state = "title";
+let state = 'title';
 let cnv;
 let points = 0;
 let w = 600;
@@ -10,10 +10,11 @@ let coins = [];
 let playerImg;
 let coinImg;
 
-function preLoad() {
-  playerImg = loadImage('assets/player.png');
-  coinImg = loadImage('assets/coin.png');
+function preload(){
+ playerImg = loadImage('assets/player.png');
+ coinImg = loadImage('assets/coin.png');
 }
+
 
 function setup() {
   cnv = createCanvas(w, h);
