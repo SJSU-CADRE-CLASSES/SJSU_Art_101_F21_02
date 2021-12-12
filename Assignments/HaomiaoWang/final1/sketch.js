@@ -193,7 +193,7 @@ function begin(){
       slimes.splice(i, 1);
     } else if (slimes[i].y > h) {
       slimes.splice(i, 1);
-      console.log("bye");
+      console.log("end");
     }
   }
   for (let i = bslimes.length - 1; i >= 0; i--) {
@@ -204,7 +204,7 @@ function begin(){
       bslimes.splice(i, 1);
     } else if (bslimes[i].y > h) {
       bslimes.splice(i, 1);
-      console.log("bye");
+      console.log("end");
     }
   }
 fill(255, 195, 77);
@@ -238,15 +238,15 @@ function gameOverMouseClicked() {
 }
 
 function youWin(){
-  background(230, 255, 230);
+  background(193, 240, 193);
   background(winbg);
   textSize(70);
-  fill(132, 225, 132);
+  fill(111, 220, 111);
   text('You score:', w / 2, h/4 );
   text(points  + ' points', w / 2, h/1.8-150);
 
   textSize(45);
-  text("Click anywhere to restart", w / 2, h/1.5+150);
+  text("Click anywhere to restart", w / 2, h/1.5+200);
   bgm.stop();
 
 }
