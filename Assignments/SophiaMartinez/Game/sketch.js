@@ -1,5 +1,6 @@
 'use strict';
 
+let img;
 var bg;
 let state = 'title';
 let cnv;
@@ -13,6 +14,7 @@ let pointImg;
 // let chunkyImg;
 
 function preload(){
+  img = loadImage('images4game/background2.png');
   bg = loadImage('images4game/bg.png');
   playerImg = loadImage('images4game/bigdipper.png');
   pointImg = loadImage('images4game/Rotating-golden-star.gif');
@@ -20,6 +22,7 @@ function preload(){
 }
 
 function setup() {
+
   cnv = createCanvas(w, h);
   textFont('monospace');
 
