@@ -3,7 +3,7 @@ class Player {
     this.r = 60; //size of player
     this.x = w / 2;
     this.y = h - this.r;
-    this.speed = 2;
+    this.speed = 4;
     this.direction = 'still';
   }
 
@@ -18,19 +18,27 @@ class Player {
         break;
       case 'up':
         //decrease y position
+        if (this.y > 0) {
         this.y -= this.speed;
+      }
         break;
       case 'down':
         //increase ypos
+        if (this.y < h - this.r) {
         this.y += this.speed;
+      }
         break;
       case 'right':
         //increase xpos
-        this.x += this.speed;
+        if (this.x < w - this.r){
+          this.x += this.speed;
+        }
         break;
       case 'left':
         //decrease xpos
+        if (this.x > 0){
         this.x -= this.speed;
+      }
         break;
         default:
         break;

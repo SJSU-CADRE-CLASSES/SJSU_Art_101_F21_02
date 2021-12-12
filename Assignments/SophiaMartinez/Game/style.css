@@ -1,8 +1,21 @@
 html, body{
   margin: 0;
   padding: 0;
+  background-image: url("images4game/background2.png");
+  background-size: 1500px;
+  background-repeat: no-repeat;
+
+
 }
+
 canvas {
   display: block;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 50px auto ;
 }
+
+
+
+/* body  {
+  background-image: url("images/cloudsdrift.gif");
+  background-color:  #aab4cd;
+} */

@@ -1,6 +1,6 @@
 'use strict';
 
-let bg;
+var bg;
 let state = 'title';
 let cnv;
 let score = 0;
@@ -10,11 +10,13 @@ let player;
 let points = [];
 let playerImg;
 let pointImg;
+// let chunkyImg;
 
 function preload(){
   bg = loadImage('images4game/bg.png');
   playerImg = loadImage('images4game/bigdipper.png');
   pointImg = loadImage('images4game/Rotating-golden-star.gif');
+  // chunkyImg = loadImage('images4game/gluttony.png');
 }
 
 function setup() {
@@ -28,7 +30,7 @@ function setup() {
 }
 
 function draw() {
-background(bg);
+
   switch (state) {
     case 'title':
       title();
@@ -63,10 +65,12 @@ function keyPressed() {
 }
 
 function title() {
-  background(100);
-  textSize(40);
+  background(bg);
+  textSize(50);
   fill(255);
-  text('FOOLS QUEST', w / 2, h / 5);
+  stroke(0);
+  strokeWeight(5);
+  text('CHUNKY STAR', w / 2, h / 5);
   textAlign(CENTER);
   textSize(30);
   text('click anywhere to start', w / 2, h / 2);
@@ -79,7 +83,8 @@ function titleMouseClicked() {
 }
 
 function level1() {
-  background(50, 150, 200);
+  // background(50, 150, 200);
+  background(bg);
 
 if (random(1) <= 0.01){
   points.push(new Points());
@@ -100,10 +105,17 @@ for (let i = points.length - 1; i >= 0; i--){
   score++;
   console.log(score);
   points.splice(i, 1);
+} else if (points[i].y > h){
+  points.splice(i, 1);
+
 }
 }
 
 text(`score: ${score}`, w / 4, h - 30);
+
+if (points >= 8){
+  state = 'you win';
+}
 
 }
 
@@ -122,11 +134,11 @@ function level1MouseClicked() {
     stroke(255);
     text('YOU WIN', 100, 100);
     textSize(30);
-    text('click anywhere to restart', w / 2, h * 3 / 4);
+    text('click anywhere for seconds', w / 2, h * 3 / 4);
   }
 
   function youWinMouseClicked() {
-    state = 'level 1';
-    points[0] = 0;
+    state = 'title';
+    points = 0;
   }
 }
