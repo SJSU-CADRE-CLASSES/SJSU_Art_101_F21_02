@@ -1,5 +1,6 @@
 'use strict';
 
+let bg;
 let state = 'title';
 let cnv;
 let score = 0;
@@ -7,7 +8,14 @@ let w = 600;
 let h = 600;
 let player;
 let points = [];
+let playerImg;
+let pointImg;
 
+function preload(){
+  bg = loadImage('images4game/bg.png');
+  playerImg = loadImage('images4game/bigdipper.png');
+  pointImg = loadImage('images4game/Rotating-golden-star.gif');
+}
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -20,7 +28,7 @@ function setup() {
 }
 
 function draw() {
-
+background(bg);
   switch (state) {
     case 'title':
       title();
