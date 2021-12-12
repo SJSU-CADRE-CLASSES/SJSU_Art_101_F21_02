@@ -106,7 +106,7 @@ function level1() {
     coin.move();
   })
 
-  //check for collision, if there is a collision, increase points by 1 and plice that coin out of arr ay
+  //check for collision, if there is a collision, increase points by 1 and splice that coin out of array
 
   // need to iterate backwards through the array
 
@@ -115,6 +115,9 @@ function level1() {
       points++;
       console.log(points);
       coins.splice(i, 1);
+    } else if (coins[i].y > h){
+      coins.splice(i, 1);
+      console.log('coin is out of town');
     }
   }
 
