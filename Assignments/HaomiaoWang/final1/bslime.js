@@ -1,10 +1,17 @@
 class Bslime{
     constructor(){
+        //constructor(_size){
         //this.r = _size;
-        this.r = 190;
-        this.x =  random(0+ this.r, w-this.r);
+        // this.r = 190;
+        // this.x =  random(0+ this.r, w-this.r);
+        // this.y = 0 - this.r;
+        // this.speed = 4;
+
+        this.r = 185;
+        this.x = random(w);
         this.y = 0 - this.r;
         this.speed = 4;
+
 
     }
 
