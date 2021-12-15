@@ -1,5 +1,5 @@
 class Bslime{
-    constructor(_size){
+    constructor(){
         //this.r = _size;
         this.r = 190;
         this.x =  random(0+ this.r, w-this.r);
