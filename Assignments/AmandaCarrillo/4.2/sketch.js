@@ -1,6 +1,6 @@
 'use strict';
 
-let state = "title";
+let state = 'title';
 let cnv;
 let points = 0;
 let w = 600;
@@ -10,10 +10,11 @@ let coins = [];
 let playerImg;
 let coinImg;
 
-function preLoad() {
-  playerImg = loadImage('assets/player.png');
-  coinImg = loadImage('assets/coin.png');
+function preload(){
+ playerImg = loadImage('assets/player.png');
+ coinImg = loadImage('assets/coin.png');
 }
+
 
 function setup() {
   cnv = createCanvas(w, h);
@@ -105,7 +106,7 @@ function level1() {
     coin.move();
   })
 
-  //check for collision, if there is a collision, increase points by 1 and plice that coin out of arr ay
+  //check for collision, if there is a collision, increase points by 1 and splice that coin out of array
 
   // need to iterate backwards through the array
 
@@ -114,6 +115,9 @@ function level1() {
       points++;
       console.log(points);
       coins.splice(i, 1);
+    } else if (coins[i].y > h){
+      coins.splice(i, 1);
+      console.log('coin is out of town');
     }
   }
 

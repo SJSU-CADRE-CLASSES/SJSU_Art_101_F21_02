@@ -1,8 +1,25 @@
 html, body{
   margin: 0;
   padding: 0;
+  background-image: url("images4game/gluttony.png");
+  background-size: 50%;
+  /* background-position: left bottom; */
+  background-attachment: scroll;
+  /* background-repeat: no-repeat; */
+  background-color: (51, 82, 168);
+
+
 }
+
 canvas {
   display: block;
-  margin: 50px auto 50px auto;
+  margin: 50px auto 50px auto ;
+  background-color: (51, 82, 168);
 }
+
+
+
+/* body  {
+  background-image: url("images/cloudsdrift.gif");
+  background-color:  #aab4cd;
+} */

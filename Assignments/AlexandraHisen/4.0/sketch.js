@@ -19,14 +19,14 @@ let queenImg;
 
 
 function preload (){
-  playerImg= loadImage('assets/mishkabear.png');
-  coinsImg= loadImage ('assets/complex_honeycomb.png');
-  enemiesImg= loadImage ('assets/bee.png');
-  titleImg= loadImage ('assets/bear.png');
-  berriesImg= loadImage ('assets/berries.png');
-  queenImg= loadImage ('assets/queenbee.png');
-  youLostImg= loadImage ('assets/untitled-9.png');
-  youWinImg= loadImage ('assets/victory.png');
+  playerImg= loadImage('Assets/mishkabear.png');
+  coinsImg= loadImage ('Assets/complex_honeycomb.png');
+  enemiesImg= loadImage ('Assets/bee.png');
+  titleImg= loadImage ('Assets/bear.png');
+  berriesImg= loadImage ('Assets/berries.png');
+  queenImg= loadImage ('Assets/queenbee.png');
+  youLostImg= loadImage ('Assets/dead.png');
+  youWinImg= loadImage ('Assets/victory.png');
 
 
 }
@@ -77,7 +77,7 @@ function draw() {
 }
 
 function keyPressed (){
-  if ( keyCode === LEFT_ARROW){
+  if ( keyCode == LEFT_ARROW){
     player.direction = 'left'
   }else if (keyCode == RIGHT_ARROW) {
     player.direction = 'right'

@@ -6,7 +6,7 @@ class Points {
   }
 
   display(){
-    rect(this.x, this.y, this.r, this.r);
+    image(pointImg, this.x, this.y, this.r, this.r);
   }
   move(){
     this.y++;
