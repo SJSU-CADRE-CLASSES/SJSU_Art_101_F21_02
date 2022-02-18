@@ -10,7 +10,7 @@ let y3= 250
 
 function setup() {
   cnv = createCanvas(400, 400);
-  cnv.mouseWheel(pupils); 
+  cnv.mouseWheel(pupils);
   mic = new p5.AudioIn();
   mic.start();
 count = 0;
@@ -18,10 +18,10 @@ count = 0;
 
 class Skull {
   constructor(_xpos,_ypos,rot) {
-    
+
     this._xpos = _xpos;
     this._ypos = _ypos;
-    this.rot= rot; 
+    this.rot= rot;
   }
   display(){
     rectMode(CENTER)
@@ -48,9 +48,9 @@ function draw() {
   nose ()
   pupils ()
   teeth (mic.getLevel()*1000)
-  
- 
-  
+
+
+
   skullA = new Skull(148,-5, -0.5);
   skullA.display()
   skullM= new Skull (250,-5,0.5);
@@ -69,10 +69,10 @@ function draw() {
   skullPet.display()
   skullSjsu = new Skull(10,150, 0.5);
   skullSjsu.display()
- 
- 
 
-  
+
+
+
  }
    function skull(boneColor){
   fill(boneColor)
@@ -82,7 +82,7 @@ function draw() {
 function eyes(){
  fill(100,200,400)
   square (100,100,75)
- 
+
   fill(100,200,400)
   square (225,100,75)
 }
@@ -100,7 +100,7 @@ function teeth (open){
   rect(225, 330, 20, open+30)
   rect(270, 330, 20, open+30)
 }
- 
+
  function pupils (){
  fill (255)
    ellipse (137.5,y1,30)
@@ -116,20 +116,17 @@ function mouseWheel() {
     y1 = y1 + 2;
   y2 = y2 + 2;
   y3 = y3 + 2;
- 
+
 if (y1 > 300) {
     y1 = 60;
   }
   if (y2 > 300) {
     y2 = 60;
   }
-  
+
   if (y3 > 300) {
     y3 = 60;
   }
 
 
 }
-
-
-
